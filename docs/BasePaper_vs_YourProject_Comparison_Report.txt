@@ -1,0 +1,99 @@
+Explainable Machine Learning for Lifestyle-Based Sleep Efficiency Prediction Using Behavioral and Screen Inactivity Signals
+Comparison Report: Base Paper vs Your Project
+Date: 2026-02-17
+
+Base Paper
+Title: Predicting the Risk of Sleep Disorders Using a Machine Learning–Based Simple Questionnaire
+Source: JMIR 2023; e46520 (jmir.org/2023/1/e46520)
+
+Important Scope Note
+- Base paper task: Multi-label risk prediction of OSA, COMISA, and Insomnia (classification).
+- Your project task: Sleep efficiency percentage prediction + Good/Poor classification thresholding (regression + derived classification).
+- Therefore, this is a methodological and metric-level comparison, not a strict apples-to-apples benchmark.
+
+======================================================================
+1) Base Paper Reported Results (SLEEPS model, XGBoost)
+======================================================================
+SMC Testing Set (n=851)
+- OSA      : AUROC = 0.897, AUPRC = 0.877
+- COMISA   : AUROC = 0.947, AUPRC = 0.786
+- Insomnia : AUROC = 0.922, AUPRC = 0.611
+
+EUMCSH Independent Set (n=365)
+- OSA      : AUROC = 0.930, AUPRC = 0.940
+- COMISA   : AUROC = 0.949, AUPRC = 0.854
+- Insomnia : AUROC = 0.849, AUPRC = 0.235
+
+Modeling Notes from Base Paper
+- Core model: XGBoost
+- Feature selection: SHAP-based, 9-question simple questionnaire + demographics
+- Emphasis: strong AUROC and robust AUPRC under class imbalance
+
+======================================================================
+2) Your Project Results (latest trained artifacts)
+======================================================================
+Source file: ml/reports/model_comparison.json
+Task: Sleep efficiency regression + Good/Poor derived classification (threshold=85)
+
+Random Forest
+- Accuracy = 0.9600
+- Precision = 0.9333
+- Recall = 0.8750
+- F1 = 0.9032
+- ROC-AUC = 0.9873
+- MAE = 2.6412
+- RMSE = 3.6059
+- R^2 = 0.9330
+
+XGBoost
+- Accuracy = 0.9467
+- Precision = 0.8750
+- Recall = 0.8750
+- F1 = 0.8750
+- ROC-AUC = 0.9714
+- MAE = 3.0720
+- RMSE = 4.2481
+- R^2 = 0.9070
+
+Hybrid (MLP + 1D CNN)
+- Accuracy = 0.9200
+- Precision = 0.8125
+- Recall = 0.8125
+- F1 = 0.8125
+- ROC-AUC = 0.9820
+- MAE = 4.9758
+- RMSE = 6.1650
+- R^2 = 0.8041
+
+Best observed model in your current run
+- For regression quality: Random Forest (lowest RMSE and highest R^2).
+- For derived classification: Random Forest also strongest F1 in this run.
+
+======================================================================
+3) Comparison Summary
+======================================================================
+Methodology
+- Base paper: single dominant XGBoost classifier for multi-disorder risk.
+- Your project: multi-model framework (RF, XGB, Hybrid) + explainability + recommendation pipeline.
+
+Interpretability
+- Base paper: SHAP feature importance and questionnaire simplification.
+- Your project: SHAP + humanized local insights + recommendation engine in app UI.
+
+Deployment
+- Base paper: web questionnaire deployment.
+- Your project: full-stack web + Android app, device usage integration, optional user sleep-time hint.
+
+Performance Perspective
+- Base paper reports very high AUROC across disorders (0.897 to 0.949).
+- Your project reports high ROC-AUC too for the derived Good/Poor task (0.971 to 0.987), with strong regression fit (best R^2 ~0.933).
+- Because tasks differ, compare as: "both achieve high-discrimination ML outcomes in their own problem settings."
+
+======================================================================
+4) Suggested Viva Statement
+======================================================================
+"Our base paper predicts risks of OSA, COMISA, and insomnia using XGBoost from a simplified questionnaire. My project extends this paradigm into lifestyle-based sleep efficiency prediction with a full-stack deployment, integrates temporal device behavior through a hybrid model, and provides human-readable local explanations and recommendations. Quantitatively, our models achieve high discrimination and strong regression fit in our task setting, while maintaining interpretability and practical deployment readiness."
+
+======================================================================
+End of Report
+======================================================================

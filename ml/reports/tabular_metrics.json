@@ -1,0 +1,58 @@
+{
+  "rf": {
+    "mae": 2.6412398845183938,
+    "rmse": 3.6059207748340425,
+    "r2": 0.9329937716997259,
+    "accuracy": 0.96,
+    "precision": 0.9333333333333333,
+    "recall": 0.875,
+    "f1": 0.9032258064516129,
+    "roc_auc": 0.9872881355932204
+  },
+  "xgb": {
+    "mae": 3.0720477798457226,
+    "rmse": 4.24813772457683,
+    "r2": 0.9070006340534773,
+    "accuracy": 0.9466666666666667,
+    "precision": 0.875,
+    "recall": 0.875,
+    "f1": 0.875,
+    "roc_auc": 0.9713983050847458
+  },
+  "best_rf_params": {
+    "n_estimators": 600,
+    "min_samples_split": 10,
+    "min_samples_leaf": 1,
+    "max_depth": 10
+  },
+  "best_xgb_params": {
+    "subsample": 0.7,
+    "min_child_weight": 1,
+    "max_depth": 5,
+    "learning_rate": 0.1,
+    "colsample_bytree": 1.0
+  },
+  "feature_columns": [
+    "caffeine_mg_evening",
+    "alcohol_units",
+    "dinner_hour",
+    "stress_level",
+    "mood_score",
+    "physical_activity_min",
+    "naps_count",
+    "naps_total_min",
+    "previous_sleep_hours",
+    "work_hours",
+    "blue_light_minutes",
+    "bedtime_consistency",
+    "hydration_liters",
+    "inferred_sleep_start_hour",
+    "longest_evening_inactivity_min",
+    "nighttime_activity_bursts",
+    "dinner_to_sleep_gap",
+    "caffeine_stress_interaction",
+    "activity_stress_balance",
+    "nap_sleep_debt_proxy"
+  ],
+  "quality_threshold": 85.0
+}

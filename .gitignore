@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+
+.venv/
+.env
+.DS_Store
+
+node_modules/
+frontend/.next/
+backend/.pytest_cache/
+backend/sleep_app.db
+
+.idea/
+.Rhistory
+docs/.Rhistory
+
+tmp-icons/
+
+# Generated model binaries
+ml/artifacts/*
+!ml/artifacts/.gitkeep
+
+# Keep research/evaluation JSON reports
+# ml/reports/*.json is intentionally NOT ignored
+
+# Generated visual reports
+ml/reports/*.png

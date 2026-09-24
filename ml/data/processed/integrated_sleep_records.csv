@@ -1,0 +1,826 @@
+participant_id,source_participant_id,sleep_date,bedtime,wakeup_time,total_sleep_duration_hours,time_in_bed_hours,sleep_efficiency,sleep_efficiency_calculation_source,sleep_quality_score,caffeine_consumption_level,alcohol_consumption_level,exercise_frequency_per_week,physical_activity_level_source,stress_level_source,daily_steps,awakenings,age,gender,occupation,source_dataset,source_file,source_row_number,record_status,quality_flags
+sleep_efficiency_1,1,2021-03-06,2021-03-06 01:00:00,2021-03-06 07:00:00,6.0,6.0,88.0,reported,,0.0,0.0,3.0,,,,0.0,65,Female,,sleep_efficiency,Sleep_Efficiency.csv,2,target_available,
+sleep_efficiency_2,2,2021-12-05,2021-12-05 02:00:00,2021-12-05 09:00:00,7.0,7.0,66.0,reported,,0.0,3.0,3.0,,,,3.0,69,Male,,sleep_efficiency,Sleep_Efficiency.csv,3,target_available,
+sleep_efficiency_3,3,2021-05-25,2021-05-25 21:30:00,2021-05-25 05:30:00,8.0,8.0,89.0,reported,,0.0,0.0,3.0,,,,1.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,4,target_available,
+sleep_efficiency_4,4,2021-11-03,2021-11-03 02:30:00,2021-11-03 08:30:00,6.0,6.0,51.0,reported,,50.0,5.0,1.0,,,,3.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,5,target_available,
+sleep_efficiency_5,5,2021-03-13,2021-03-13 01:00:00,2021-03-13 09:00:00,8.0,8.0,76.0,reported,,0.0,3.0,3.0,,,,3.0,57,Male,,sleep_efficiency,Sleep_Efficiency.csv,6,target_available,
+sleep_efficiency_6,6,2021-07-01,2021-07-01 21:00:00,2021-07-01 04:30:00,7.5,7.5,90.0,reported,,,0.0,1.0,,,,0.0,36,Female,,sleep_efficiency,Sleep_Efficiency.csv,7,target_available,
+sleep_efficiency_7,7,2021-07-21,2021-07-21 21:00:00,2021-07-21 03:00:00,6.0,6.0,54.0,reported,,50.0,0.0,1.0,,,,2.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,8,target_available,
+sleep_efficiency_8,8,2021-08-16,2021-08-16 00:30:00,2021-08-16 10:30:00,10.0,10.0,90.0,reported,,50.0,0.0,3.0,,,,0.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,9,target_available,
+sleep_efficiency_9,9,2021-04-05,2021-04-05 02:30:00,2021-04-05 08:30:00,6.0,6.0,79.0,reported,,50.0,0.0,1.0,,,,3.0,41,Female,,sleep_efficiency,Sleep_Efficiency.csv,10,target_available,
+sleep_efficiency_10,10,2021-09-16,2021-09-16 01:00:00,2021-09-16 10:00:00,9.0,9.0,55.00000000000001,reported,,0.0,0.0,0.0,,,,4.0,11,Female,,sleep_efficiency,Sleep_Efficiency.csv,11,target_available,
+sleep_efficiency_11,11,2021-02-28,2021-02-28 00:30:00,2021-02-28 08:30:00,8.0,8.0,92.0,reported,,50.0,0.0,3.0,,,,1.0,50,Male,,sleep_efficiency,Sleep_Efficiency.csv,12,target_available,
+sleep_efficiency_12,12,2021-03-10,2021-03-10 22:30:00,2021-03-10 06:00:00,7.5,7.5,93.0,reported,,0.0,0.0,3.0,,,,0.0,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,13,target_available,
+sleep_efficiency_13,13,2021-08-07,2021-08-07 02:30:00,2021-08-07 11:30:00,9.0,9.0,93.0,reported,,50.0,0.0,1.0,,,,0.0,30,Female,,sleep_efficiency,Sleep_Efficiency.csv,14,target_available,
+sleep_efficiency_14,14,2021-02-25,2021-02-25 01:00:00,2021-02-25 09:30:00,8.5,8.5,64.0,reported,,0.0,0.0,3.0,,,,4.0,28,Male,,sleep_efficiency,Sleep_Efficiency.csv,15,target_available,
+sleep_efficiency_15,15,2021-07-03,2021-07-03 01:30:00,2021-07-03 10:00:00,8.5,8.5,54.0,reported,,25.0,1.0,0.0,,,,2.0,36,Female,,sleep_efficiency,Sleep_Efficiency.csv,16,target_available,
+sleep_efficiency_16,16,2021-12-06,2021-12-06 22:00:00,2021-12-06 05:30:00,7.5,7.5,92.0,reported,,50.0,2.0,5.0,,,,0.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,17,target_available,
+sleep_efficiency_17,17,2021-03-24,2021-03-24 01:00:00,2021-03-24 08:00:00,7.0,7.0,54.0,reported,,0.0,2.0,0.0,,,,4.0,21,Female,,sleep_efficiency,Sleep_Efficiency.csv,18,target_available,
+sleep_efficiency_18,18,2021-08-27,2021-08-27 23:00:00,2021-08-27 06:30:00,7.5,7.5,50.0,reported,,50.0,2.0,3.0,,,,3.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,19,target_available,
+sleep_efficiency_19,19,2021-07-27,2021-07-27 00:00:00,2021-07-27 09:00:00,9.0,9.0,98.0,reported,,25.0,1.0,0.0,,,,0.0,43,Female,,sleep_efficiency,Sleep_Efficiency.csv,20,target_available,
+sleep_efficiency_20,20,2021-12-03,2021-12-03 00:30:00,2021-12-03 07:30:00,7.0,7.0,89.0,reported,,50.0,0.0,3.0,,,,,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,21,target_available,
+sleep_efficiency_21,21,2021-05-02,2021-05-02 00:00:00,2021-05-02 08:00:00,8.0,8.0,83.0,reported,,0.0,,2.0,,,,3.0,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,22,target_available,
+sleep_efficiency_22,22,2021-06-14,2021-06-14 02:30:00,2021-06-14 10:00:00,7.5,7.5,71.0,reported,,50.0,4.0,1.0,,,,3.0,32,Male,,sleep_efficiency,Sleep_Efficiency.csv,23,target_available,
+sleep_efficiency_23,23,2021-12-23,2021-12-23 22:00:00,2021-12-23 06:00:00,8.0,8.0,84.0,reported,,75.0,0.0,2.0,,,,2.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,24,target_available,
+sleep_efficiency_24,24,2021-05-21,2021-05-21 02:30:00,2021-05-21 10:30:00,8.0,8.0,98.0,reported,,50.0,0.0,1.0,,,,0.0,63,Female,,sleep_efficiency,Sleep_Efficiency.csv,25,target_available,
+sleep_efficiency_25,25,2021-09-16,2021-09-16 00:00:00,2021-09-16 07:00:00,7.0,7.0,88.0,reported,,,5.0,2.0,,,,1.0,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,26,target_available,
+sleep_efficiency_26,26,2021-03-26,2021-03-26 00:00:00,2021-03-26 06:00:00,6.0,6.0,91.0,reported,,0.0,0.0,2.0,,,,1.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,27,target_available,
+sleep_efficiency_27,27,2021-06-18,2021-06-18 00:00:00,2021-06-18 07:00:00,7.0,7.0,95.0,reported,,,0.0,1.0,,,,0.0,36,Female,,sleep_efficiency,Sleep_Efficiency.csv,28,target_available,
+sleep_efficiency_28,28,2021-12-15,2021-12-15 02:30:00,2021-12-15 09:30:00,7.0,7.0,84.0,reported,,0.0,0.0,2.0,,,,2.0,35,Male,,sleep_efficiency,Sleep_Efficiency.csv,29,target_available,
+sleep_efficiency_29,29,2021-11-08,2021-11-08 21:30:00,2021-11-08 06:30:00,9.0,9.0,65.0,reported,,0.0,0.0,3.0,,,,3.0,23,Male,,sleep_efficiency,Sleep_Efficiency.csv,30,target_available,
+sleep_efficiency_30,30,2021-12-25,2021-12-25 22:30:00,2021-12-25 05:30:00,7.0,7.0,91.0,reported,,0.0,3.0,4.0,,,,1.0,47,Female,,sleep_efficiency,Sleep_Efficiency.csv,31,target_available,
+sleep_efficiency_31,31,2021-08-10,2021-08-10 00:00:00,2021-08-10 07:00:00,7.0,7.0,56.99999999999999,reported,,0.0,1.0,3.0,,,,3.0,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,32,target_available,
+sleep_efficiency_32,32,2021-05-24,2021-05-24 00:30:00,2021-05-24 08:30:00,8.0,8.0,68.0,reported,,25.0,0.0,0.0,,,,3.0,18,Male,,sleep_efficiency,Sleep_Efficiency.csv,33,target_available,
+sleep_efficiency_33,33,2021-03-26,2021-03-26 00:00:00,2021-03-26 07:00:00,7.0,7.0,55.00000000000001,reported,,0.0,4.0,0.0,,,,3.0,26,Male,,sleep_efficiency,Sleep_Efficiency.csv,34,target_available,
+sleep_efficiency_34,34,2021-11-28,2021-11-28 00:30:00,2021-11-28 07:30:00,7.0,7.0,90.0,reported,,25.0,1.0,,,,,0.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,35,target_available,
+sleep_efficiency_35,35,2021-07-28,2021-07-28 21:30:00,2021-07-28 05:00:00,7.5,7.5,94.0,reported,,0.0,0.0,3.0,,,,0.0,46,Female,,sleep_efficiency,Sleep_Efficiency.csv,36,target_available,
+sleep_efficiency_36,36,2021-10-19,2021-10-19 01:00:00,2021-10-19 08:00:00,7.0,7.0,64.0,reported,,50.0,3.0,0.0,,,,2.0,61,Female,,sleep_efficiency,Sleep_Efficiency.csv,37,target_available,
+sleep_efficiency_37,37,2021-08-06,2021-08-06 22:00:00,2021-08-06 05:00:00,7.0,7.0,87.0,reported,,0.0,0.0,3.0,,,,1.0,38,Male,,sleep_efficiency,Sleep_Efficiency.csv,38,target_available,
+sleep_efficiency_38,38,2021-09-05,2021-09-05 00:00:00,2021-09-05 09:00:00,9.0,9.0,82.0,reported,,,0.0,1.0,,,,4.0,20,Female,,sleep_efficiency,Sleep_Efficiency.csv,39,target_available,
+sleep_efficiency_39,39,2021-06-19,2021-06-19 00:00:00,2021-06-19 07:30:00,7.5,7.5,87.0,reported,,50.0,0.0,1.0,,,,1.0,28,Female,,sleep_efficiency,Sleep_Efficiency.csv,40,target_available,
+sleep_efficiency_40,40,2021-03-26,2021-03-26 02:00:00,2021-03-26 09:00:00,7.0,7.0,63.0,reported,,50.0,3.0,0.0,,,,3.0,58,Female,,sleep_efficiency,Sleep_Efficiency.csv,41,target_available,
+sleep_efficiency_41,41,2021-07-29,2021-07-29 22:00:00,2021-07-29 04:00:00,6.0,6.0,83.0,reported,,0.0,0.0,0.0,,,,3.0,46,Male,,sleep_efficiency,Sleep_Efficiency.csv,42,target_available,
+sleep_efficiency_42,42,2021-05-08,2021-05-08 01:30:00,2021-05-08 07:30:00,6.0,6.0,83.0,reported,,25.0,0.0,1.0,,,,1.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,43,target_available,
+sleep_efficiency_43,43,2021-06-27,2021-06-27 00:00:00,2021-06-27 10:00:00,10.0,10.0,59.0,reported,,50.0,0.0,1.0,,,,2.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,44,target_available,
+sleep_efficiency_44,44,2021-08-13,2021-08-13 22:30:00,2021-08-13 06:00:00,7.5,7.5,87.0,reported,,50.0,0.0,1.0,,,,1.0,31,Female,,sleep_efficiency,Sleep_Efficiency.csv,45,target_available,
+sleep_efficiency_45,45,2021-12-10,2021-12-10 23:00:00,2021-12-10 07:00:00,8.0,8.0,77.0,reported,,25.0,1.0,0.0,,,,3.0,34,Female,,sleep_efficiency,Sleep_Efficiency.csv,46,target_available,
+sleep_efficiency_46,46,2021-04-07,2021-04-07 01:30:00,2021-04-07 08:30:00,7.0,7.0,86.0,reported,,50.0,0.0,1.0,,,,1.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,47,target_available,
+sleep_efficiency_47,47,2021-04-20,2021-04-20 00:00:00,2021-04-20 08:00:00,8.0,8.0,91.0,reported,,0.0,0.0,0.0,,,,1.0,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,48,target_available,
+sleep_efficiency_48,48,2021-04-11,2021-04-11 00:00:00,2021-04-11 07:30:00,7.5,7.5,71.0,reported,,50.0,1.0,1.0,,,,1.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,49,target_available,
+sleep_efficiency_49,49,2021-08-01,2021-08-01 00:00:00,2021-08-01 08:00:00,8.0,8.0,81.0,reported,,0.0,0.0,0.0,,,,3.0,21,Female,,sleep_efficiency,Sleep_Efficiency.csv,50,target_available,
+sleep_efficiency_50,50,2021-04-10,2021-04-10 21:30:00,2021-04-10 04:30:00,7.0,7.0,81.0,reported,,0.0,5.0,4.0,,,,1.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,51,target_available,
+sleep_efficiency_51,51,2021-11-24,2021-11-24 22:00:00,2021-11-24 05:00:00,7.0,7.0,71.0,reported,,25.0,0.0,2.0,,,,1.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,52,target_available,
+sleep_efficiency_52,52,2021-08-27,2021-08-27 02:30:00,2021-08-27 10:00:00,7.5,7.5,71.0,reported,,50.0,2.0,3.0,,,,2.0,65,Male,,sleep_efficiency,Sleep_Efficiency.csv,53,target_available,
+sleep_efficiency_53,53,2021-11-27,2021-11-27 01:00:00,2021-11-27 09:30:00,8.5,8.5,52.0,reported,,0.0,0.0,0.0,,,,2.0,9,Female,,sleep_efficiency,Sleep_Efficiency.csv,54,target_available,
+sleep_efficiency_54,54,2021-08-31,2021-08-31 01:00:00,2021-08-31 09:30:00,8.5,8.5,65.0,reported,,0.0,0.0,0.0,,,,2.0,16,Female,,sleep_efficiency,Sleep_Efficiency.csv,55,target_available,
+sleep_efficiency_55,55,2021-08-09,2021-08-09 01:30:00,2021-08-09 09:00:00,7.5,7.5,84.0,reported,,0.0,0.0,3.0,,,,2.0,18,Male,,sleep_efficiency,Sleep_Efficiency.csv,56,target_available,
+sleep_efficiency_56,56,2021-12-04,2021-12-04 22:00:00,2021-12-04 07:00:00,9.0,9.0,84.0,reported,,0.0,0.0,3.0,,,,1.0,37,Male,,sleep_efficiency,Sleep_Efficiency.csv,57,target_available,
+sleep_efficiency_57,57,2021-09-22,2021-09-22 01:00:00,2021-09-22 09:00:00,8.0,8.0,99.0,reported,,0.0,3.0,3.0,,,,1.0,54,Male,,sleep_efficiency,Sleep_Efficiency.csv,58,target_available,
+sleep_efficiency_58,58,2021-03-20,2021-03-20 02:00:00,2021-03-20 09:30:00,7.5,7.5,91.0,reported,,,0.0,3.0,,,,1.0,43,Male,,sleep_efficiency,Sleep_Efficiency.csv,59,target_available,
+sleep_efficiency_59,59,2021-11-07,2021-11-07 01:30:00,2021-11-07 08:30:00,7.0,7.0,71.0,reported,,50.0,0.0,1.0,,,,3.0,34,Female,,sleep_efficiency,Sleep_Efficiency.csv,60,target_available,
+sleep_efficiency_60,60,2021-08-08,2021-08-08 21:00:00,2021-08-08 04:30:00,7.5,7.5,80.0,reported,,50.0,0.0,1.0,,,,4.0,34,Female,,sleep_efficiency,Sleep_Efficiency.csv,61,target_available,
+sleep_efficiency_61,61,2021-06-11,2021-06-11 02:30:00,2021-06-11 10:00:00,7.5,7.5,95.0,reported,,,0.0,1.0,,,,1.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,62,target_available,
+sleep_efficiency_62,62,2021-09-30,2021-09-30 22:30:00,2021-09-30 05:30:00,7.0,7.0,91.0,reported,,0.0,0.0,4.0,,,,0.0,56,Male,,sleep_efficiency,Sleep_Efficiency.csv,63,target_available,
+sleep_efficiency_63,63,2021-05-03,2021-05-03 21:00:00,2021-05-03 05:00:00,8.0,8.0,81.0,reported,,200.0,0.0,,,,,1.0,29,Male,,sleep_efficiency,Sleep_Efficiency.csv,64,target_available,
+sleep_efficiency_64,64,2021-05-08,2021-05-08 21:00:00,2021-05-08 04:30:00,7.5,7.5,93.0,reported,,,0.0,1.0,,,,1.0,35,Female,,sleep_efficiency,Sleep_Efficiency.csv,65,target_available,
+sleep_efficiency_65,65,2021-04-24,2021-04-24 01:30:00,2021-04-24 09:00:00,7.5,7.5,85.0,reported,,,0.0,3.0,,,,1.0,30,Male,,sleep_efficiency,Sleep_Efficiency.csv,66,target_available,
+sleep_efficiency_66,66,2021-02-21,2021-02-21 01:00:00,2021-02-21 09:00:00,8.0,8.0,77.0,reported,,0.0,3.0,3.0,,,,4.0,21,Male,,sleep_efficiency,Sleep_Efficiency.csv,67,target_available,
+sleep_efficiency_67,67,2021-07-16,2021-07-16 00:00:00,2021-07-16 07:00:00,7.0,7.0,84.0,reported,,0.0,4.0,2.0,,,,4.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,68,target_available,
+sleep_efficiency_68,68,2021-12-24,2021-12-24 01:30:00,2021-12-24 09:00:00,7.5,7.5,87.0,reported,,25.0,2.0,1.0,,,,0.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,69,target_available,
+sleep_efficiency_69,69,2021-05-07,2021-05-07 00:00:00,2021-05-07 07:00:00,7.0,7.0,80.0,reported,,0.0,0.0,0.0,,,,2.0,46,Male,,sleep_efficiency,Sleep_Efficiency.csv,70,target_available,
+sleep_efficiency_70,70,2021-09-23,2021-09-23 22:00:00,2021-09-23 04:00:00,6.0,6.0,52.0,reported,,0.0,2.0,3.0,,,,2.0,40,Male,,sleep_efficiency,Sleep_Efficiency.csv,71,target_available,
+sleep_efficiency_71,71,2021-06-08,2021-06-08 02:30:00,2021-06-08 10:00:00,7.5,7.5,54.0,reported,,50.0,3.0,1.0,,,,1.0,30,Female,,sleep_efficiency,Sleep_Efficiency.csv,72,target_available,
+sleep_efficiency_72,72,2021-11-26,2021-11-26 23:00:00,2021-11-26 06:00:00,7.0,7.0,88.0,reported,,50.0,2.0,4.0,,,,1.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,73,target_available,
+sleep_efficiency_73,73,2021-02-28,2021-02-28 21:30:00,2021-02-28 03:30:00,6.0,6.0,64.0,reported,,0.0,4.0,3.0,,,,1.0,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,74,target_available,
+sleep_efficiency_74,74,2021-05-25,2021-05-25 02:30:00,2021-05-25 10:00:00,7.5,7.5,87.0,reported,,25.0,0.0,2.0,,,,0.0,58,Male,,sleep_efficiency,Sleep_Efficiency.csv,75,target_available,
+sleep_efficiency_75,75,2021-12-23,2021-12-23 22:00:00,2021-12-23 05:00:00,7.0,7.0,77.0,reported,,0.0,0.0,0.0,,,,4.0,47,Male,,sleep_efficiency,Sleep_Efficiency.csv,76,target_available,
+sleep_efficiency_76,76,2021-12-16,2021-12-16 00:30:00,2021-12-16 09:00:00,8.5,8.5,68.0,reported,,0.0,,1.0,,,,2.0,44,Male,,sleep_efficiency,Sleep_Efficiency.csv,77,target_available,
+sleep_efficiency_77,77,2021-09-02,2021-09-02 21:00:00,2021-09-02 04:00:00,7.0,7.0,94.0,reported,,0.0,0.0,3.0,,,,1.0,47,Female,,sleep_efficiency,Sleep_Efficiency.csv,78,target_available,
+sleep_efficiency_78,78,2021-01-11,2021-01-11 02:00:00,2021-01-11 11:00:00,9.0,9.0,70.0,reported,,0.0,5.0,3.0,,,,1.0,46,Male,,sleep_efficiency,Sleep_Efficiency.csv,79,target_available,
+sleep_efficiency_79,79,2021-03-04,2021-03-04 22:00:00,2021-03-04 05:00:00,7.0,7.0,79.0,reported,,0.0,0.0,3.0,,,,4.0,43,Male,,sleep_efficiency,Sleep_Efficiency.csv,80,target_available,
+sleep_efficiency_80,80,2021-05-19,2021-05-19 02:30:00,2021-05-19 10:00:00,7.5,7.5,77.0,reported,,0.0,0.0,2.0,,,,3.0,54,Male,,sleep_efficiency,Sleep_Efficiency.csv,81,target_available,
+sleep_efficiency_81,81,2021-07-14,2021-07-14 01:30:00,2021-07-14 10:00:00,8.5,8.5,86.0,reported,,25.0,0.0,1.0,,,,1.0,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,82,target_available,
+sleep_efficiency_82,82,2021-07-11,2021-07-11 21:00:00,2021-07-11 04:30:00,7.5,7.5,81.0,reported,,200.0,0.0,2.0,,,,2.0,29,Male,,sleep_efficiency,Sleep_Efficiency.csv,83,target_available,
+sleep_efficiency_83,83,2021-07-03,2021-07-03 02:00:00,2021-07-03 09:30:00,7.5,7.5,88.0,reported,,0.0,0.0,3.0,,,,0.0,66,Male,,sleep_efficiency,Sleep_Efficiency.csv,84,target_available,
+sleep_efficiency_84,84,2021-12-04,2021-12-04 22:30:00,2021-12-04 06:30:00,8.0,8.0,78.0,reported,,25.0,0.0,3.0,,,,4.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,85,target_available,
+sleep_efficiency_85,85,2021-09-26,2021-09-26 22:00:00,2021-09-26 04:00:00,6.0,6.0,64.0,reported,,0.0,3.0,0.0,,,,4.0,50,Male,,sleep_efficiency,Sleep_Efficiency.csv,86,target_available,
+sleep_efficiency_86,86,2021-11-06,2021-11-06 23:00:00,2021-11-06 06:30:00,7.5,7.5,88.0,reported,,75.0,0.0,2.0,,,,,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,87,target_available,
+sleep_efficiency_87,87,2021-04-09,2021-04-09 00:00:00,2021-04-09 07:00:00,7.0,7.0,78.0,reported,,0.0,0.0,0.0,,,,2.0,50,Male,,sleep_efficiency,Sleep_Efficiency.csv,88,target_available,
+sleep_efficiency_88,88,2021-04-14,2021-04-14 00:00:00,2021-04-14 07:00:00,7.0,7.0,71.0,reported,,0.0,3.0,0.0,,,,3.0,50,Male,,sleep_efficiency,Sleep_Efficiency.csv,89,target_available,
+sleep_efficiency_89,89,2021-08-28,2021-08-28 02:00:00,2021-08-28 09:30:00,7.5,7.5,97.0,reported,,0.0,0.0,3.0,,,,0.0,48,Male,,sleep_efficiency,Sleep_Efficiency.csv,90,target_available,
+sleep_efficiency_90,90,2021-11-26,2021-11-26 00:00:00,2021-11-26 07:30:00,7.5,7.5,77.0,reported,,25.0,0.0,1.0,,,,4.0,24,Female,,sleep_efficiency,Sleep_Efficiency.csv,91,target_available,
+sleep_efficiency_91,91,2021-03-29,2021-03-29 02:30:00,2021-03-29 07:30:00,5.0,5.0,80.0,reported,,0.0,0.0,2.0,,,,4.0,45,Male,,sleep_efficiency,Sleep_Efficiency.csv,92,target_available,
+sleep_efficiency_92,92,2021-08-20,2021-08-20 21:30:00,2021-08-20 05:30:00,8.0,8.0,94.0,reported,,0.0,3.0,3.0,,,,0.0,57,Male,,sleep_efficiency,Sleep_Efficiency.csv,93,target_available,
+sleep_efficiency_93,93,2021-08-25,2021-08-25 21:00:00,2021-08-25 04:00:00,7.0,7.0,52.0,reported,,0.0,3.0,3.0,,,,3.0,39,Male,,sleep_efficiency,Sleep_Efficiency.csv,94,target_available,
+sleep_efficiency_94,94,2021-10-23,2021-10-23 22:00:00,2021-10-23 05:00:00,7.0,7.0,76.0,reported,,0.0,0.0,0.0,,,,4.0,43,Male,,sleep_efficiency,Sleep_Efficiency.csv,95,target_available,
+sleep_efficiency_95,95,2021-08-12,2021-08-12 00:00:00,2021-08-12 07:30:00,7.5,7.5,73.0,reported,,0.0,3.0,0.0,,,,4.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,96,target_available,
+sleep_efficiency_96,96,2021-07-10,2021-07-10 02:00:00,2021-07-10 09:00:00,7.0,7.0,73.0,reported,,25.0,2.0,0.0,,,,1.0,61,Female,,sleep_efficiency,Sleep_Efficiency.csv,97,target_available,
+sleep_efficiency_97,97,2021-02-15,2021-02-15 21:00:00,2021-02-15 04:00:00,7.0,7.0,96.0,reported,,200.0,0.0,3.0,,,,0.0,41,Male,,sleep_efficiency,Sleep_Efficiency.csv,98,target_available,
+sleep_efficiency_98,98,2021-11-02,2021-11-02 23:00:00,2021-11-02 06:30:00,7.5,7.5,91.0,reported,,25.0,0.0,2.0,,,,1.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,99,target_available,
+sleep_efficiency_99,99,2021-01-12,2021-01-12 02:00:00,2021-01-12 11:00:00,9.0,9.0,80.0,reported,,25.0,0.0,0.0,,,,2.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,100,target_available,
+sleep_efficiency_100,100,2021-12-07,2021-12-07 01:30:00,2021-12-07 09:30:00,8.0,8.0,77.0,reported,,0.0,0.0,3.0,,,,4.0,65,Male,,sleep_efficiency,Sleep_Efficiency.csv,101,target_available,
+sleep_efficiency_101,101,2021-09-02,2021-09-02 00:30:00,2021-09-02 08:30:00,8.0,8.0,81.0,reported,,25.0,1.0,0.0,,,,1.0,38,Female,,sleep_efficiency,Sleep_Efficiency.csv,102,target_available,
+sleep_efficiency_102,102,2021-01-28,2021-01-28 01:00:00,2021-01-28 09:30:00,8.5,8.5,71.0,reported,,0.0,1.0,3.0,,,,4.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,103,target_available,
+sleep_efficiency_103,103,2021-12-30,2021-12-30 00:00:00,2021-12-30 08:00:00,8.0,8.0,95.0,reported,,25.0,0.0,0.0,,,,1.0,55,Female,,sleep_efficiency,Sleep_Efficiency.csv,104,target_available,
+sleep_efficiency_104,104,2021-11-18,2021-11-18 23:00:00,2021-11-18 05:00:00,6.0,6.0,64.0,reported,,25.0,5.0,0.0,,,,4.0,44,Female,,sleep_efficiency,Sleep_Efficiency.csv,105,target_available,
+sleep_efficiency_105,105,2021-06-13,2021-06-13 23:00:00,2021-06-13 05:00:00,6.0,6.0,94.0,reported,,50.0,0.0,1.0,,,,0.0,38,Female,,sleep_efficiency,Sleep_Efficiency.csv,106,target_available,
+sleep_efficiency_106,106,2021-12-07,2021-12-07 22:00:00,2021-12-07 06:00:00,8.0,8.0,87.0,reported,,25.0,0.0,3.0,,,,0.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,107,target_available,
+sleep_efficiency_107,107,2021-05-19,2021-05-19 21:00:00,2021-05-19 04:00:00,7.0,7.0,63.0,reported,,0.0,5.0,2.0,,,,3.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,108,target_available,
+sleep_efficiency_108,108,2021-04-03,2021-04-03 00:30:00,2021-04-03 09:00:00,8.5,8.5,88.0,reported,,50.0,0.0,1.0,,,,0.0,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,109,target_available,
+sleep_efficiency_109,109,2021-10-22,2021-10-22 23:00:00,2021-10-22 07:00:00,8.0,8.0,90.0,reported,,50.0,2.0,4.0,,,,1.0,39,Female,,sleep_efficiency,Sleep_Efficiency.csv,110,target_available,
+sleep_efficiency_110,110,2021-12-30,2021-12-30 00:30:00,2021-12-30 08:00:00,7.5,7.5,94.0,reported,,50.0,0.0,3.0,,,,1.0,47,Male,,sleep_efficiency,Sleep_Efficiency.csv,111,target_available,
+sleep_efficiency_111,111,2021-06-18,2021-06-18 00:30:00,2021-06-18 05:30:00,5.0,5.0,91.0,reported,,50.0,0.0,3.0,,,,1.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,112,target_available,
+sleep_efficiency_112,112,2021-10-26,2021-10-26 23:00:00,2021-10-26 06:00:00,7.0,7.0,90.0,reported,,100.0,0.0,3.0,,,,0.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,113,target_available,
+sleep_efficiency_113,113,2021-10-07,2021-10-07 23:00:00,2021-10-07 07:00:00,8.0,8.0,80.0,reported,,75.0,0.0,2.0,,,,4.0,23,Male,,sleep_efficiency,Sleep_Efficiency.csv,114,target_available,
+sleep_efficiency_114,114,2021-11-19,2021-11-19 01:30:00,2021-11-19 07:30:00,6.0,6.0,85.0,reported,,25.0,0.0,1.0,,,,1.0,54,Male,,sleep_efficiency,Sleep_Efficiency.csv,115,target_available,
+sleep_efficiency_115,115,2021-07-02,2021-07-02 00:30:00,2021-07-02 09:00:00,8.5,8.5,89.0,reported,,,0.0,1.0,,,,1.0,32,Male,,sleep_efficiency,Sleep_Efficiency.csv,116,target_available,
+sleep_efficiency_116,116,2021-08-04,2021-08-04 00:00:00,2021-08-04 07:00:00,7.0,7.0,53.0,reported,,0.0,5.0,3.0,,,,2.0,22,Male,,sleep_efficiency,Sleep_Efficiency.csv,117,target_available,
+sleep_efficiency_117,117,2021-04-29,2021-04-29 00:30:00,2021-04-29 08:30:00,8.0,8.0,87.0,reported,,50.0,0.0,3.0,,,,1.0,50,Male,,sleep_efficiency,Sleep_Efficiency.csv,118,target_available,
+sleep_efficiency_118,118,2021-10-11,2021-10-11 21:30:00,2021-10-11 05:30:00,8.0,8.0,50.0,reported,,0.0,5.0,0.0,,,,1.0,30,Male,,sleep_efficiency,Sleep_Efficiency.csv,119,target_available,
+sleep_efficiency_119,119,2021-11-25,2021-11-25 22:30:00,2021-11-25 05:30:00,7.0,7.0,93.0,reported,,0.0,0.0,3.0,,,,1.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,120,target_available,
+sleep_efficiency_120,120,2021-07-25,2021-07-25 21:30:00,2021-07-25 04:30:00,7.0,7.0,72.0,reported,,0.0,0.0,3.0,,,,2.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,121,target_available,
+sleep_efficiency_121,121,2021-07-24,2021-07-24 22:30:00,2021-07-24 04:30:00,6.0,6.0,92.0,reported,,0.0,0.0,4.0,,,,1.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,122,target_available,
+sleep_efficiency_122,122,2021-07-24,2021-07-24 01:00:00,2021-07-24 09:00:00,8.0,8.0,62.0,reported,,0.0,0.0,0.0,,,,1.0,15,Female,,sleep_efficiency,Sleep_Efficiency.csv,123,target_available,
+sleep_efficiency_123,123,2021-04-26,2021-04-26 00:00:00,2021-04-26 07:00:00,7.0,7.0,93.0,reported,,0.0,0.0,0.0,,,,1.0,48,Male,,sleep_efficiency,Sleep_Efficiency.csv,124,target_available,
+sleep_efficiency_124,124,2021-10-05,2021-10-05 01:30:00,2021-10-05 10:00:00,8.5,8.5,91.0,reported,,25.0,0.0,1.0,,,,,19,Male,,sleep_efficiency,Sleep_Efficiency.csv,125,target_available,
+sleep_efficiency_125,125,2021-10-29,2021-10-29 02:00:00,2021-10-29 09:00:00,7.0,7.0,63.0,reported,,0.0,2.0,3.0,,,,3.0,56,Male,,sleep_efficiency,Sleep_Efficiency.csv,126,target_available,
+sleep_efficiency_126,126,2021-05-31,2021-05-31 22:30:00,2021-05-31 06:30:00,8.0,8.0,77.0,reported,,25.0,0.0,3.0,,,,2.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,127,target_available,
+sleep_efficiency_127,127,2021-01-29,2021-01-29 00:00:00,2021-01-29 07:00:00,7.0,7.0,51.0,reported,,0.0,0.0,0.0,,,,3.0,54,Male,,sleep_efficiency,Sleep_Efficiency.csv,128,target_available,
+sleep_efficiency_128,128,2021-05-15,2021-05-15 23:00:00,2021-05-15 06:00:00,7.0,7.0,94.0,reported,,50.0,1.0,3.0,,,,1.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,129,target_available,
+sleep_efficiency_129,129,2021-08-09,2021-08-09 23:00:00,2021-08-09 08:00:00,9.0,9.0,73.0,reported,,25.0,1.0,0.0,,,,2.0,33,Female,,sleep_efficiency,Sleep_Efficiency.csv,130,target_available,
+sleep_efficiency_130,130,2021-07-20,2021-07-20 21:00:00,2021-07-20 04:00:00,7.0,7.0,78.0,reported,,50.0,,3.0,,,,2.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,131,target_available,
+sleep_efficiency_131,131,2021-11-25,2021-11-25 00:30:00,2021-11-25 08:30:00,8.0,8.0,55.00000000000001,reported,,25.0,1.0,0.0,,,,1.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,132,target_available,
+sleep_efficiency_132,132,2021-01-03,2021-01-03 00:30:00,2021-01-03 08:30:00,8.0,8.0,83.0,reported,,50.0,0.0,1.0,,,,4.0,36,Female,,sleep_efficiency,Sleep_Efficiency.csv,133,target_available,
+sleep_efficiency_133,133,2021-09-10,2021-09-10 22:00:00,2021-09-10 05:30:00,7.5,7.5,94.0,reported,,50.0,0.0,1.0,,,,1.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,134,target_available,
+sleep_efficiency_134,134,2021-01-26,2021-01-26 21:30:00,2021-01-26 05:30:00,8.0,8.0,95.0,reported,,0.0,0.0,3.0,,,,1.0,37,Male,,sleep_efficiency,Sleep_Efficiency.csv,135,target_available,
+sleep_efficiency_135,135,2021-10-23,2021-10-23 23:00:00,2021-10-23 06:00:00,7.0,7.0,59.0,reported,,75.0,2.0,2.0,,,,3.0,27,Male,,sleep_efficiency,Sleep_Efficiency.csv,136,target_available,
+sleep_efficiency_136,136,2021-02-03,2021-02-03 00:00:00,2021-02-03 07:00:00,7.0,7.0,82.0,reported,,50.0,1.0,4.0,,,,,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,137,target_available,
+sleep_efficiency_137,137,2021-03-05,2021-03-05 00:30:00,2021-03-05 07:30:00,7.0,7.0,90.0,reported,,,3.0,1.0,,,,0.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,138,target_available,
+sleep_efficiency_138,138,2021-03-06,2021-03-06 02:00:00,2021-03-06 09:00:00,7.0,7.0,77.0,reported,,0.0,0.0,3.0,,,,2.0,36,Male,,sleep_efficiency,Sleep_Efficiency.csv,139,target_available,
+sleep_efficiency_139,139,2021-03-01,2021-03-01 02:30:00,2021-03-01 10:00:00,7.5,7.5,83.0,reported,,0.0,3.0,3.0,,,,,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,140,target_available,
+sleep_efficiency_140,140,2021-12-09,2021-12-09 00:00:00,2021-12-09 09:00:00,9.0,9.0,65.0,reported,,25.0,2.0,0.0,,,,2.0,52,Female,,sleep_efficiency,Sleep_Efficiency.csv,141,target_available,
+sleep_efficiency_141,141,2021-09-19,2021-09-19 22:00:00,2021-09-19 06:30:00,8.5,8.5,54.0,reported,,25.0,,0.0,,,,2.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,142,target_available,
+sleep_efficiency_142,142,2021-02-05,2021-02-05 21:00:00,2021-02-05 03:00:00,6.0,6.0,51.0,reported,,50.0,5.0,1.0,,,,2.0,28,Female,,sleep_efficiency,Sleep_Efficiency.csv,143,target_available,
+sleep_efficiency_143,143,2021-02-04,2021-02-04 22:00:00,2021-02-04 05:00:00,7.0,7.0,81.0,reported,,0.0,3.0,3.0,,,,3.0,48,Male,,sleep_efficiency,Sleep_Efficiency.csv,144,target_available,
+sleep_efficiency_144,144,2021-04-21,2021-04-21 21:30:00,2021-04-21 04:30:00,7.0,7.0,87.0,reported,,0.0,3.0,3.0,,,,,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,145,target_available,
+sleep_efficiency_145,145,2021-03-26,2021-03-26 02:00:00,2021-03-26 09:00:00,7.0,7.0,75.0,reported,,25.0,1.0,0.0,,,,2.0,65,Female,,sleep_efficiency,Sleep_Efficiency.csv,146,target_available,
+sleep_efficiency_146,146,2021-12-03,2021-12-03 01:30:00,2021-12-03 08:30:00,7.0,7.0,56.99999999999999,reported,,50.0,5.0,1.0,,,,3.0,31,Female,,sleep_efficiency,Sleep_Efficiency.csv,147,target_available,
+sleep_efficiency_147,147,2021-09-10,2021-09-10 23:00:00,2021-09-10 07:00:00,8.0,8.0,57.99999999999999,reported,,0.0,0.0,3.0,,,,2.0,42,Male,,sleep_efficiency,Sleep_Efficiency.csv,148,target_available,
+sleep_efficiency_148,148,2021-11-27,2021-11-27 00:00:00,2021-11-27 08:00:00,8.0,8.0,81.0,reported,,25.0,1.0,0.0,,,,4.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,149,target_available,
+sleep_efficiency_149,149,2021-02-27,2021-02-27 21:00:00,2021-02-27 05:00:00,8.0,8.0,75.0,reported,,50.0,,1.0,,,,3.0,26,Female,,sleep_efficiency,Sleep_Efficiency.csv,150,target_available,
+sleep_efficiency_150,150,2021-09-30,2021-09-30 02:30:00,2021-09-30 10:00:00,7.5,7.5,60.0,reported,,50.0,0.0,1.0,,,,,33,Female,,sleep_efficiency,Sleep_Efficiency.csv,151,target_available,
+sleep_efficiency_151,151,2021-04-15,2021-04-15 01:00:00,2021-04-15 09:30:00,8.5,8.5,53.0,reported,,0.0,2.0,3.0,,,,3.0,65,Male,,sleep_efficiency,Sleep_Efficiency.csv,152,target_available,
+sleep_efficiency_152,152,2021-07-24,2021-07-24 23:00:00,2021-07-24 06:00:00,7.0,7.0,93.0,reported,,50.0,2.0,4.0,,,,1.0,50,Female,,sleep_efficiency,Sleep_Efficiency.csv,153,target_available,
+sleep_efficiency_153,153,2021-09-29,2021-09-29 23:00:00,2021-09-29 06:30:00,7.5,7.5,89.0,reported,,75.0,1.0,4.0,,,,0.0,22,Male,,sleep_efficiency,Sleep_Efficiency.csv,154,target_available,
+sleep_efficiency_154,154,2021-07-01,2021-07-01 02:30:00,2021-07-01 10:00:00,7.5,7.5,70.0,reported,,0.0,0.0,3.0,,,,3.0,41,Male,,sleep_efficiency,Sleep_Efficiency.csv,155,target_available,
+sleep_efficiency_155,155,2021-03-19,2021-03-19 02:00:00,2021-03-19 09:30:00,7.5,7.5,74.0,reported,,0.0,1.0,3.0,,,,4.0,68,Male,,sleep_efficiency,Sleep_Efficiency.csv,156,target_available,
+sleep_efficiency_156,156,2021-09-23,2021-09-23 01:30:00,2021-09-23 09:00:00,7.5,7.5,92.0,reported,,0.0,0.0,1.0,,,,1.0,61,Male,,sleep_efficiency,Sleep_Efficiency.csv,157,target_available,
+sleep_efficiency_157,157,2021-01-26,2021-01-26 21:30:00,2021-01-26 05:00:00,7.5,7.5,93.0,reported,,50.0,0.0,1.0,,,,0.0,23,Female,,sleep_efficiency,Sleep_Efficiency.csv,158,target_available,
+sleep_efficiency_158,158,2021-07-20,2021-07-20 21:00:00,2021-07-20 04:00:00,7.0,7.0,95.0,reported,,0.0,0.0,4.0,,,,1.0,45,Female,,sleep_efficiency,Sleep_Efficiency.csv,159,target_available,
+sleep_efficiency_159,159,2021-02-02,2021-02-02 01:00:00,2021-02-02 08:00:00,7.0,7.0,60.0,reported,,0.0,0.0,0.0,,,,3.0,14,Female,,sleep_efficiency,Sleep_Efficiency.csv,160,target_available,
+sleep_efficiency_160,160,2021-10-18,2021-10-18 00:30:00,2021-10-18 09:00:00,8.5,8.5,93.0,reported,,0.0,0.0,1.0,,,,0.0,30,Male,,sleep_efficiency,Sleep_Efficiency.csv,161,target_available,
+sleep_efficiency_161,161,2021-11-06,2021-11-06 02:30:00,2021-11-06 09:30:00,7.0,7.0,81.0,reported,,0.0,0.0,2.0,,,,4.0,42,Male,,sleep_efficiency,Sleep_Efficiency.csv,162,target_available,
+sleep_efficiency_162,162,2021-11-06,2021-11-06 21:00:00,2021-11-06 04:30:00,7.5,7.5,95.0,reported,,200.0,0.0,3.0,,,,0.0,42,Male,,sleep_efficiency,Sleep_Efficiency.csv,163,target_available,
+sleep_efficiency_163,163,2021-05-31,2021-05-31 22:00:00,2021-05-31 05:00:00,7.0,7.0,72.0,reported,,0.0,0.0,0.0,,,,3.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,164,target_available,
+sleep_efficiency_164,164,2021-09-06,2021-09-06 00:30:00,2021-09-06 07:30:00,7.0,7.0,90.0,reported,,25.0,1.0,0.0,,,,1.0,49,Female,,sleep_efficiency,Sleep_Efficiency.csv,165,target_available,
+sleep_efficiency_165,165,2021-09-02,2021-09-02 02:00:00,2021-09-02 10:00:00,8.0,8.0,95.0,reported,,,0.0,3.0,,,,1.0,48,Male,,sleep_efficiency,Sleep_Efficiency.csv,166,target_available,
+sleep_efficiency_166,166,2021-01-11,2021-01-11 22:00:00,2021-01-11 05:00:00,7.0,7.0,91.0,reported,,0.0,5.0,4.0,,,,1.0,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,167,target_available,
+sleep_efficiency_167,167,2021-06-02,2021-06-02 23:00:00,2021-06-02 06:00:00,7.0,7.0,85.0,reported,,0.0,0.0,3.0,,,,1.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,168,target_available,
+sleep_efficiency_168,168,2021-05-03,2021-05-03 22:00:00,2021-05-03 05:00:00,7.0,7.0,90.0,reported,,75.0,0.0,4.0,,,,0.0,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,169,target_available,
+sleep_efficiency_169,169,2021-05-24,2021-05-24 23:00:00,2021-05-24 06:30:00,7.5,7.5,92.0,reported,,50.0,1.0,3.0,,,,0.0,35,Male,,sleep_efficiency,Sleep_Efficiency.csv,170,target_available,
+sleep_efficiency_170,170,2021-12-06,2021-12-06 01:30:00,2021-12-06 08:30:00,7.0,7.0,60.0,reported,,,0.0,1.0,,,,3.0,55,Female,,sleep_efficiency,Sleep_Efficiency.csv,171,target_available,
+sleep_efficiency_171,171,2021-10-20,2021-10-20 21:30:00,2021-10-20 05:30:00,8.0,8.0,89.0,reported,,0.0,3.0,3.0,,,,,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,172,target_available,
+sleep_efficiency_172,172,2021-10-06,2021-10-06 21:00:00,2021-10-06 04:30:00,7.5,7.5,67.0,reported,,50.0,3.0,1.0,,,,1.0,33,Female,,sleep_efficiency,Sleep_Efficiency.csv,173,target_available,
+sleep_efficiency_173,173,2021-07-28,2021-07-28 23:00:00,2021-07-28 07:00:00,8.0,8.0,51.0,reported,,0.0,0.0,2.0,,,,3.0,27,Male,,sleep_efficiency,Sleep_Efficiency.csv,174,target_available,
+sleep_efficiency_174,174,2021-11-11,2021-11-11 02:00:00,2021-11-11 08:00:00,6.0,6.0,78.0,reported,,0.0,0.0,0.0,,,,1.0,24,Female,,sleep_efficiency,Sleep_Efficiency.csv,175,target_available,
+sleep_efficiency_175,175,2021-07-26,2021-07-26 22:30:00,2021-07-26 06:30:00,8.0,8.0,95.0,reported,,0.0,0.0,4.0,,,,1.0,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,176,target_available,
+sleep_efficiency_176,176,2021-07-07,2021-07-07 22:00:00,2021-07-07 05:00:00,7.0,7.0,68.0,reported,,,0.0,3.0,,,,2.0,42,Male,,sleep_efficiency,Sleep_Efficiency.csv,177,target_available,
+sleep_efficiency_177,177,2021-09-17,2021-09-17 02:00:00,2021-09-17 09:30:00,7.5,7.5,68.0,reported,,50.0,2.0,0.0,,,,3.0,62,Female,,sleep_efficiency,Sleep_Efficiency.csv,178,target_available,
+sleep_efficiency_178,178,2021-07-04,2021-07-04 02:00:00,2021-07-04 09:00:00,7.0,7.0,94.0,reported,,50.0,0.0,1.0,,,,0.0,44,Female,,sleep_efficiency,Sleep_Efficiency.csv,179,target_available,
+sleep_efficiency_179,179,2021-08-08,2021-08-08 00:30:00,2021-08-08 08:30:00,8.0,8.0,78.0,reported,,25.0,1.0,0.0,,,,3.0,39,Female,,sleep_efficiency,Sleep_Efficiency.csv,180,target_available,
+sleep_efficiency_180,180,2021-06-30,2021-06-30 23:00:00,2021-06-30 05:00:00,6.0,6.0,90.0,reported,,75.0,0.0,2.0,,,,1.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,181,target_available,
+sleep_efficiency_181,181,2021-11-20,2021-11-20 02:30:00,2021-11-20 10:00:00,7.5,7.5,83.0,reported,,0.0,0.0,2.0,,,,2.0,37,Male,,sleep_efficiency,Sleep_Efficiency.csv,182,target_available,
+sleep_efficiency_182,182,2021-11-27,2021-11-27 21:30:00,2021-11-27 04:30:00,7.0,7.0,80.0,reported,,50.0,0.0,1.0,,,,2.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,183,target_available,
+sleep_efficiency_183,183,2021-08-08,2021-08-08 21:30:00,2021-08-08 05:00:00,7.5,7.5,96.0,reported,,0.0,0.0,4.0,,,,0.0,49,Female,,sleep_efficiency,Sleep_Efficiency.csv,184,target_available,
+sleep_efficiency_184,184,2021-01-18,2021-01-18 00:00:00,2021-01-18 08:00:00,8.0,8.0,91.0,reported,,0.0,0.0,0.0,,,,0.0,24,Female,,sleep_efficiency,Sleep_Efficiency.csv,185,target_available,
+sleep_efficiency_185,185,2021-07-14,2021-07-14 21:00:00,2021-07-14 04:30:00,7.5,7.5,96.0,reported,,25.0,0.0,4.0,,,,0.0,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,186,target_available,
+sleep_efficiency_186,186,2021-05-25,2021-05-25 23:00:00,2021-05-25 06:30:00,7.5,7.5,94.0,reported,,50.0,,4.0,,,,0.0,36,Female,,sleep_efficiency,Sleep_Efficiency.csv,187,target_available,
+sleep_efficiency_187,187,2021-12-10,2021-12-10 00:00:00,2021-12-10 07:00:00,7.0,7.0,63.0,reported,,,3.0,1.0,,,,3.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,188,target_available,
+sleep_efficiency_188,188,2021-06-01,2021-06-01 00:00:00,2021-06-01 07:00:00,7.0,7.0,73.0,reported,,50.0,,2.0,,,,4.0,27,Male,,sleep_efficiency,Sleep_Efficiency.csv,189,target_available,
+sleep_efficiency_189,189,2021-09-13,2021-09-13 02:30:00,2021-09-13 10:30:00,8.0,8.0,87.0,reported,,50.0,0.0,1.0,,,,1.0,21,Male,,sleep_efficiency,Sleep_Efficiency.csv,190,target_available,
+sleep_efficiency_190,190,2021-02-07,2021-02-07 01:00:00,2021-02-07 08:00:00,7.0,7.0,76.0,reported,,0.0,0.0,0.0,,,,4.0,52,Female,,sleep_efficiency,Sleep_Efficiency.csv,191,target_available,
+sleep_efficiency_191,191,2021-10-17,2021-10-17 00:00:00,2021-10-17 07:30:00,7.5,7.5,68.0,reported,,50.0,4.0,2.0,,,,4.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,192,target_available,
+sleep_efficiency_192,192,2021-09-09,2021-09-09 22:30:00,2021-09-09 06:30:00,8.0,8.0,94.0,reported,,75.0,0.0,2.0,,,,1.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,193,target_available,
+sleep_efficiency_193,193,2021-07-14,2021-07-14 00:00:00,2021-07-14 07:00:00,7.0,7.0,95.0,reported,,0.0,,2.0,,,,0.0,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,194,target_available,
+sleep_efficiency_194,194,2021-07-30,2021-07-30 02:00:00,2021-07-30 09:00:00,7.0,7.0,62.0,reported,,25.0,0.0,0.0,,,,1.0,18,Female,,sleep_efficiency,Sleep_Efficiency.csv,195,target_available,
+sleep_efficiency_195,195,2021-06-05,2021-06-05 21:00:00,2021-06-05 05:00:00,8.0,8.0,91.0,reported,,0.0,0.0,3.0,,,,1.0,44,Female,,sleep_efficiency,Sleep_Efficiency.csv,196,target_available,
+sleep_efficiency_196,196,2021-12-05,2021-12-05 02:00:00,2021-12-05 09:00:00,7.0,7.0,67.0,reported,,50.0,5.0,0.0,,,,2.0,61,Female,,sleep_efficiency,Sleep_Efficiency.csv,197,target_available,
+sleep_efficiency_197,197,2021-08-05,2021-08-05 00:00:00,2021-08-05 08:00:00,8.0,8.0,94.0,reported,,75.0,0.0,2.0,,,,1.0,30,Female,,sleep_efficiency,Sleep_Efficiency.csv,198,target_available,
+sleep_efficiency_198,198,2021-01-09,2021-01-09 02:30:00,2021-01-09 08:30:00,6.0,6.0,79.0,reported,,0.0,0.0,2.0,,,,4.0,48,Male,,sleep_efficiency,Sleep_Efficiency.csv,199,target_available,
+sleep_efficiency_199,199,2021-12-31,2021-12-31 01:30:00,2021-12-31 06:30:00,5.0,5.0,86.0,reported,,25.0,1.0,0.0,,,,1.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,200,target_available,
+sleep_efficiency_200,200,2021-08-19,2021-08-19 22:30:00,2021-08-19 05:30:00,7.0,7.0,83.0,reported,,0.0,0.0,0.0,,,,1.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,201,target_available,
+sleep_efficiency_201,201,2021-06-09,2021-06-09 00:00:00,2021-06-09 07:00:00,7.0,7.0,73.0,reported,,0.0,4.0,0.0,,,,3.0,61,Male,,sleep_efficiency,Sleep_Efficiency.csv,202,target_available,
+sleep_efficiency_202,202,2021-10-18,2021-10-18 02:00:00,2021-10-18 10:00:00,8.0,8.0,71.0,reported,,50.0,0.0,0.0,,,,2.0,64,Female,,sleep_efficiency,Sleep_Efficiency.csv,203,target_available,
+sleep_efficiency_203,203,2021-08-05,2021-08-05 00:30:00,2021-08-05 06:30:00,6.0,6.0,87.0,reported,,25.0,1.0,0.0,,,,0.0,59,Female,,sleep_efficiency,Sleep_Efficiency.csv,204,target_available,
+sleep_efficiency_204,204,2021-07-11,2021-07-11 23:00:00,2021-07-11 07:00:00,8.0,8.0,50.0,reported,,,3.0,2.0,,,,3.0,38,Male,,sleep_efficiency,Sleep_Efficiency.csv,205,target_available,
+sleep_efficiency_205,205,2021-03-07,2021-03-07 22:30:00,2021-03-07 05:30:00,7.0,7.0,92.0,reported,,0.0,3.0,4.0,,,,1.0,31,Female,,sleep_efficiency,Sleep_Efficiency.csv,206,target_available,
+sleep_efficiency_206,206,2021-12-22,2021-12-22 21:30:00,2021-12-22 03:30:00,6.0,6.0,79.0,reported,,25.0,1.0,0.0,,,,1.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,207,target_available,
+sleep_efficiency_207,207,2021-01-22,2021-01-22 01:30:00,2021-01-22 08:30:00,7.0,7.0,98.0,reported,,25.0,1.0,0.0,,,,0.0,31,Female,,sleep_efficiency,Sleep_Efficiency.csv,208,target_available,
+sleep_efficiency_208,208,2021-03-15,2021-03-15 02:00:00,2021-03-15 09:00:00,7.0,7.0,93.0,reported,,50.0,0.0,0.0,,,,1.0,41,Female,,sleep_efficiency,Sleep_Efficiency.csv,209,target_available,
+sleep_efficiency_209,209,2021-03-22,2021-03-22 22:00:00,2021-03-22 06:00:00,8.0,8.0,88.0,reported,,0.0,0.0,2.0,,,,1.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,210,target_available,
+sleep_efficiency_210,210,2021-02-06,2021-02-06 02:00:00,2021-02-06 11:00:00,9.0,9.0,77.0,reported,,0.0,0.0,3.0,,,,1.0,61,Male,,sleep_efficiency,Sleep_Efficiency.csv,211,target_available,
+sleep_efficiency_211,211,2021-10-20,2021-10-20 00:00:00,2021-10-20 07:00:00,7.0,7.0,86.0,reported,,0.0,0.0,0.0,,,,0.0,61,Male,,sleep_efficiency,Sleep_Efficiency.csv,212,target_available,
+sleep_efficiency_212,212,2021-07-15,2021-07-15 01:00:00,2021-07-15 08:00:00,7.0,7.0,54.0,reported,,0.0,0.0,0.0,,,,3.0,10,Female,,sleep_efficiency,Sleep_Efficiency.csv,213,target_available,
+sleep_efficiency_213,213,2021-01-31,2021-01-31 23:00:00,2021-01-31 06:30:00,7.5,7.5,80.0,reported,,50.0,2.0,4.0,,,,1.0,36,Female,,sleep_efficiency,Sleep_Efficiency.csv,214,target_available,
+sleep_efficiency_214,214,2021-10-29,2021-10-29 00:00:00,2021-10-29 05:00:00,5.0,5.0,86.0,reported,,75.0,0.0,2.0,,,,1.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,215,target_available,
+sleep_efficiency_215,215,2021-09-25,2021-09-25 00:30:00,2021-09-25 08:00:00,7.5,7.5,61.0,reported,,25.0,2.0,2.0,,,,1.0,27,Male,,sleep_efficiency,Sleep_Efficiency.csv,216,target_available,
+sleep_efficiency_216,216,2021-05-14,2021-05-14 23:00:00,2021-05-14 06:00:00,7.0,7.0,72.0,reported,,,5.0,1.0,,,,4.0,22,Female,,sleep_efficiency,Sleep_Efficiency.csv,217,target_available,
+sleep_efficiency_217,217,2021-06-15,2021-06-15 21:00:00,2021-06-15 03:00:00,6.0,6.0,72.0,reported,,0.0,5.0,3.0,,,,1.0,22,Male,,sleep_efficiency,Sleep_Efficiency.csv,218,target_available,
+sleep_efficiency_218,218,2021-09-26,2021-09-26 00:00:00,2021-09-26 07:30:00,7.5,7.5,55.00000000000001,reported,,50.0,3.0,1.0,,,,4.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,219,target_available,
+sleep_efficiency_219,219,2021-07-07,2021-07-07 01:00:00,2021-07-07 08:00:00,7.0,7.0,96.0,reported,,50.0,0.0,0.0,,,,1.0,56,Female,,sleep_efficiency,Sleep_Efficiency.csv,220,target_available,
+sleep_efficiency_220,220,2021-03-11,2021-03-11 01:00:00,2021-03-11 09:00:00,8.0,8.0,57.99999999999999,reported,,0.0,0.0,0.0,,,,1.0,13,Female,,sleep_efficiency,Sleep_Efficiency.csv,221,target_available,
+sleep_efficiency_221,221,2021-09-17,2021-09-17 21:00:00,2021-09-17 04:00:00,7.0,7.0,77.0,reported,,0.0,0.0,4.0,,,,4.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,222,target_available,
+sleep_efficiency_222,222,2021-12-17,2021-12-17 23:00:00,2021-12-17 07:30:00,8.5,8.5,85.0,reported,,25.0,1.0,0.0,,,,0.0,41,Female,,sleep_efficiency,Sleep_Efficiency.csv,223,target_available,
+sleep_efficiency_223,223,2021-02-07,2021-02-07 00:00:00,2021-02-07 08:00:00,8.0,8.0,95.0,reported,,50.0,1.0,3.0,,,,0.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,224,target_available,
+sleep_efficiency_224,224,2021-08-18,2021-08-18 02:00:00,2021-08-18 10:30:00,8.5,8.5,69.0,reported,,50.0,0.0,0.0,,,,3.0,63,Female,,sleep_efficiency,Sleep_Efficiency.csv,225,target_available,
+sleep_efficiency_225,225,2021-02-24,2021-02-24 23:00:00,2021-02-24 05:00:00,6.0,6.0,95.0,reported,,75.0,1.0,4.0,,,,1.0,38,Male,,sleep_efficiency,Sleep_Efficiency.csv,226,target_available,
+sleep_efficiency_226,226,2021-09-07,2021-09-07 01:00:00,2021-09-07 09:00:00,8.0,8.0,82.0,reported,,0.0,3.0,3.0,,,,3.0,60,Male,,sleep_efficiency,Sleep_Efficiency.csv,227,target_available,
+sleep_efficiency_227,227,2021-12-29,2021-12-29 22:00:00,2021-12-29 05:30:00,7.5,7.5,93.0,reported,,0.0,0.0,5.0,,,,0.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,228,target_available,
+sleep_efficiency_228,228,2021-09-12,2021-09-12 21:30:00,2021-09-12 04:30:00,7.0,7.0,82.0,reported,,0.0,0.0,2.0,,,,1.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,229,target_available,
+sleep_efficiency_229,229,2021-09-28,2021-09-28 00:00:00,2021-09-28 08:00:00,8.0,8.0,94.0,reported,,25.0,0.0,0.0,,,,0.0,30,Female,,sleep_efficiency,Sleep_Efficiency.csv,230,target_available,
+sleep_efficiency_230,230,2021-03-04,2021-03-04 22:30:00,2021-03-04 05:30:00,7.0,7.0,75.0,reported,,0.0,0.0,3.0,,,,4.0,26,Male,,sleep_efficiency,Sleep_Efficiency.csv,231,target_available,
+sleep_efficiency_231,231,2021-10-21,2021-10-21 01:30:00,2021-10-21 09:00:00,7.5,7.5,91.0,reported,,50.0,0.0,1.0,,,,0.0,32,Male,,sleep_efficiency,Sleep_Efficiency.csv,232,target_available,
+sleep_efficiency_232,232,2021-04-28,2021-04-28 23:00:00,2021-04-28 07:00:00,8.0,8.0,65.0,reported,,0.0,0.0,3.0,,,,1.0,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,233,target_available,
+sleep_efficiency_233,233,2021-03-06,2021-03-06 23:00:00,2021-03-06 04:00:00,5.0,5.0,87.0,reported,,25.0,1.0,0.0,,,,1.0,36,Female,,sleep_efficiency,Sleep_Efficiency.csv,234,target_available,
+sleep_efficiency_234,234,2021-09-23,2021-09-23 01:30:00,2021-09-23 09:30:00,8.0,8.0,84.0,reported,,25.0,0.0,1.0,,,,4.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,235,target_available,
+sleep_efficiency_235,235,2021-07-26,2021-07-26 01:00:00,2021-07-26 10:00:00,9.0,9.0,85.0,reported,,50.0,0.0,0.0,,,,1.0,18,Female,,sleep_efficiency,Sleep_Efficiency.csv,236,target_available,
+sleep_efficiency_236,236,2021-02-02,2021-02-02 21:00:00,2021-02-02 04:00:00,7.0,7.0,91.0,reported,,50.0,0.0,1.0,,,,1.0,28,Female,,sleep_efficiency,Sleep_Efficiency.csv,237,target_available,
+sleep_efficiency_237,237,2021-12-15,2021-12-15 21:30:00,2021-12-15 05:00:00,7.5,7.5,71.0,reported,,0.0,3.0,0.0,,,,1.0,58,Male,,sleep_efficiency,Sleep_Efficiency.csv,238,target_available,
+sleep_efficiency_238,238,2021-04-29,2021-04-29 01:30:00,2021-04-29 09:00:00,7.5,7.5,82.0,reported,,25.0,0.0,1.0,,,,2.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,239,target_available,
+sleep_efficiency_239,239,2021-02-13,2021-02-13 01:30:00,2021-02-13 10:00:00,8.5,8.5,77.0,reported,,25.0,1.0,0.0,,,,4.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,240,target_available,
+sleep_efficiency_240,240,2021-02-27,2021-02-27 22:00:00,2021-02-27 06:00:00,8.0,8.0,95.0,reported,,0.0,0.0,3.0,,,,0.0,41,Male,,sleep_efficiency,Sleep_Efficiency.csv,241,target_available,
+sleep_efficiency_241,241,2021-07-23,2021-07-23 22:30:00,2021-07-23 05:30:00,7.0,7.0,95.0,reported,,0.0,0.0,4.0,,,,0.0,32,Male,,sleep_efficiency,Sleep_Efficiency.csv,242,target_available,
+sleep_efficiency_242,242,2021-03-07,2021-03-07 00:30:00,2021-03-07 09:00:00,8.5,8.5,76.0,reported,,0.0,0.0,1.0,,,,3.0,56,Male,,sleep_efficiency,Sleep_Efficiency.csv,243,target_available,
+sleep_efficiency_243,243,2021-08-17,2021-08-17 02:30:00,2021-08-17 10:30:00,8.0,8.0,85.0,reported,,50.0,0.0,1.0,,,,0.0,43,Female,,sleep_efficiency,Sleep_Efficiency.csv,244,target_available,
+sleep_efficiency_244,244,2021-09-14,2021-09-14 00:00:00,2021-09-14 07:00:00,7.0,7.0,75.0,reported,,75.0,0.0,3.0,,,,4.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,245,target_available,
+sleep_efficiency_245,245,2021-01-08,2021-01-08 22:00:00,2021-01-08 05:00:00,7.0,7.0,92.0,reported,,0.0,0.0,4.0,,,,,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,246,target_available,
+sleep_efficiency_246,246,2021-02-06,2021-02-06 01:00:00,2021-02-06 09:30:00,8.5,8.5,78.0,reported,,0.0,3.0,3.0,,,,3.0,67,Male,,sleep_efficiency,Sleep_Efficiency.csv,247,target_available,
+sleep_efficiency_247,247,2021-09-03,2021-09-03 22:00:00,2021-09-03 06:30:00,8.5,8.5,91.0,reported,,25.0,1.0,0.0,,,,1.0,36,Female,,sleep_efficiency,Sleep_Efficiency.csv,248,target_available,
+sleep_efficiency_248,248,2021-09-01,2021-09-01 22:00:00,2021-09-01 06:00:00,8.0,8.0,85.0,reported,,0.0,0.0,5.0,,,,0.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,249,target_available,
+sleep_efficiency_249,249,2021-10-20,2021-10-20 00:00:00,2021-10-20 07:30:00,7.5,7.5,95.0,reported,,0.0,0.0,0.0,,,,0.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,250,target_available,
+sleep_efficiency_250,250,2021-04-04,2021-04-04 00:30:00,2021-04-04 10:30:00,10.0,10.0,66.0,reported,,0.0,4.0,1.0,,,,,61,Male,,sleep_efficiency,Sleep_Efficiency.csv,251,target_available,
+sleep_efficiency_251,251,2021-03-31,2021-03-31 21:30:00,2021-03-31 04:30:00,7.0,7.0,63.0,reported,,50.0,2.0,2.0,,,,2.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,252,target_available,
+sleep_efficiency_252,252,2021-06-26,2021-06-26 00:30:00,2021-06-26 09:00:00,8.5,8.5,86.0,reported,,50.0,0.0,1.0,,,,0.0,31,Male,,sleep_efficiency,Sleep_Efficiency.csv,253,target_available,
+sleep_efficiency_253,253,2021-06-23,2021-06-23 02:30:00,2021-06-23 09:30:00,7.0,7.0,54.0,reported,,50.0,5.0,1.0,,,,1.0,23,Female,,sleep_efficiency,Sleep_Efficiency.csv,254,target_available,
+sleep_efficiency_254,254,2021-06-01,2021-06-01 21:00:00,2021-06-01 03:00:00,6.0,6.0,95.0,reported,,0.0,0.0,3.0,,,,0.0,46,Female,,sleep_efficiency,Sleep_Efficiency.csv,255,target_available,
+sleep_efficiency_255,255,2021-03-23,2021-03-23 01:30:00,2021-03-23 08:30:00,7.0,7.0,72.0,reported,,50.0,5.0,1.0,,,,3.0,47,Female,,sleep_efficiency,Sleep_Efficiency.csv,256,target_available,
+sleep_efficiency_256,256,2021-06-23,2021-06-23 02:00:00,2021-06-23 09:00:00,7.0,7.0,52.0,reported,,50.0,0.0,0.0,,,,2.0,65,Female,,sleep_efficiency,Sleep_Efficiency.csv,257,target_available,
+sleep_efficiency_257,257,2021-04-22,2021-04-22 00:00:00,2021-04-22 07:00:00,7.0,7.0,93.0,reported,,25.0,1.0,0.0,,,,0.0,35,Female,,sleep_efficiency,Sleep_Efficiency.csv,258,target_available,
+sleep_efficiency_258,258,2021-05-31,2021-05-31 22:00:00,2021-05-31 06:00:00,8.0,8.0,52.0,reported,,25.0,5.0,5.0,,,,1.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,259,target_available,
+sleep_efficiency_259,259,2021-10-21,2021-10-21 22:00:00,2021-10-21 06:00:00,8.0,8.0,61.0,reported,,0.0,0.0,3.0,,,,1.0,54,Male,,sleep_efficiency,Sleep_Efficiency.csv,260,target_available,
+sleep_efficiency_260,260,2021-06-18,2021-06-18 21:30:00,2021-06-18 05:00:00,7.5,7.5,79.0,reported,,0.0,0.0,4.0,,,,2.0,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,261,target_available,
+sleep_efficiency_261,261,2021-08-20,2021-08-20 22:00:00,2021-08-20 05:00:00,7.0,7.0,94.0,reported,,0.0,3.0,3.0,,,,0.0,46,Male,,sleep_efficiency,Sleep_Efficiency.csv,262,target_available,
+sleep_efficiency_262,262,2021-12-17,2021-12-17 22:00:00,2021-12-17 05:00:00,7.0,7.0,76.0,reported,,25.0,0.0,4.0,,,,1.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,263,target_available,
+sleep_efficiency_263,263,2021-11-08,2021-11-08 21:00:00,2021-11-08 06:00:00,9.0,9.0,76.0,reported,,50.0,0.0,,,,,4.0,31,Female,,sleep_efficiency,Sleep_Efficiency.csv,264,target_available,
+sleep_efficiency_264,264,2021-04-17,2021-04-17 00:00:00,2021-04-17 09:00:00,9.0,9.0,78.0,reported,,25.0,0.0,1.0,,,,1.0,23,Female,,sleep_efficiency,Sleep_Efficiency.csv,265,target_available,
+sleep_efficiency_265,265,2021-05-30,2021-05-30 22:00:00,2021-05-30 05:00:00,7.0,7.0,94.0,reported,,50.0,0.0,3.0,,,,0.0,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,266,target_available,
+sleep_efficiency_266,266,2021-06-21,2021-06-21 02:00:00,2021-06-21 09:30:00,7.5,7.5,87.0,reported,,0.0,0.0,3.0,,,,0.0,44,Male,,sleep_efficiency,Sleep_Efficiency.csv,267,target_available,
+sleep_efficiency_267,267,2021-05-18,2021-05-18 00:00:00,2021-05-18 07:00:00,7.0,7.0,55.00000000000001,reported,,0.0,3.0,0.0,,,,3.0,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,268,target_available,
+sleep_efficiency_268,268,2021-10-26,2021-10-26 22:30:00,2021-10-26 06:30:00,8.0,8.0,93.0,reported,,0.0,3.0,4.0,,,,1.0,30,Female,,sleep_efficiency,Sleep_Efficiency.csv,269,target_available,
+sleep_efficiency_269,269,2021-11-30,2021-11-30 01:00:00,2021-11-30 09:30:00,8.5,8.5,93.0,reported,,0.0,3.0,3.0,,,,1.0,45,Male,,sleep_efficiency,Sleep_Efficiency.csv,270,target_available,
+sleep_efficiency_270,270,2021-10-05,2021-10-05 00:00:00,2021-10-05 07:00:00,7.0,7.0,94.0,reported,,25.0,0.0,2.0,,,,0.0,27,Male,,sleep_efficiency,Sleep_Efficiency.csv,271,target_available,
+sleep_efficiency_271,271,2021-11-03,2021-11-03 00:00:00,2021-11-03 08:00:00,8.0,8.0,78.0,reported,,,0.0,0.0,,,,1.0,44,Female,,sleep_efficiency,Sleep_Efficiency.csv,272,target_available,
+sleep_efficiency_272,272,2021-10-12,2021-10-12 21:30:00,2021-10-12 04:30:00,7.0,7.0,94.0,reported,,0.0,0.0,3.0,,,,1.0,50,Female,,sleep_efficiency,Sleep_Efficiency.csv,273,target_available,
+sleep_efficiency_273,273,2021-02-13,2021-02-13 01:00:00,2021-02-13 10:00:00,9.0,9.0,50.0,reported,,0.0,3.0,3.0,,,,2.0,58,Male,,sleep_efficiency,Sleep_Efficiency.csv,274,target_available,
+sleep_efficiency_274,274,2021-12-19,2021-12-19 00:30:00,2021-12-19 07:30:00,7.0,7.0,93.0,reported,,50.0,0.0,3.0,,,,0.0,49,Male,,sleep_efficiency,Sleep_Efficiency.csv,275,target_available,
+sleep_efficiency_275,275,2021-06-21,2021-06-21 22:00:00,2021-06-21 05:00:00,7.0,7.0,73.0,reported,,0.0,5.0,0.0,,,,4.0,46,Male,,sleep_efficiency,Sleep_Efficiency.csv,276,target_available,
+sleep_efficiency_276,276,2021-05-27,2021-05-27 23:00:00,2021-05-27 06:00:00,7.0,7.0,90.0,reported,,50.0,4.0,1.0,,,,0.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,277,target_available,
+sleep_efficiency_277,277,2021-02-03,2021-02-03 22:00:00,2021-02-03 06:00:00,8.0,8.0,87.0,reported,,50.0,1.0,4.0,,,,0.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,278,target_available,
+sleep_efficiency_278,278,2021-04-17,2021-04-17 21:30:00,2021-04-17 05:30:00,8.0,8.0,93.0,reported,,25.0,0.0,4.0,,,,0.0,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,279,target_available,
+sleep_efficiency_279,279,2021-08-26,2021-08-26 02:30:00,2021-08-26 10:30:00,8.0,8.0,90.0,reported,,50.0,0.0,1.0,,,,0.0,42,Female,,sleep_efficiency,Sleep_Efficiency.csv,280,target_available,
+sleep_efficiency_280,280,2021-02-07,2021-02-07 22:00:00,2021-02-07 05:00:00,7.0,7.0,67.0,reported,,0.0,2.0,4.0,,,,1.0,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,281,target_available,
+sleep_efficiency_281,281,2021-11-28,2021-11-28 00:00:00,2021-11-28 07:30:00,7.5,7.5,90.0,reported,,50.0,0.0,1.0,,,,1.0,25,Female,,sleep_efficiency,Sleep_Efficiency.csv,282,target_available,
+sleep_efficiency_282,282,2021-02-14,2021-02-14 02:00:00,2021-02-14 09:30:00,7.5,7.5,90.0,reported,,0.0,0.0,3.0,,,,1.0,64,Male,,sleep_efficiency,Sleep_Efficiency.csv,283,target_available,
+sleep_efficiency_283,283,2021-12-31,2021-12-31 21:00:00,2021-12-31 04:00:00,7.0,7.0,98.0,reported,,75.0,0.0,2.0,,,,1.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,284,target_available,
+sleep_efficiency_284,284,2021-01-13,2021-01-13 23:00:00,2021-01-13 07:30:00,8.5,8.5,66.0,reported,,25.0,2.0,0.0,,,,4.0,38,Female,,sleep_efficiency,Sleep_Efficiency.csv,285,target_available,
+sleep_efficiency_285,285,2021-12-08,2021-12-08 02:00:00,2021-12-08 09:00:00,7.0,7.0,68.0,reported,,50.0,0.0,0.0,,,,3.0,17,Female,,sleep_efficiency,Sleep_Efficiency.csv,286,target_available,
+sleep_efficiency_286,286,2021-02-21,2021-02-21 23:00:00,2021-02-21 05:00:00,6.0,6.0,56.00000000000001,reported,,0.0,5.0,2.0,,,,3.0,27,Male,,sleep_efficiency,Sleep_Efficiency.csv,287,target_available,
+sleep_efficiency_287,287,2021-11-25,2021-11-25 22:00:00,2021-11-25 06:00:00,8.0,8.0,62.0,reported,,0.0,2.0,3.0,,,,1.0,50,Male,,sleep_efficiency,Sleep_Efficiency.csv,288,target_available,
+sleep_efficiency_288,288,2021-01-06,2021-01-06 21:30:00,2021-01-06 05:00:00,7.5,7.5,52.0,reported,,75.0,2.0,3.0,,,,,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,289,target_available,
+sleep_efficiency_289,289,2021-09-13,2021-09-13 23:00:00,2021-09-13 06:00:00,7.0,7.0,96.0,reported,,25.0,1.0,0.0,,,,,34,Female,,sleep_efficiency,Sleep_Efficiency.csv,290,target_available,
+sleep_efficiency_290,290,2021-06-08,2021-06-08 22:00:00,2021-06-08 05:00:00,7.0,7.0,81.0,reported,,50.0,0.0,1.0,,,,2.0,26,Female,,sleep_efficiency,Sleep_Efficiency.csv,291,target_available,
+sleep_efficiency_291,291,2021-01-20,2021-01-20 22:30:00,2021-01-20 06:30:00,8.0,8.0,84.0,reported,,0.0,0.0,3.0,,,,3.0,54,Male,,sleep_efficiency,Sleep_Efficiency.csv,292,target_available,
+sleep_efficiency_292,292,2021-03-28,2021-03-28 21:30:00,2021-03-28 05:00:00,7.5,7.5,93.0,reported,,0.0,0.0,3.0,,,,1.0,46,Female,,sleep_efficiency,Sleep_Efficiency.csv,293,target_available,
+sleep_efficiency_293,293,2021-11-06,2021-11-06 22:00:00,2021-11-06 04:00:00,6.0,6.0,87.0,reported,,0.0,0.0,4.0,,,,0.0,38,Female,,sleep_efficiency,Sleep_Efficiency.csv,294,target_available,
+sleep_efficiency_294,294,2021-04-01,2021-04-01 22:00:00,2021-04-01 05:00:00,7.0,7.0,86.0,reported,,25.0,0.0,0.0,,,,0.0,24,Female,,sleep_efficiency,Sleep_Efficiency.csv,295,target_available,
+sleep_efficiency_295,295,2021-03-12,2021-03-12 23:00:00,2021-03-12 06:00:00,7.0,7.0,89.0,reported,,75.0,1.0,4.0,,,,0.0,38,Male,,sleep_efficiency,Sleep_Efficiency.csv,296,target_available,
+sleep_efficiency_296,296,2021-10-09,2021-10-09 01:00:00,2021-10-09 09:00:00,8.0,8.0,94.0,reported,,0.0,0.0,2.0,,,,0.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,297,target_available,
+sleep_efficiency_297,297,2021-11-06,2021-11-06 00:00:00,2021-11-06 07:00:00,7.0,7.0,84.0,reported,,0.0,0.0,0.0,,,,2.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,298,target_available,
+sleep_efficiency_298,298,2021-01-11,2021-01-11 00:30:00,2021-01-11 08:30:00,8.0,8.0,86.0,reported,,25.0,1.0,0.0,,,,1.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,299,target_available,
+sleep_efficiency_299,299,2021-08-11,2021-08-11 23:00:00,2021-08-11 07:30:00,8.5,8.5,75.0,reported,,25.0,1.0,0.0,,,,2.0,35,Female,,sleep_efficiency,Sleep_Efficiency.csv,300,target_available,
+sleep_efficiency_300,300,2021-04-24,2021-04-24 21:30:00,2021-04-24 05:30:00,8.0,8.0,60.0,reported,,0.0,4.0,3.0,,,,4.0,22,Male,,sleep_efficiency,Sleep_Efficiency.csv,301,target_available,
+sleep_efficiency_301,301,2021-10-09,2021-10-09 22:30:00,2021-10-09 05:30:00,7.0,7.0,93.0,reported,,0.0,3.0,4.0,,,,0.0,47,Female,,sleep_efficiency,Sleep_Efficiency.csv,302,target_available,
+sleep_efficiency_302,302,2021-12-29,2021-12-29 00:00:00,2021-12-29 08:30:00,8.5,8.5,75.0,reported,,25.0,0.0,1.0,,,,2.0,25,Female,,sleep_efficiency,Sleep_Efficiency.csv,303,target_available,
+sleep_efficiency_303,303,2021-05-15,2021-05-15 00:00:00,2021-05-15 07:00:00,7.0,7.0,81.0,reported,,0.0,5.0,3.0,,,,4.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,304,target_available,
+sleep_efficiency_304,304,2021-01-08,2021-01-08 02:30:00,2021-01-08 12:30:00,10.0,10.0,78.0,reported,,0.0,0.0,2.0,,,,2.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,305,target_available,
+sleep_efficiency_305,305,2021-05-01,2021-05-01 00:00:00,2021-05-01 08:00:00,8.0,8.0,84.0,reported,,0.0,4.0,,,,,4.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,306,target_available,
+sleep_efficiency_306,306,2021-11-21,2021-11-21 00:30:00,2021-11-21 05:30:00,5.0,5.0,90.0,reported,,0.0,0.0,1.0,,,,1.0,65,Male,,sleep_efficiency,Sleep_Efficiency.csv,307,target_available,
+sleep_efficiency_307,307,2021-07-16,2021-07-16 21:00:00,2021-07-16 03:00:00,6.0,6.0,90.0,reported,,0.0,5.0,2.0,,,,1.0,27,Male,,sleep_efficiency,Sleep_Efficiency.csv,308,target_available,
+sleep_efficiency_308,308,2021-11-29,2021-11-29 00:30:00,2021-11-29 09:30:00,9.0,9.0,67.0,reported,,25.0,1.0,0.0,,,,,41,Female,,sleep_efficiency,Sleep_Efficiency.csv,309,target_available,
+sleep_efficiency_309,309,2021-10-16,2021-10-16 01:00:00,2021-10-16 08:00:00,7.0,7.0,93.0,reported,,0.0,5.0,3.0,,,,1.0,56,Female,,sleep_efficiency,Sleep_Efficiency.csv,310,target_available,
+sleep_efficiency_310,310,2021-12-21,2021-12-21 21:00:00,2021-12-21 04:30:00,7.5,7.5,80.0,reported,,50.0,0.0,1.0,,,,2.0,28,Female,,sleep_efficiency,Sleep_Efficiency.csv,311,target_available,
+sleep_efficiency_311,311,2021-09-26,2021-09-26 23:00:00,2021-09-26 09:00:00,10.0,10.0,63.0,reported,,25.0,1.0,0.0,,,,4.0,33,Female,,sleep_efficiency,Sleep_Efficiency.csv,312,target_available,
+sleep_efficiency_312,312,2021-07-19,2021-07-19 22:00:00,2021-07-19 05:00:00,7.0,7.0,90.0,reported,,0.0,0.0,4.0,,,,1.0,22,Female,,sleep_efficiency,Sleep_Efficiency.csv,313,target_available,
+sleep_efficiency_313,313,2021-12-12,2021-12-12 01:00:00,2021-12-12 10:00:00,9.0,9.0,90.0,reported,,0.0,3.0,3.0,,,,1.0,50,Male,,sleep_efficiency,Sleep_Efficiency.csv,314,target_available,
+sleep_efficiency_314,314,2021-12-04,2021-12-04 23:00:00,2021-12-04 06:00:00,7.0,7.0,86.0,reported,,25.0,0.0,2.0,,,,1.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,315,target_available,
+sleep_efficiency_315,315,2021-03-25,2021-03-25 22:30:00,2021-03-25 05:30:00,7.0,7.0,51.0,reported,,0.0,0.0,0.0,,,,4.0,54,Male,,sleep_efficiency,Sleep_Efficiency.csv,316,target_available,
+sleep_efficiency_316,316,2021-03-10,2021-03-10 22:00:00,2021-03-10 06:00:00,8.0,8.0,71.0,reported,,0.0,0.0,3.0,,,,,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,317,target_available,
+sleep_efficiency_317,317,2021-04-19,2021-04-19 00:00:00,2021-04-19 07:30:00,7.5,7.5,87.0,reported,,0.0,0.0,0.0,,,,1.0,58,Male,,sleep_efficiency,Sleep_Efficiency.csv,318,target_available,
+sleep_efficiency_318,318,2021-11-22,2021-11-22 21:00:00,2021-11-22 04:30:00,7.5,7.5,70.0,reported,,0.0,5.0,0.0,,,,1.0,45,Male,,sleep_efficiency,Sleep_Efficiency.csv,319,target_available,
+sleep_efficiency_319,319,2021-03-30,2021-03-30 00:00:00,2021-03-30 08:00:00,8.0,8.0,85.0,reported,,0.0,0.0,0.0,,,,1.0,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,320,target_available,
+sleep_efficiency_320,320,2021-08-27,2021-08-27 00:00:00,2021-08-27 07:00:00,7.0,7.0,87.0,reported,,0.0,4.0,2.0,,,,1.0,54,Male,,sleep_efficiency,Sleep_Efficiency.csv,321,target_available,
+sleep_efficiency_321,321,2021-06-19,2021-06-19 23:00:00,2021-06-19 06:00:00,7.0,7.0,60.0,reported,,0.0,2.0,3.0,,,,1.0,60,Male,,sleep_efficiency,Sleep_Efficiency.csv,322,target_available,
+sleep_efficiency_322,322,2021-09-11,2021-09-11 23:00:00,2021-09-11 06:30:00,7.5,7.5,83.0,reported,,,0.0,3.0,,,,2.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,323,target_available,
+sleep_efficiency_323,323,2021-09-17,2021-09-17 21:00:00,2021-09-17 04:30:00,7.5,7.5,80.0,reported,,50.0,0.0,1.0,,,,3.0,30,Female,,sleep_efficiency,Sleep_Efficiency.csv,324,target_available,
+sleep_efficiency_324,324,2021-12-29,2021-12-29 00:00:00,2021-12-29 07:30:00,7.5,7.5,93.0,reported,,0.0,0.0,0.0,,,,0.0,41,Male,,sleep_efficiency,Sleep_Efficiency.csv,325,target_available,
+sleep_efficiency_325,325,2021-03-08,2021-03-08 01:30:00,2021-03-08 07:30:00,6.0,6.0,75.0,reported,,,0.0,1.0,,,,4.0,44,Female,,sleep_efficiency,Sleep_Efficiency.csv,326,target_available,
+sleep_efficiency_326,326,2021-07-30,2021-07-30 01:00:00,2021-07-30 08:00:00,7.0,7.0,50.0,reported,,0.0,4.0,0.0,,,,4.0,52,Female,,sleep_efficiency,Sleep_Efficiency.csv,327,target_available,
+sleep_efficiency_327,327,2021-12-11,2021-12-11 00:00:00,2021-12-11 07:30:00,7.5,7.5,50.0,reported,,75.0,1.0,2.0,,,,1.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,328,target_available,
+sleep_efficiency_328,328,2021-10-26,2021-10-26 23:00:00,2021-10-26 06:30:00,7.5,7.5,67.0,reported,,50.0,1.0,1.0,,,,,44,Female,,sleep_efficiency,Sleep_Efficiency.csv,329,target_available,
+sleep_efficiency_329,329,2021-09-30,2021-09-30 22:00:00,2021-09-30 06:00:00,8.0,8.0,96.0,reported,,25.0,1.0,0.0,,,,1.0,42,Female,,sleep_efficiency,Sleep_Efficiency.csv,330,target_available,
+sleep_efficiency_330,330,2021-05-21,2021-05-21 00:00:00,2021-05-21 07:30:00,7.5,7.5,52.0,reported,,50.0,2.0,1.0,,,,4.0,26,Female,,sleep_efficiency,Sleep_Efficiency.csv,331,target_available,
+sleep_efficiency_331,331,2021-05-21,2021-05-21 22:30:00,2021-05-21 04:00:00,5.5,5.5,68.0,reported,,0.0,0.0,0.0,,,,2.0,49,Male,,sleep_efficiency,Sleep_Efficiency.csv,332,target_available,
+sleep_efficiency_332,332,2021-04-28,2021-04-28 21:30:00,2021-04-28 05:30:00,8.0,8.0,72.0,reported,,0.0,0.0,3.0,,,,3.0,46,Male,,sleep_efficiency,Sleep_Efficiency.csv,333,target_available,
+sleep_efficiency_333,333,2021-11-01,2021-11-01 01:00:00,2021-11-01 10:00:00,9.0,9.0,56.00000000000001,reported,,0.0,0.0,0.0,,,,1.0,12,Female,,sleep_efficiency,Sleep_Efficiency.csv,334,target_available,
+sleep_efficiency_334,334,2021-01-23,2021-01-23 22:00:00,2021-01-23 05:30:00,7.5,7.5,91.0,reported,,25.0,0.0,5.0,,,,0.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,335,target_available,
+sleep_efficiency_335,335,2021-11-07,2021-11-07 23:00:00,2021-11-07 07:30:00,8.5,8.5,85.0,reported,,25.0,1.0,0.0,,,,0.0,39,Female,,sleep_efficiency,Sleep_Efficiency.csv,336,target_available,
+sleep_efficiency_336,336,2021-10-26,2021-10-26 00:30:00,2021-10-26 10:30:00,10.0,10.0,72.0,reported,,50.0,4.0,1.0,,,,3.0,44,Female,,sleep_efficiency,Sleep_Efficiency.csv,337,target_available,
+sleep_efficiency_337,337,2021-07-20,2021-07-20 22:00:00,2021-07-20 05:00:00,7.0,7.0,90.0,reported,,0.0,,5.0,,,,1.0,50,Female,,sleep_efficiency,Sleep_Efficiency.csv,338,target_available,
+sleep_efficiency_338,338,2021-07-05,2021-07-05 22:30:00,2021-07-05 06:30:00,8.0,8.0,77.0,reported,,50.0,1.0,3.0,,,,,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,339,target_available,
+sleep_efficiency_339,339,2021-11-10,2021-11-10 02:30:00,2021-11-10 12:30:00,10.0,10.0,89.0,reported,,0.0,0.0,3.0,,,,1.0,44,Male,,sleep_efficiency,Sleep_Efficiency.csv,340,target_available,
+sleep_efficiency_340,340,2021-08-09,2021-08-09 22:00:00,2021-08-09 03:30:00,5.5,5.5,90.0,reported,,0.0,0.0,0.0,,,,0.0,57,Male,,sleep_efficiency,Sleep_Efficiency.csv,341,target_available,
+sleep_efficiency_341,341,2021-06-11,2021-06-11 22:30:00,2021-06-11 05:30:00,7.0,7.0,85.0,reported,,75.0,0.0,2.0,,,,1.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,342,target_available,
+sleep_efficiency_342,342,2021-03-18,2021-03-18 00:00:00,2021-03-18 08:00:00,8.0,8.0,95.0,reported,,0.0,0.0,0.0,,,,0.0,65,Female,,sleep_efficiency,Sleep_Efficiency.csv,343,target_available,
+sleep_efficiency_343,343,2021-08-17,2021-08-17 01:00:00,2021-08-17 09:00:00,8.0,8.0,51.0,reported,,50.0,5.0,0.0,,,,4.0,41,Female,,sleep_efficiency,Sleep_Efficiency.csv,344,target_available,
+sleep_efficiency_344,344,2021-11-01,2021-11-01 02:30:00,2021-11-01 09:30:00,7.0,7.0,90.0,reported,,50.0,0.0,1.0,,,,0.0,52,Female,,sleep_efficiency,Sleep_Efficiency.csv,345,target_available,
+sleep_efficiency_345,345,2021-03-26,2021-03-26 21:30:00,2021-03-26 06:30:00,9.0,9.0,90.0,reported,,0.0,3.0,3.0,,,,1.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,346,target_available,
+sleep_efficiency_346,346,2021-03-09,2021-03-09 00:00:00,2021-03-09 07:00:00,7.0,7.0,51.0,reported,,50.0,2.0,3.0,,,,1.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,347,target_available,
+sleep_efficiency_347,347,2021-03-01,2021-03-01 22:30:00,2021-03-01 05:30:00,7.0,7.0,84.0,reported,,0.0,0.0,4.0,,,,1.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,348,target_available,
+sleep_efficiency_348,348,2021-09-19,2021-09-19 00:00:00,2021-09-19 08:00:00,8.0,8.0,82.0,reported,,0.0,4.0,2.0,,,,3.0,30,Male,,sleep_efficiency,Sleep_Efficiency.csv,349,target_available,
+sleep_efficiency_349,349,2021-04-17,2021-04-17 01:30:00,2021-04-17 08:30:00,7.0,7.0,88.0,reported,,25.0,0.0,1.0,,,,0.0,57,Male,,sleep_efficiency,Sleep_Efficiency.csv,350,target_available,
+sleep_efficiency_350,350,2021-12-04,2021-12-04 21:30:00,2021-12-04 05:00:00,7.5,7.5,79.0,reported,,50.0,0.0,1.0,,,,1.0,24,Female,,sleep_efficiency,Sleep_Efficiency.csv,351,target_available,
+sleep_efficiency_351,351,2021-07-18,2021-07-18 21:30:00,2021-07-18 04:30:00,7.0,7.0,64.0,reported,,0.0,1.0,3.0,,,,4.0,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,352,target_available,
+sleep_efficiency_352,352,2021-01-07,2021-01-07 00:00:00,2021-01-07 07:30:00,7.5,7.5,84.0,reported,,25.0,0.0,1.0,,,,4.0,19,Female,,sleep_efficiency,Sleep_Efficiency.csv,353,target_available,
+sleep_efficiency_353,353,2021-10-06,2021-10-06 21:00:00,2021-10-06 05:00:00,8.0,8.0,86.0,reported,,0.0,5.0,3.0,,,,,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,354,target_available,
+sleep_efficiency_354,354,2021-12-17,2021-12-17 22:00:00,2021-12-17 05:30:00,7.5,7.5,71.0,reported,,0.0,2.0,0.0,,,,4.0,45,Male,,sleep_efficiency,Sleep_Efficiency.csv,355,target_available,
+sleep_efficiency_355,355,2021-06-08,2021-06-08 22:00:00,2021-06-08 05:00:00,7.0,7.0,90.0,reported,,0.0,5.0,2.0,,,,1.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,356,target_available,
+sleep_efficiency_356,356,2021-10-26,2021-10-26 02:30:00,2021-10-26 09:30:00,7.0,7.0,82.0,reported,,,0.0,2.0,,,,3.0,39,Male,,sleep_efficiency,Sleep_Efficiency.csv,357,target_available,
+sleep_efficiency_357,357,2021-07-17,2021-07-17 22:30:00,2021-07-17 06:30:00,8.0,8.0,95.0,reported,,0.0,0.0,4.0,,,,0.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,358,target_available,
+sleep_efficiency_358,358,2021-06-04,2021-06-04 00:00:00,2021-06-04 09:00:00,9.0,9.0,95.0,reported,,75.0,0.0,2.0,,,,0.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,359,target_available,
+sleep_efficiency_359,359,2021-11-17,2021-11-17 22:00:00,2021-11-17 05:00:00,7.0,7.0,54.0,reported,,0.0,2.0,3.0,,,,1.0,41,Male,,sleep_efficiency,Sleep_Efficiency.csv,360,target_available,
+sleep_efficiency_360,360,2021-03-11,2021-03-11 01:00:00,2021-03-11 10:00:00,9.0,9.0,95.0,reported,,0.0,0.0,0.0,,,,0.0,65,Female,,sleep_efficiency,Sleep_Efficiency.csv,361,target_available,
+sleep_efficiency_361,361,2021-11-08,2021-11-08 00:00:00,2021-11-08 09:00:00,9.0,9.0,53.0,reported,,25.0,4.0,0.0,,,,2.0,56,Female,,sleep_efficiency,Sleep_Efficiency.csv,362,target_available,
+sleep_efficiency_362,362,2021-07-03,2021-07-03 00:00:00,2021-07-03 06:00:00,6.0,6.0,92.0,reported,,75.0,0.0,2.0,,,,0.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,363,target_available,
+sleep_efficiency_363,363,2021-02-26,2021-02-26 23:00:00,2021-02-26 06:30:00,7.5,7.5,85.0,reported,,0.0,0.0,1.0,,,,1.0,28,Male,,sleep_efficiency,Sleep_Efficiency.csv,364,target_available,
+sleep_efficiency_364,364,2021-11-06,2021-11-06 01:30:00,2021-11-06 11:30:00,10.0,10.0,92.0,reported,,25.0,1.0,0.0,,,,0.0,30,Female,,sleep_efficiency,Sleep_Efficiency.csv,365,target_available,
+sleep_efficiency_365,365,2021-09-07,2021-09-07 00:30:00,2021-09-07 08:30:00,8.0,8.0,53.0,reported,,0.0,0.0,3.0,,,,1.0,37,Male,,sleep_efficiency,Sleep_Efficiency.csv,366,target_available,
+sleep_efficiency_366,366,2021-05-19,2021-05-19 01:30:00,2021-05-19 08:30:00,7.0,7.0,75.0,reported,,50.0,0.0,1.0,,,,4.0,22,Female,,sleep_efficiency,Sleep_Efficiency.csv,367,target_available,
+sleep_efficiency_367,367,2021-10-13,2021-10-13 23:00:00,2021-10-13 07:00:00,8.0,8.0,82.0,reported,,75.0,0.0,,,,,3.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,368,target_available,
+sleep_efficiency_368,368,2021-08-03,2021-08-03 02:30:00,2021-08-03 07:30:00,5.0,5.0,74.0,reported,,0.0,0.0,3.0,,,,1.0,56,Male,,sleep_efficiency,Sleep_Efficiency.csv,369,target_available,
+sleep_efficiency_369,369,2021-06-18,2021-06-18 01:30:00,2021-06-18 09:00:00,7.5,7.5,87.0,reported,,25.0,0.0,1.0,,,,0.0,56,Male,,sleep_efficiency,Sleep_Efficiency.csv,370,target_available,
+sleep_efficiency_370,370,2021-05-08,2021-05-08 01:30:00,2021-05-08 07:30:00,6.0,6.0,72.0,reported,,25.0,1.0,1.0,,,,2.0,41,Male,,sleep_efficiency,Sleep_Efficiency.csv,371,target_available,
+sleep_efficiency_371,371,2021-09-21,2021-09-21 22:00:00,2021-09-21 05:00:00,7.0,7.0,87.0,reported,,50.0,1.0,3.0,,,,1.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,372,target_available,
+sleep_efficiency_372,372,2021-02-21,2021-02-21 02:30:00,2021-02-21 09:30:00,7.0,7.0,53.0,reported,,50.0,2.0,1.0,,,,2.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,373,target_available,
+sleep_efficiency_373,373,2021-02-24,2021-02-24 22:00:00,2021-02-24 06:00:00,8.0,8.0,72.0,reported,,25.0,1.0,2.0,,,,3.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,374,target_available,
+sleep_efficiency_374,374,2021-10-11,2021-10-11 23:00:00,2021-10-11 07:00:00,8.0,8.0,87.0,reported,,0.0,0.0,3.0,,,,1.0,39,Male,,sleep_efficiency,Sleep_Efficiency.csv,375,target_available,
+sleep_efficiency_375,375,2021-08-13,2021-08-13 01:30:00,2021-08-13 09:00:00,7.5,7.5,66.0,reported,,25.0,1.0,1.0,,,,4.0,65,Male,,sleep_efficiency,Sleep_Efficiency.csv,376,target_available,
+sleep_efficiency_376,376,2021-01-26,2021-01-26 02:00:00,2021-01-26 11:00:00,9.0,9.0,66.0,reported,,50.0,3.0,0.0,,,,2.0,60,Female,,sleep_efficiency,Sleep_Efficiency.csv,377,target_available,
+sleep_efficiency_377,377,2021-03-19,2021-03-19 22:30:00,2021-03-19 06:30:00,8.0,8.0,72.0,reported,,0.0,2.0,0.0,,,,1.0,48,Male,,sleep_efficiency,Sleep_Efficiency.csv,378,target_available,
+sleep_efficiency_378,378,2021-04-14,2021-04-14 00:00:00,2021-04-14 08:00:00,8.0,8.0,81.0,reported,,25.0,0.0,1.0,,,,4.0,21,Female,,sleep_efficiency,Sleep_Efficiency.csv,379,target_available,
+sleep_efficiency_379,379,2021-02-15,2021-02-15 00:00:00,2021-02-15 07:00:00,7.0,7.0,88.0,reported,,0.0,5.0,2.0,,,,0.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,380,target_available,
+sleep_efficiency_380,380,2021-07-31,2021-07-31 22:00:00,2021-07-31 05:00:00,7.0,7.0,94.0,reported,,0.0,3.0,3.0,,,,1.0,61,Male,,sleep_efficiency,Sleep_Efficiency.csv,381,target_available,
+sleep_efficiency_381,381,2021-02-10,2021-02-10 21:30:00,2021-02-10 04:30:00,7.0,7.0,83.0,reported,,25.0,1.0,0.0,,,,1.0,35,Female,,sleep_efficiency,Sleep_Efficiency.csv,382,target_available,
+sleep_efficiency_382,382,2021-04-16,2021-04-16 23:00:00,2021-04-16 06:00:00,7.0,7.0,91.0,reported,,75.0,1.0,4.0,,,,1.0,22,Male,,sleep_efficiency,Sleep_Efficiency.csv,383,target_available,
+sleep_efficiency_383,383,2021-06-11,2021-06-11 21:00:00,2021-06-11 04:30:00,7.5,7.5,95.0,reported,,0.0,0.0,3.0,,,,1.0,40,Male,,sleep_efficiency,Sleep_Efficiency.csv,384,target_available,
+sleep_efficiency_384,384,2021-02-26,2021-02-26 22:00:00,2021-02-26 07:00:00,9.0,9.0,90.0,reported,,0.0,0.0,3.0,,,,1.0,39,Male,,sleep_efficiency,Sleep_Efficiency.csv,385,target_available,
+sleep_efficiency_385,385,2021-09-25,2021-09-25 21:00:00,2021-09-25 04:00:00,7.0,7.0,95.0,reported,,0.0,0.0,3.0,,,,1.0,40,Male,,sleep_efficiency,Sleep_Efficiency.csv,386,target_available,
+sleep_efficiency_386,386,2021-10-11,2021-10-11 00:00:00,2021-10-11 08:00:00,8.0,8.0,90.0,reported,,0.0,0.0,0.0,,,,1.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,387,target_available,
+sleep_efficiency_387,387,2021-07-29,2021-07-29 02:30:00,2021-07-29 09:30:00,7.0,7.0,62.0,reported,,50.0,5.0,1.0,,,,4.0,62,Female,,sleep_efficiency,Sleep_Efficiency.csv,388,target_available,
+sleep_efficiency_388,388,2021-07-14,2021-07-14 21:00:00,2021-07-14 04:00:00,7.0,7.0,93.0,reported,,0.0,0.0,3.0,,,,1.0,48,Female,,sleep_efficiency,Sleep_Efficiency.csv,389,target_available,
+sleep_efficiency_389,389,2021-09-05,2021-09-05 00:00:00,2021-09-05 08:00:00,8.0,8.0,79.0,reported,,25.0,0.0,1.0,,,,3.0,22,Female,,sleep_efficiency,Sleep_Efficiency.csv,390,target_available,
+sleep_efficiency_390,390,2021-02-06,2021-02-06 23:00:00,2021-02-06 07:00:00,8.0,8.0,91.0,reported,,50.0,2.0,4.0,,,,1.0,36,Female,,sleep_efficiency,Sleep_Efficiency.csv,391,target_available,
+sleep_efficiency_391,391,2021-12-09,2021-12-09 23:00:00,2021-12-09 06:30:00,7.5,7.5,81.0,reported,,,0.0,2.0,,,,2.0,21,Male,,sleep_efficiency,Sleep_Efficiency.csv,392,target_available,
+sleep_efficiency_392,392,2021-08-24,2021-08-24 00:30:00,2021-08-24 05:30:00,5.0,5.0,52.0,reported,,50.0,4.0,1.0,,,,2.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,393,target_available,
+sleep_efficiency_393,393,2021-08-30,2021-08-30 23:00:00,2021-08-30 06:00:00,7.0,7.0,52.0,reported,,,3.0,4.0,,,,3.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,394,target_available,
+sleep_efficiency_394,394,2021-04-30,2021-04-30 21:30:00,2021-04-30 04:30:00,7.0,7.0,84.0,reported,,0.0,0.0,0.0,,,,3.0,56,Male,,sleep_efficiency,Sleep_Efficiency.csv,395,target_available,
+sleep_efficiency_395,395,2021-05-05,2021-05-05 02:00:00,2021-05-05 10:00:00,8.0,8.0,67.0,reported,,50.0,5.0,0.0,,,,4.0,55,Female,,sleep_efficiency,Sleep_Efficiency.csv,396,target_available,
+sleep_efficiency_396,396,2021-12-23,2021-12-23 21:30:00,2021-12-23 05:30:00,8.0,8.0,83.0,reported,,0.0,,3.0,,,,2.0,56,Male,,sleep_efficiency,Sleep_Efficiency.csv,397,target_available,
+sleep_efficiency_397,397,2021-03-25,2021-03-25 01:30:00,2021-03-25 08:30:00,7.0,7.0,63.0,reported,,50.0,1.0,1.0,,,,1.0,57,Female,,sleep_efficiency,Sleep_Efficiency.csv,398,target_available,
+sleep_efficiency_398,398,2021-07-18,2021-07-18 02:00:00,2021-07-18 10:00:00,8.0,8.0,64.0,reported,,50.0,2.0,0.0,,,,2.0,59,Female,,sleep_efficiency,Sleep_Efficiency.csv,399,target_available,
+sleep_efficiency_399,399,2021-07-21,2021-07-21 01:00:00,2021-07-21 08:00:00,7.0,7.0,91.0,reported,,50.0,0.0,0.0,,,,0.0,30,Female,,sleep_efficiency,Sleep_Efficiency.csv,400,target_available,
+sleep_efficiency_400,400,2021-08-02,2021-08-02 02:30:00,2021-08-02 10:00:00,7.5,7.5,82.0,reported,,50.0,0.0,1.0,,,,3.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,401,target_available,
+sleep_efficiency_401,401,2021-10-03,2021-10-03 21:30:00,2021-10-03 05:30:00,8.0,8.0,92.0,reported,,25.0,0.0,4.0,,,,1.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,402,target_available,
+sleep_efficiency_402,402,2021-02-01,2021-02-01 01:30:00,2021-02-01 09:00:00,7.5,7.5,92.0,reported,,0.0,0.0,3.0,,,,0.0,48,Male,,sleep_efficiency,Sleep_Efficiency.csv,403,target_available,
+sleep_efficiency_403,403,2021-11-25,2021-11-25 22:00:00,2021-11-25 06:00:00,8.0,8.0,93.0,reported,,0.0,0.0,3.0,,,,0.0,38,Male,,sleep_efficiency,Sleep_Efficiency.csv,404,target_available,
+sleep_efficiency_404,404,2021-11-06,2021-11-06 21:30:00,2021-11-06 05:30:00,8.0,8.0,87.0,reported,,0.0,3.0,3.0,,,,0.0,58,Male,,sleep_efficiency,Sleep_Efficiency.csv,405,target_available,
+sleep_efficiency_405,405,2021-04-10,2021-04-10 02:30:00,2021-04-10 08:30:00,6.0,6.0,64.0,reported,,,3.0,1.0,,,,,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,406,target_available,
+sleep_efficiency_406,406,2021-08-15,2021-08-15 02:00:00,2021-08-15 07:30:00,5.5,5.5,90.0,reported,,0.0,,3.0,,,,0.0,56,Male,,sleep_efficiency,Sleep_Efficiency.csv,407,target_available,
+sleep_efficiency_407,407,2021-04-17,2021-04-17 22:30:00,2021-04-17 05:30:00,7.0,7.0,82.0,reported,,0.0,0.0,3.0,,,,2.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,408,target_available,
+sleep_efficiency_408,408,2021-08-31,2021-08-31 00:30:00,2021-08-31 08:30:00,8.0,8.0,86.0,reported,,25.0,1.0,0.0,,,,,35,Female,,sleep_efficiency,Sleep_Efficiency.csv,409,target_available,
+sleep_efficiency_409,409,2021-06-06,2021-06-06 00:00:00,2021-06-06 08:00:00,8.0,8.0,73.0,reported,,0.0,2.0,0.0,,,,3.0,61,Female,,sleep_efficiency,Sleep_Efficiency.csv,410,target_available,
+sleep_efficiency_410,410,2021-11-12,2021-11-12 23:00:00,2021-11-12 07:00:00,8.0,8.0,90.0,reported,,50.0,0.0,1.0,,,,0.0,32,Female,,sleep_efficiency,Sleep_Efficiency.csv,411,target_available,
+sleep_efficiency_411,411,2021-10-02,2021-10-02 02:00:00,2021-10-02 09:00:00,7.0,7.0,68.0,reported,,0.0,4.0,3.0,,,,1.0,58,Male,,sleep_efficiency,Sleep_Efficiency.csv,412,target_available,
+sleep_efficiency_412,412,2021-09-27,2021-09-27 00:00:00,2021-09-27 07:00:00,7.0,7.0,82.0,reported,,0.0,0.0,2.0,,,,3.0,53,Male,,sleep_efficiency,Sleep_Efficiency.csv,413,target_available,
+sleep_efficiency_413,413,2021-11-14,2021-11-14 01:00:00,2021-11-14 08:00:00,7.0,7.0,74.0,reported,,25.0,0.0,1.0,,,,3.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,414,target_available,
+sleep_efficiency_414,414,2021-10-25,2021-10-25 00:30:00,2021-10-25 09:00:00,8.5,8.5,88.0,reported,,50.0,0.0,3.0,,,,1.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,415,target_available,
+sleep_efficiency_415,415,2021-09-19,2021-09-19 00:00:00,2021-09-19 08:00:00,8.0,8.0,72.0,reported,,25.0,4.0,1.0,,,,1.0,28,Female,,sleep_efficiency,Sleep_Efficiency.csv,416,target_available,
+sleep_efficiency_416,416,2021-03-03,2021-03-03 00:00:00,2021-03-03 07:00:00,7.0,7.0,67.0,reported,,0.0,4.0,0.0,,,,1.0,49,Male,,sleep_efficiency,Sleep_Efficiency.csv,417,target_available,
+sleep_efficiency_417,417,2021-01-04,2021-01-04 22:00:00,2021-01-04 05:00:00,7.0,7.0,87.0,reported,,0.0,0.0,5.0,,,,0.0,49,Female,,sleep_efficiency,Sleep_Efficiency.csv,418,target_available,
+sleep_efficiency_418,418,2021-10-07,2021-10-07 22:00:00,2021-10-07 05:00:00,7.0,7.0,66.0,reported,,0.0,3.0,3.0,,,,4.0,44,Male,,sleep_efficiency,Sleep_Efficiency.csv,419,target_available,
+sleep_efficiency_419,419,2021-07-26,2021-07-26 22:00:00,2021-07-26 07:00:00,9.0,9.0,66.0,reported,,0.0,2.0,0.0,,,,1.0,51,Male,,sleep_efficiency,Sleep_Efficiency.csv,420,target_available,
+sleep_efficiency_420,420,2021-03-04,2021-03-04 00:30:00,2021-03-04 09:00:00,8.5,8.5,87.0,reported,,50.0,0.0,1.0,,,,0.0,21,Male,,sleep_efficiency,Sleep_Efficiency.csv,421,target_available,
+sleep_efficiency_421,421,2021-10-04,2021-10-04 21:30:00,2021-10-04 04:30:00,7.0,7.0,51.0,reported,,0.0,,3.0,,,,4.0,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,422,target_available,
+sleep_efficiency_422,422,2021-05-05,2021-05-05 22:30:00,2021-05-05 05:30:00,7.0,7.0,79.0,reported,,0.0,0.0,0.0,,,,4.0,44,Male,,sleep_efficiency,Sleep_Efficiency.csv,423,target_available,
+sleep_efficiency_423,423,2021-07-11,2021-07-11 21:00:00,2021-07-11 04:00:00,7.0,7.0,80.0,reported,,25.0,1.0,0.0,,,,4.0,41,Female,,sleep_efficiency,Sleep_Efficiency.csv,424,target_available,
+sleep_efficiency_424,424,2021-10-17,2021-10-17 00:30:00,2021-10-17 08:00:00,7.5,7.5,55.00000000000001,reported,,50.0,4.0,1.0,,,,1.0,41,Female,,sleep_efficiency,Sleep_Efficiency.csv,425,target_available,
+sleep_efficiency_425,425,2021-04-24,2021-04-24 00:00:00,2021-04-24 08:00:00,8.0,8.0,85.0,reported,,0.0,4.0,2.0,,,,0.0,19,Male,,sleep_efficiency,Sleep_Efficiency.csv,426,target_available,
+sleep_efficiency_426,426,2021-10-31,2021-10-31 21:00:00,2021-10-31 03:00:00,6.0,6.0,88.0,reported,,50.0,0.0,1.0,,,,0.0,26,Female,,sleep_efficiency,Sleep_Efficiency.csv,427,target_available,
+sleep_efficiency_427,427,2021-05-12,2021-05-12 23:00:00,2021-05-12 06:00:00,7.0,7.0,88.0,reported,,75.0,,4.0,,,,1.0,26,Male,,sleep_efficiency,Sleep_Efficiency.csv,428,target_available,
+sleep_efficiency_428,428,2021-12-09,2021-12-09 23:00:00,2021-12-09 07:00:00,8.0,8.0,93.0,reported,,0.0,3.0,3.0,,,,0.0,54,Male,,sleep_efficiency,Sleep_Efficiency.csv,429,target_available,
+sleep_efficiency_429,429,2021-01-11,2021-01-11 01:00:00,2021-01-11 09:00:00,8.0,8.0,63.0,reported,,0.0,5.0,3.0,,,,2.0,23,Male,,sleep_efficiency,Sleep_Efficiency.csv,430,target_available,
+sleep_efficiency_430,430,2021-01-05,2021-01-05 22:30:00,2021-01-05 06:00:00,7.5,7.5,92.0,reported,,0.0,0.0,4.0,,,,1.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,431,target_available,
+sleep_efficiency_431,431,2021-06-30,2021-06-30 00:30:00,2021-06-30 06:30:00,6.0,6.0,80.0,reported,,50.0,0.0,1.0,,,,1.0,38,Female,,sleep_efficiency,Sleep_Efficiency.csv,432,target_available,
+sleep_efficiency_432,432,2021-10-20,2021-10-20 23:00:00,2021-10-20 06:00:00,7.0,7.0,92.0,reported,,50.0,1.0,3.0,,,,1.0,37,Female,,sleep_efficiency,Sleep_Efficiency.csv,433,target_available,
+sleep_efficiency_433,433,2021-04-27,2021-04-27 01:00:00,2021-04-27 09:00:00,8.0,8.0,77.0,reported,,0.0,3.0,3.0,,,,3.0,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,434,target_available,
+sleep_efficiency_434,434,2021-02-16,2021-02-16 21:00:00,2021-02-16 04:30:00,7.5,7.5,90.0,reported,,75.0,0.0,2.0,,,,0.0,29,Female,,sleep_efficiency,Sleep_Efficiency.csv,435,target_available,
+sleep_efficiency_435,435,2021-08-11,2021-08-11 23:00:00,2021-08-11 07:00:00,8.0,8.0,90.0,reported,,75.0,2.0,4.0,,,,,28,Female,,sleep_efficiency,Sleep_Efficiency.csv,436,target_available,
+sleep_efficiency_436,436,2021-02-12,2021-02-12 22:00:00,2021-02-12 05:00:00,7.0,7.0,96.0,reported,,0.0,0.0,3.0,,,,0.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,437,target_available,
+sleep_efficiency_437,437,2021-06-10,2021-06-10 21:30:00,2021-06-10 05:30:00,8.0,8.0,72.0,reported,,0.0,3.0,3.0,,,,2.0,59,Male,,sleep_efficiency,Sleep_Efficiency.csv,438,target_available,
+sleep_efficiency_438,438,2021-03-11,2021-03-11 01:00:00,2021-03-11 09:00:00,8.0,8.0,86.0,reported,,0.0,3.0,3.0,,,,0.0,56,Male,,sleep_efficiency,Sleep_Efficiency.csv,439,target_available,
+sleep_efficiency_439,439,2021-04-14,2021-04-14 01:30:00,2021-04-14 07:30:00,6.0,6.0,90.0,reported,,0.0,3.0,3.0,,,,1.0,55,Male,,sleep_efficiency,Sleep_Efficiency.csv,440,target_available,
+sleep_efficiency_440,440,2021-11-30,2021-11-30 23:00:00,2021-11-30 06:30:00,7.5,7.5,50.0,reported,,0.0,3.0,3.0,,,,4.0,25,Male,,sleep_efficiency,Sleep_Efficiency.csv,441,target_available,
+sleep_efficiency_441,441,2021-02-06,2021-02-06 21:00:00,2021-02-06 05:00:00,8.0,8.0,88.0,reported,,75.0,,2.0,,,,0.0,28,Female,,sleep_efficiency,Sleep_Efficiency.csv,442,target_available,
+sleep_efficiency_442,442,2021-03-30,2021-03-30 00:00:00,2021-03-30 09:00:00,9.0,9.0,60.0,reported,,0.0,3.0,0.0,,,,4.0,46,Male,,sleep_efficiency,Sleep_Efficiency.csv,443,target_available,
+sleep_efficiency_443,443,2021-02-06,2021-02-06 01:30:00,2021-02-06 08:30:00,7.0,7.0,68.0,reported,,,4.0,1.0,,,,1.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,444,target_available,
+sleep_efficiency_444,444,2021-09-05,2021-09-05 02:00:00,2021-09-05 09:30:00,7.5,7.5,67.0,reported,,50.0,2.0,0.0,,,,4.0,65,Female,,sleep_efficiency,Sleep_Efficiency.csv,445,target_available,
+sleep_efficiency_445,445,2021-05-07,2021-05-07 00:00:00,2021-05-07 07:30:00,7.5,7.5,57.99999999999999,reported,,0.0,2.0,0.0,,,,1.0,24,Male,,sleep_efficiency,Sleep_Efficiency.csv,446,target_available,
+sleep_efficiency_446,446,2021-11-16,2021-11-16 23:00:00,2021-11-16 06:30:00,7.5,7.5,53.0,reported,,50.0,2.0,1.0,,,,4.0,30,Female,,sleep_efficiency,Sleep_Efficiency.csv,447,target_available,
+sleep_efficiency_447,447,2021-04-21,2021-04-21 00:00:00,2021-04-21 07:00:00,7.0,7.0,50.0,reported,,0.0,4.0,,,,,2.0,23,Male,,sleep_efficiency,Sleep_Efficiency.csv,448,target_available,
+sleep_efficiency_448,448,2021-11-13,2021-11-13 22:00:00,2021-11-13 05:30:00,7.5,7.5,91.0,reported,,0.0,0.0,5.0,,,,0.0,27,Female,,sleep_efficiency,Sleep_Efficiency.csv,449,target_available,
+sleep_efficiency_449,449,2021-03-31,2021-03-31 21:00:00,2021-03-31 03:00:00,6.0,6.0,74.0,reported,,25.0,0.0,3.0,,,,4.0,52,Male,,sleep_efficiency,Sleep_Efficiency.csv,450,target_available,
+sleep_efficiency_450,450,2021-09-07,2021-09-07 23:00:00,2021-09-07 07:30:00,8.5,8.5,55.00000000000001,reported,,,3.0,0.0,,,,1.0,40,Female,,sleep_efficiency,Sleep_Efficiency.csv,451,target_available,
+sleep_efficiency_451,451,2021-07-29,2021-07-29 21:00:00,2021-07-29 04:00:00,7.0,7.0,76.0,reported,,0.0,0.0,3.0,,,,3.0,45,Male,,sleep_efficiency,Sleep_Efficiency.csv,452,target_available,
+sleep_efficiency_452,452,2021-03-17,2021-03-17 02:30:00,2021-03-17 10:00:00,7.5,7.5,63.0,reported,,50.0,0.0,1.0,,,,1.0,18,Male,,sleep_efficiency,Sleep_Efficiency.csv,453,target_available,
+sleep_health_1,1,,,,6.1,,,,6,,,,42,6,4200,,27,Male,Software Engineer,sleep_health_lifestyle,ss.csv,2,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_2,2,,,,6.2,,,,6,,,,60,8,10000,,28,Male,Doctor,sleep_health_lifestyle,ss.csv,3,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_3,3,,,,6.2,,,,6,,,,60,8,10000,,28,Male,Doctor,sleep_health_lifestyle,ss.csv,4,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_4,4,,,,5.9,,,,4,,,,30,8,3000,,28,Male,Sales Representative,sleep_health_lifestyle,ss.csv,5,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_5,5,,,,5.9,,,,4,,,,30,8,3000,,28,Male,Sales Representative,sleep_health_lifestyle,ss.csv,6,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_6,6,,,,5.9,,,,4,,,,30,8,3000,,28,Male,Software Engineer,sleep_health_lifestyle,ss.csv,7,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_7,7,,,,6.3,,,,6,,,,40,7,3500,,29,Male,Teacher,sleep_health_lifestyle,ss.csv,8,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_8,8,,,,7.8,,,,7,,,,75,6,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,9,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_9,9,,,,7.8,,,,7,,,,75,6,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,10,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_10,10,,,,7.8,,,,7,,,,75,6,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,11,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_11,11,,,,6.1,,,,6,,,,30,8,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,12,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_12,12,,,,7.8,,,,7,,,,75,6,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,13,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_13,13,,,,6.1,,,,6,,,,30,8,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,14,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_14,14,,,,6.0,,,,6,,,,30,8,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,15,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_15,15,,,,6.0,,,,6,,,,30,8,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,16,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_16,16,,,,6.0,,,,6,,,,30,8,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,17,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_17,17,,,,6.5,,,,5,,,,40,7,4000,,29,Female,Nurse,sleep_health_lifestyle,ss.csv,18,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_18,18,,,,6.0,,,,6,,,,30,8,8000,,29,Male,Doctor,sleep_health_lifestyle,ss.csv,19,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_19,19,,,,6.5,,,,5,,,,40,7,4000,,29,Female,Nurse,sleep_health_lifestyle,ss.csv,20,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_20,20,,,,7.6,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,21,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_21,21,,,,7.7,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,22,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_22,22,,,,7.7,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,23,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_23,23,,,,7.7,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,24,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_24,24,,,,7.7,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,25,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_25,25,,,,7.8,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,26,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_26,26,,,,7.9,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,27,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_27,27,,,,7.8,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,28,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_28,28,,,,7.9,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,29,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_29,29,,,,7.9,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,30,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_30,30,,,,7.9,,,,7,,,,75,6,8000,,30,Male,Doctor,sleep_health_lifestyle,ss.csv,31,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_31,31,,,,6.4,,,,5,,,,35,7,4100,,30,Female,Nurse,sleep_health_lifestyle,ss.csv,32,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_32,32,,,,6.4,,,,5,,,,35,7,4100,,30,Female,Nurse,sleep_health_lifestyle,ss.csv,33,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_33,33,,,,7.9,,,,8,,,,75,4,6800,,31,Female,Nurse,sleep_health_lifestyle,ss.csv,34,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_34,34,,,,6.1,,,,6,,,,30,8,5000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,35,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_35,35,,,,7.7,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,36,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_36,36,,,,6.1,,,,6,,,,30,8,5000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,37,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_37,37,,,,6.1,,,,6,,,,30,8,5000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,38,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_38,38,,,,7.6,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,39,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_39,39,,,,7.6,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,40,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_40,40,,,,7.6,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,41,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_41,41,,,,7.7,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,42,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_42,42,,,,7.7,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,43,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_43,43,,,,7.7,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,44,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_44,44,,,,7.8,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,45,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_45,45,,,,7.7,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,46,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_46,46,,,,7.8,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,47,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_47,47,,,,7.7,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,48,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_48,48,,,,7.8,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,49,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_49,49,,,,7.7,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,50,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_50,50,,,,7.7,,,,7,,,,75,6,8000,,31,Male,Doctor,sleep_health_lifestyle,ss.csv,51,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_51,51,,,,7.5,,,,8,,,,45,3,8000,,32,Male,Engineer,sleep_health_lifestyle,ss.csv,52,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_52,52,,,,7.5,,,,8,,,,45,3,8000,,32,Male,Engineer,sleep_health_lifestyle,ss.csv,53,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_53,53,,,,6.0,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,54,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_54,54,,,,7.6,,,,7,,,,75,6,8000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,55,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_55,55,,,,6.0,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,56,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_56,56,,,,6.0,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,57,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_57,57,,,,7.7,,,,7,,,,75,6,8000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,58,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_58,58,,,,6.0,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,59,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_59,59,,,,6.0,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,60,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_60,60,,,,7.7,,,,7,,,,75,6,8000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,61,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_61,61,,,,6.0,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,62,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_62,62,,,,6.0,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,63,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_63,63,,,,6.2,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,64,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_64,64,,,,6.2,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,65,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_65,65,,,,6.2,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,66,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_66,66,,,,6.2,,,,6,,,,30,8,5000,,32,Male,Doctor,sleep_health_lifestyle,ss.csv,67,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_67,67,,,,7.2,,,,8,,,,50,6,7000,,32,Male,Accountant,sleep_health_lifestyle,ss.csv,68,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_68,68,,,,6.0,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,69,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_69,69,,,,6.2,,,,6,,,,50,6,5500,,33,Female,Scientist,sleep_health_lifestyle,ss.csv,70,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_70,70,,,,6.2,,,,6,,,,50,6,5500,,33,Female,Scientist,sleep_health_lifestyle,ss.csv,71,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_71,71,,,,6.1,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,72,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_72,72,,,,6.1,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,73,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_73,73,,,,6.1,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,74,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_74,74,,,,6.1,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,75,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_75,75,,,,6.0,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,76,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_76,76,,,,6.0,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,77,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_77,77,,,,6.0,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,78,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_78,78,,,,6.0,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,79,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_79,79,,,,6.0,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,80,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_80,80,,,,6.0,,,,6,,,,30,8,5000,,33,Male,Doctor,sleep_health_lifestyle,ss.csv,81,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_81,81,,,,5.8,,,,4,,,,32,8,5200,,34,Female,Scientist,sleep_health_lifestyle,ss.csv,82,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_82,82,,,,5.8,,,,4,,,,32,8,5200,,34,Female,Scientist,sleep_health_lifestyle,ss.csv,83,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_83,83,,,,6.7,,,,7,,,,40,5,5600,,35,Male,Teacher,sleep_health_lifestyle,ss.csv,84,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_84,84,,,,6.7,,,,7,,,,40,5,5600,,35,Male,Teacher,sleep_health_lifestyle,ss.csv,85,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_85,85,,,,7.5,,,,8,,,,60,5,8000,,35,Male,Software Engineer,sleep_health_lifestyle,ss.csv,86,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_86,86,,,,7.2,,,,8,,,,60,4,7000,,35,Female,Accountant,sleep_health_lifestyle,ss.csv,87,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_87,87,,,,7.2,,,,8,,,,60,4,5000,,35,Male,Engineer,sleep_health_lifestyle,ss.csv,88,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_88,88,,,,7.2,,,,8,,,,60,4,5000,,35,Male,Engineer,sleep_health_lifestyle,ss.csv,89,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_89,89,,,,7.3,,,,8,,,,60,4,5000,,35,Male,Engineer,sleep_health_lifestyle,ss.csv,90,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_90,90,,,,7.3,,,,8,,,,60,4,5000,,35,Male,Engineer,sleep_health_lifestyle,ss.csv,91,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_91,91,,,,7.3,,,,8,,,,60,4,5000,,35,Male,Engineer,sleep_health_lifestyle,ss.csv,92,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_92,92,,,,7.3,,,,8,,,,60,4,5000,,35,Male,Engineer,sleep_health_lifestyle,ss.csv,93,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_93,93,,,,7.5,,,,8,,,,60,5,8000,,35,Male,Software Engineer,sleep_health_lifestyle,ss.csv,94,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_94,94,,,,7.4,,,,7,,,,60,5,3300,,35,Male,Lawyer,sleep_health_lifestyle,ss.csv,95,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_95,95,,,,7.2,,,,8,,,,60,4,7000,,36,Female,Accountant,sleep_health_lifestyle,ss.csv,96,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_96,96,,,,7.1,,,,8,,,,60,4,7000,,36,Female,Accountant,sleep_health_lifestyle,ss.csv,97,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_97,97,,,,7.2,,,,8,,,,60,4,7000,,36,Female,Accountant,sleep_health_lifestyle,ss.csv,98,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_98,98,,,,7.1,,,,8,,,,60,4,7000,,36,Female,Accountant,sleep_health_lifestyle,ss.csv,99,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_99,99,,,,7.1,,,,8,,,,60,4,7000,,36,Female,Teacher,sleep_health_lifestyle,ss.csv,100,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_100,100,,,,7.1,,,,8,,,,60,4,7000,,36,Female,Teacher,sleep_health_lifestyle,ss.csv,101,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_101,101,,,,7.2,,,,8,,,,60,4,7000,,36,Female,Teacher,sleep_health_lifestyle,ss.csv,102,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_102,102,,,,7.2,,,,8,,,,60,4,7000,,36,Female,Teacher,sleep_health_lifestyle,ss.csv,103,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_103,103,,,,7.2,,,,8,,,,60,4,7000,,36,Female,Teacher,sleep_health_lifestyle,ss.csv,104,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_104,104,,,,6.6,,,,5,,,,35,7,4800,,36,Male,Teacher,sleep_health_lifestyle,ss.csv,105,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_105,105,,,,7.2,,,,8,,,,60,4,7000,,36,Female,Teacher,sleep_health_lifestyle,ss.csv,106,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_106,106,,,,6.6,,,,5,,,,35,7,4800,,36,Male,Teacher,sleep_health_lifestyle,ss.csv,107,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_107,107,,,,6.1,,,,6,,,,42,6,4200,,37,Female,Nurse,sleep_health_lifestyle,ss.csv,108,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_108,108,,,,7.8,,,,8,,,,70,4,7000,,37,Male,Engineer,sleep_health_lifestyle,ss.csv,109,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_109,109,,,,7.8,,,,8,,,,70,4,7000,,37,Male,Engineer,sleep_health_lifestyle,ss.csv,110,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_110,110,,,,7.4,,,,8,,,,60,5,8000,,37,Male,Lawyer,sleep_health_lifestyle,ss.csv,111,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_111,111,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,112,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_112,112,,,,7.4,,,,8,,,,60,5,8000,,37,Male,Lawyer,sleep_health_lifestyle,ss.csv,113,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_113,113,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,114,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_114,114,,,,7.4,,,,8,,,,60,5,8000,,37,Male,Lawyer,sleep_health_lifestyle,ss.csv,115,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_115,115,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,116,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_116,116,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,117,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_117,117,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,118,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_118,118,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,119,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_119,119,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,120,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_120,120,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,121,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_121,121,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,122,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_122,122,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,123,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_123,123,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,124,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_124,124,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,125,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_125,125,,,,7.2,,,,8,,,,60,4,7000,,37,Female,Accountant,sleep_health_lifestyle,ss.csv,126,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_126,126,,,,7.5,,,,8,,,,60,4,8000,,37,Female,Nurse,sleep_health_lifestyle,ss.csv,127,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_127,127,,,,7.3,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,128,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_128,128,,,,7.1,,,,8,,,,60,4,7000,,38,Female,Accountant,sleep_health_lifestyle,ss.csv,129,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_129,129,,,,7.3,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,130,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_130,130,,,,7.3,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,131,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_131,131,,,,7.1,,,,8,,,,60,4,7000,,38,Female,Accountant,sleep_health_lifestyle,ss.csv,132,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_132,132,,,,7.3,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,133,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_133,133,,,,7.3,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,134,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_134,134,,,,7.1,,,,8,,,,60,4,7000,,38,Female,Accountant,sleep_health_lifestyle,ss.csv,135,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_135,135,,,,7.3,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,136,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_136,136,,,,7.3,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,137,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_137,137,,,,7.1,,,,8,,,,60,4,7000,,38,Female,Accountant,sleep_health_lifestyle,ss.csv,138,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_138,138,,,,7.1,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,139,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_139,139,,,,7.1,,,,8,,,,60,4,7000,,38,Female,Accountant,sleep_health_lifestyle,ss.csv,140,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_140,140,,,,7.1,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,141,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_141,141,,,,7.1,,,,8,,,,60,4,7000,,38,Female,Accountant,sleep_health_lifestyle,ss.csv,142,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_142,142,,,,7.1,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,143,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_143,143,,,,7.1,,,,8,,,,60,4,7000,,38,Female,Accountant,sleep_health_lifestyle,ss.csv,144,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_144,144,,,,7.1,,,,8,,,,60,4,7000,,38,Female,Accountant,sleep_health_lifestyle,ss.csv,145,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_145,145,,,,7.1,,,,8,,,,60,5,8000,,38,Male,Lawyer,sleep_health_lifestyle,ss.csv,146,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_146,146,,,,7.4,,,,7,,,,60,5,3300,,38,Female,Lawyer,sleep_health_lifestyle,ss.csv,147,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_147,147,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,148,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_148,148,,,,6.5,,,,5,,,,40,7,4000,,39,Male,Engineer,sleep_health_lifestyle,ss.csv,149,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_149,149,,,,6.9,,,,7,,,,50,6,5500,,39,Female,Lawyer,sleep_health_lifestyle,ss.csv,150,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_150,150,,,,8.0,,,,9,,,,80,3,7500,,39,Female,Accountant,sleep_health_lifestyle,ss.csv,151,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_151,151,,,,8.0,,,,9,,,,80,3,7500,,39,Female,Accountant,sleep_health_lifestyle,ss.csv,152,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_152,152,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,153,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_153,153,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,154,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_154,154,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,155,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_155,155,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,156,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_156,156,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,157,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_157,157,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,158,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_158,158,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,159,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_159,159,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,160,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_160,160,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,161,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_161,161,,,,7.2,,,,8,,,,60,5,8000,,39,Male,Lawyer,sleep_health_lifestyle,ss.csv,162,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_162,162,,,,7.2,,,,8,,,,55,6,7300,,40,Female,Accountant,sleep_health_lifestyle,ss.csv,163,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_163,163,,,,7.2,,,,8,,,,55,6,7300,,40,Female,Accountant,sleep_health_lifestyle,ss.csv,164,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_164,164,,,,7.9,,,,8,,,,90,5,8000,,40,Male,Lawyer,sleep_health_lifestyle,ss.csv,165,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_165,165,,,,7.9,,,,8,,,,90,5,8000,,40,Male,Lawyer,sleep_health_lifestyle,ss.csv,166,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_166,166,,,,7.6,,,,8,,,,90,5,8000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,167,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_167,167,,,,7.3,,,,8,,,,70,6,6200,,41,Male,Engineer,sleep_health_lifestyle,ss.csv,168,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_168,168,,,,7.1,,,,7,,,,55,6,6000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,169,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_169,169,,,,7.1,,,,7,,,,55,6,6000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,170,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_170,170,,,,7.7,,,,8,,,,90,5,8000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,171,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_171,171,,,,7.7,,,,8,,,,90,5,8000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,172,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_172,172,,,,7.7,,,,8,,,,90,5,8000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,173,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_173,173,,,,7.7,,,,8,,,,90,5,8000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,174,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_174,174,,,,7.7,,,,8,,,,90,5,8000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,175,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_175,175,,,,7.6,,,,8,,,,90,5,8000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,176,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_176,176,,,,7.6,,,,8,,,,90,5,8000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,177,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_177,177,,,,7.6,,,,8,,,,90,5,8000,,41,Male,Lawyer,sleep_health_lifestyle,ss.csv,178,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_178,178,,,,6.5,,,,6,,,,45,7,6000,,42,Male,Salesperson,sleep_health_lifestyle,ss.csv,179,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_179,179,,,,7.8,,,,8,,,,90,5,8000,,42,Male,Lawyer,sleep_health_lifestyle,ss.csv,180,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_180,180,,,,7.8,,,,8,,,,90,5,8000,,42,Male,Lawyer,sleep_health_lifestyle,ss.csv,181,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_181,181,,,,7.8,,,,8,,,,90,5,8000,,42,Male,Lawyer,sleep_health_lifestyle,ss.csv,182,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_182,182,,,,7.8,,,,8,,,,90,5,8000,,42,Male,Lawyer,sleep_health_lifestyle,ss.csv,183,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_183,183,,,,7.8,,,,8,,,,90,5,8000,,42,Male,Lawyer,sleep_health_lifestyle,ss.csv,184,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_184,184,,,,7.8,,,,8,,,,90,5,8000,,42,Male,Lawyer,sleep_health_lifestyle,ss.csv,185,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_185,185,,,,6.8,,,,6,,,,45,7,5000,,42,Female,Teacher,sleep_health_lifestyle,ss.csv,186,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_186,186,,,,6.8,,,,6,,,,45,7,5000,,42,Female,Teacher,sleep_health_lifestyle,ss.csv,187,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_187,187,,,,6.7,,,,7,,,,45,4,6000,,43,Female,Teacher,sleep_health_lifestyle,ss.csv,188,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_188,188,,,,6.3,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,189,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_189,189,,,,6.7,,,,7,,,,45,4,6000,,43,Female,Teacher,sleep_health_lifestyle,ss.csv,190,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_190,190,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,191,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_191,191,,,,6.7,,,,7,,,,45,4,6000,,43,Female,Teacher,sleep_health_lifestyle,ss.csv,192,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_192,192,,,,6.4,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,193,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_193,193,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,194,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_194,194,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,195,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_195,195,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,196,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_196,196,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,197,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_197,197,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,198,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_198,198,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,199,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_199,199,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,200,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_200,200,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,201,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_201,201,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,202,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_202,202,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,203,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_203,203,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,204,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_204,204,,,,6.9,,,,6,,,,47,7,6800,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,205,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_205,205,,,,7.6,,,,8,,,,75,4,6800,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,206,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_206,206,,,,7.7,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,207,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_207,207,,,,7.7,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,208,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_208,208,,,,7.7,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,209,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_209,209,,,,7.7,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,210,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_210,210,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,211,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_211,211,,,,7.7,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,212,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_212,212,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,213,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_213,213,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,214,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_214,214,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,215,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_215,215,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,216,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_216,216,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,217,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_217,217,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,218,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_218,218,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,219,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_219,219,,,,7.8,,,,8,,,,90,5,8000,,43,Male,Engineer,sleep_health_lifestyle,ss.csv,220,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_220,220,,,,6.5,,,,6,,,,45,7,6000,,43,Male,Salesperson,sleep_health_lifestyle,ss.csv,221,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_221,221,,,,6.6,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,222,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_222,222,,,,6.4,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,223,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_223,223,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,224,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_224,224,,,,6.4,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,225,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_225,225,,,,6.6,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,226,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_226,226,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,227,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_227,227,,,,6.6,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,228,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_228,228,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,229,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_229,229,,,,6.6,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,230,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_230,230,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,231,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_231,231,,,,6.6,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,232,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_232,232,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,233,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_233,233,,,,6.6,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,234,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_234,234,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,235,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_235,235,,,,6.6,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,236,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_236,236,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,237,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_237,237,,,,6.4,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,238,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_238,238,,,,6.5,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,239,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_239,239,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,240,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_240,240,,,,6.4,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,241,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_241,241,,,,6.5,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,242,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_242,242,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,243,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_243,243,,,,6.4,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,244,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_244,244,,,,6.5,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,245,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_245,245,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,246,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_246,246,,,,6.5,,,,7,,,,45,4,6000,,44,Female,Teacher,sleep_health_lifestyle,ss.csv,247,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_247,247,,,,6.3,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,248,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_248,248,,,,6.8,,,,7,,,,45,7,5000,,44,Male,Engineer,sleep_health_lifestyle,ss.csv,249,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_249,249,,,,6.4,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,250,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_250,250,,,,6.5,,,,6,,,,45,7,6000,,44,Male,Salesperson,sleep_health_lifestyle,ss.csv,251,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_251,251,,,,6.8,,,,7,,,,30,6,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,252,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_252,252,,,,6.8,,,,7,,,,30,6,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,253,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_253,253,,,,6.5,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,254,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_254,254,,,,6.5,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,255,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_255,255,,,,6.5,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,256,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_256,256,,,,6.5,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,257,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_257,257,,,,6.6,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,258,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_258,258,,,,6.6,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,259,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_259,259,,,,6.6,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,260,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_260,260,,,,6.6,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,261,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_261,261,,,,6.6,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,262,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_262,262,,,,6.6,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,263,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_263,263,,,,6.6,,,,7,,,,45,4,6000,,45,Female,Teacher,sleep_health_lifestyle,ss.csv,264,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_264,264,,,,6.9,,,,7,,,,55,5,5500,,45,Female,Manager,sleep_health_lifestyle,ss.csv,265,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_265,265,,,,7.3,,,,7,,,,65,5,3500,,48,Male,Doctor,sleep_health_lifestyle,ss.csv,266,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_266,266,,,,5.9,,,,6,,,,90,8,10000,,48,Female,Nurse,sleep_health_lifestyle,ss.csv,267,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_267,267,,,,7.3,,,,7,,,,65,5,3500,,48,Male,Doctor,sleep_health_lifestyle,ss.csv,268,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_268,268,,,,6.2,,,,6,,,,90,8,10000,,49,Female,Nurse,sleep_health_lifestyle,ss.csv,269,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_269,269,,,,6.0,,,,6,,,,90,8,10000,,49,Female,Nurse,sleep_health_lifestyle,ss.csv,270,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_270,270,,,,6.1,,,,6,,,,90,8,10000,,49,Female,Nurse,sleep_health_lifestyle,ss.csv,271,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_271,271,,,,6.1,,,,6,,,,90,8,10000,,49,Female,Nurse,sleep_health_lifestyle,ss.csv,272,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_272,272,,,,6.1,,,,6,,,,90,8,10000,,49,Female,Nurse,sleep_health_lifestyle,ss.csv,273,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_273,273,,,,6.1,,,,6,,,,90,8,10000,,49,Female,Nurse,sleep_health_lifestyle,ss.csv,274,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_274,274,,,,6.2,,,,6,,,,90,8,10000,,49,Female,Nurse,sleep_health_lifestyle,ss.csv,275,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_275,275,,,,6.2,,,,6,,,,90,8,10000,,49,Female,Nurse,sleep_health_lifestyle,ss.csv,276,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_276,276,,,,6.2,,,,6,,,,90,8,10000,,49,Female,Nurse,sleep_health_lifestyle,ss.csv,277,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_277,277,,,,8.1,,,,9,,,,85,3,3700,,49,Male,Doctor,sleep_health_lifestyle,ss.csv,278,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_278,278,,,,8.1,,,,9,,,,85,3,3700,,49,Male,Doctor,sleep_health_lifestyle,ss.csv,279,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_279,279,,,,6.1,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,280,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_280,280,,,,8.3,,,,9,,,,30,3,5000,,50,Female,Engineer,sleep_health_lifestyle,ss.csv,281,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_281,281,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,282,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_282,282,,,,6.1,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,283,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_283,283,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,284,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_284,284,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,285,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_285,285,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,286,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_286,286,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,287,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_287,287,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,288,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_288,288,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,289,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_289,289,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,290,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_290,290,,,,6.1,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,291,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_291,291,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,292,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_292,292,,,,6.1,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,293,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_293,293,,,,6.1,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,294,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_294,294,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,295,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_295,295,,,,6.1,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,296,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_296,296,,,,6.0,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,297,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_297,297,,,,6.1,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,298,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_298,298,,,,6.1,,,,6,,,,90,8,10000,,50,Female,Nurse,sleep_health_lifestyle,ss.csv,299,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_299,299,,,,8.5,,,,9,,,,30,3,5000,,51,Female,Engineer,sleep_health_lifestyle,ss.csv,300,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_300,300,,,,8.5,,,,9,,,,30,3,5000,,51,Female,Engineer,sleep_health_lifestyle,ss.csv,301,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_301,301,,,,8.5,,,,9,,,,30,3,5000,,51,Female,Engineer,sleep_health_lifestyle,ss.csv,302,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_302,302,,,,8.5,,,,9,,,,30,3,5000,,51,Female,Engineer,sleep_health_lifestyle,ss.csv,303,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_303,303,,,,7.1,,,,7,,,,55,6,6000,,51,Female,Nurse,sleep_health_lifestyle,ss.csv,304,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_304,304,,,,6.0,,,,6,,,,90,8,10000,,51,Female,Nurse,sleep_health_lifestyle,ss.csv,305,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_305,305,,,,6.1,,,,6,,,,90,8,10000,,51,Female,Nurse,sleep_health_lifestyle,ss.csv,306,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_306,306,,,,6.1,,,,6,,,,90,8,10000,,51,Female,Nurse,sleep_health_lifestyle,ss.csv,307,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_307,307,,,,6.5,,,,7,,,,45,7,6000,,52,Female,Accountant,sleep_health_lifestyle,ss.csv,308,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_308,308,,,,6.5,,,,7,,,,45,7,6000,,52,Female,Accountant,sleep_health_lifestyle,ss.csv,309,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_309,309,,,,6.6,,,,7,,,,45,7,6000,,52,Female,Accountant,sleep_health_lifestyle,ss.csv,310,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_310,310,,,,6.6,,,,7,,,,45,7,6000,,52,Female,Accountant,sleep_health_lifestyle,ss.csv,311,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_311,311,,,,6.6,,,,7,,,,45,7,6000,,52,Female,Accountant,sleep_health_lifestyle,ss.csv,312,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_312,312,,,,6.6,,,,7,,,,45,7,6000,,52,Female,Accountant,sleep_health_lifestyle,ss.csv,313,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_313,313,,,,8.4,,,,9,,,,30,3,5000,,52,Female,Engineer,sleep_health_lifestyle,ss.csv,314,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_314,314,,,,8.4,,,,9,,,,30,3,5000,,52,Female,Engineer,sleep_health_lifestyle,ss.csv,315,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_315,315,,,,8.4,,,,9,,,,30,3,5000,,52,Female,Engineer,sleep_health_lifestyle,ss.csv,316,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_316,316,,,,8.3,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,317,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_317,317,,,,8.5,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,318,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_318,318,,,,8.5,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,319,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_319,319,,,,8.4,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,320,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_320,320,,,,8.4,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,321,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_321,321,,,,8.5,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,322,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_322,322,,,,8.4,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,323,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_323,323,,,,8.4,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,324,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_324,324,,,,8.5,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,325,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_325,325,,,,8.3,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,326,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_326,326,,,,8.5,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,327,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_327,327,,,,8.3,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,328,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_328,328,,,,8.5,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,329,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_329,329,,,,8.3,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,330,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_330,330,,,,8.5,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,331,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_331,331,,,,8.5,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,332,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_332,332,,,,8.4,,,,9,,,,30,3,5000,,53,Female,Engineer,sleep_health_lifestyle,ss.csv,333,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_333,333,,,,8.4,,,,9,,,,30,3,5000,,54,Female,Engineer,sleep_health_lifestyle,ss.csv,334,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_334,334,,,,8.4,,,,9,,,,30,3,5000,,54,Female,Engineer,sleep_health_lifestyle,ss.csv,335,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_335,335,,,,8.4,,,,9,,,,30,3,5000,,54,Female,Engineer,sleep_health_lifestyle,ss.csv,336,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_336,336,,,,8.4,,,,9,,,,30,3,5000,,54,Female,Engineer,sleep_health_lifestyle,ss.csv,337,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_337,337,,,,8.4,,,,9,,,,30,3,5000,,54,Female,Engineer,sleep_health_lifestyle,ss.csv,338,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_338,338,,,,8.4,,,,9,,,,30,3,5000,,54,Female,Engineer,sleep_health_lifestyle,ss.csv,339,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_339,339,,,,8.5,,,,9,,,,30,3,5000,,54,Female,Engineer,sleep_health_lifestyle,ss.csv,340,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_340,340,,,,8.1,,,,9,,,,75,4,5000,,55,Female,Nurse,sleep_health_lifestyle,ss.csv,341,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_341,341,,,,8.1,,,,9,,,,75,4,5000,,55,Female,Nurse,sleep_health_lifestyle,ss.csv,342,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_342,342,,,,8.2,,,,9,,,,90,3,10000,,56,Female,Doctor,sleep_health_lifestyle,ss.csv,343,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_343,343,,,,8.2,,,,9,,,,90,3,10000,,56,Female,Doctor,sleep_health_lifestyle,ss.csv,344,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_344,344,,,,8.1,,,,9,,,,75,3,7000,,57,Female,Nurse,sleep_health_lifestyle,ss.csv,345,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_345,345,,,,8.2,,,,9,,,,75,3,7000,,57,Female,Nurse,sleep_health_lifestyle,ss.csv,346,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_346,346,,,,8.2,,,,9,,,,75,3,7000,,57,Female,Nurse,sleep_health_lifestyle,ss.csv,347,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_347,347,,,,8.2,,,,9,,,,75,3,7000,,57,Female,Nurse,sleep_health_lifestyle,ss.csv,348,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_348,348,,,,8.2,,,,9,,,,75,3,7000,,57,Female,Nurse,sleep_health_lifestyle,ss.csv,349,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_349,349,,,,8.2,,,,9,,,,75,3,7000,,57,Female,Nurse,sleep_health_lifestyle,ss.csv,350,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_350,350,,,,8.1,,,,9,,,,75,3,7000,,57,Female,Nurse,sleep_health_lifestyle,ss.csv,351,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_351,351,,,,8.1,,,,9,,,,75,3,7000,,57,Female,Nurse,sleep_health_lifestyle,ss.csv,352,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_352,352,,,,8.1,,,,9,,,,75,3,7000,,57,Female,Nurse,sleep_health_lifestyle,ss.csv,353,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_353,353,,,,8.0,,,,9,,,,75,3,7000,,58,Female,Nurse,sleep_health_lifestyle,ss.csv,354,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_354,354,,,,8.0,,,,9,,,,75,3,7000,,58,Female,Nurse,sleep_health_lifestyle,ss.csv,355,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_355,355,,,,8.0,,,,9,,,,75,3,7000,,58,Female,Nurse,sleep_health_lifestyle,ss.csv,356,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_356,356,,,,8.0,,,,9,,,,75,3,7000,,58,Female,Nurse,sleep_health_lifestyle,ss.csv,357,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_357,357,,,,8.0,,,,9,,,,75,3,7000,,58,Female,Nurse,sleep_health_lifestyle,ss.csv,358,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_358,358,,,,8.0,,,,9,,,,75,3,7000,,58,Female,Nurse,sleep_health_lifestyle,ss.csv,359,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_359,359,,,,8.0,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,360,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_360,360,,,,8.1,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,361,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_361,361,,,,8.2,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,362,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_362,362,,,,8.2,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,363,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_363,363,,,,8.2,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,364,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_364,364,,,,8.2,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,365,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_365,365,,,,8.0,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,366,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_366,366,,,,8.0,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,367,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_367,367,,,,8.1,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,368,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_368,368,,,,8.0,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,369,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_369,369,,,,8.1,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,370,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_370,370,,,,8.1,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,371,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_371,371,,,,8.0,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,372,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_372,372,,,,8.1,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,373,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts
+sleep_health_373,373,,,,8.1,,,,9,,,,75,3,7000,,59,Female,Nurse,sleep_health_lifestyle,ss.csv,374,no_sleep_efficiency_target,no_observation_date;not_joined_to_other_cohorts

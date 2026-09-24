@@ -1,0 +1,184 @@
+\\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+
+\\usepackage[T1]{fontenc}
+\\usepackage{graphicx}
+\\usepackage{booktabs}
+\\usepackage{multirow}
+\\usepackage{amsmath}
+\\usepackage{siunitx}
+\\usepackage{url}
+
+\\jyear{2026}
+
+\\begin{document}
+
+\\title[Explainable Machine Learning for Lifestyle-Based Sleep Efficiency Prediction Using Behavioral and Screen Inactivity Signals]{Explainable Machine Learning for Lifestyle-Based Sleep Efficiency Prediction Using Behavioral and Screen Inactivity Signals}
+
+\\author*[1]{\\fnm{Reno} \\sur{Chacko}}\\email{reno@example.com}
+\\author[1]{\\fnm{Guide Name} \\sur{Surname}}\\email{guide@example.com}
+
+\\affil[1]{\\orgdiv{Department of Computer Science}, \\orgname{Your College Name}, \\orgaddress{\\city{Your City}, \\country{India}}}
+
+\\abstract{Sleep efficiency is a major digital-health indicator, but many systems depend on intrusive physiological sensing such as EEG, ECG, or wearable streams. This work proposes a fully behavioral and interpretable framework for sleep efficiency prediction using only lifestyle inputs and screen inactivity patterns. We implement an end-to-end production pipeline with a FastAPI backend, web and Android clients, database logging, and explainability services. Three models are evaluated: Random Forest, XGBoost, and a hybrid model that fuses tabular lifestyle features with time-series screen activity features. The system estimates probable sleep onset from prolonged night-time inactivity and derives behavior-aware recommendations from model attributions. On the processed sleep lifestyle dataset, Random Forest achieves accuracy 0.960 and ROC-AUC 0.987, XGBoost reaches accuracy 0.947 and ROC-AUC 0.971, and the hybrid model achieves accuracy 0.920 with ROC-AUC 0.982. For regression of sleep efficiency percentage, Random Forest provides the best MAE/RMSE of 2.64/3.61 and $R^2=0.933$. The proposed framework demonstrates that non-invasive lifestyle and device-use signals can support clinically meaningful sleep-quality stratification while preserving interpretability and deployability.}
+
+\\keywords{Sleep efficiency, Interpretable machine learning, XGBoost, Random Forest, Hybrid model, Screen inactivity, SHAP, Digital phenotyping}
+
+\\maketitle
+
+\\section{Introduction}
+Sleep quality affects cognition, emotional stability, cardiometabolic risk, and productivity. Existing sleep assessment approaches often require polysomnography or wearables, which increase cost and reduce long-term adherence. This paper addresses a practical gap: can we predict sleep efficiency reliably from lifestyle and phone behavior alone, with explanations that users can act on.
+
+We present an interpretable AI system that predicts both (i) sleep efficiency percentage and (ii) binary sleep quality (Good/Poor), using non-invasive daily factors such as caffeine timing, alcohol intake, stress, mood, physical activity, naps, prior sleep history, and inferred sleep onset from device inactivity. The system is implemented as a deployable full-stack application suitable for real-world student-scale deployment.
+
+\\section{Motivation and Objectives}
+The project is motivated by three constraints in real-world sleep analytics:
+\\begin{enumerate}
+    \\item Many models are accurate but not interpretable for end users.
+    \\item Wearable-dependent systems reduce accessibility and continuity.
+    \\item Behavioral signals are abundant but underused in actionable recommendation pipelines.
+\\end{enumerate}
+
+The objectives are:
+\\begin{itemize}
+    \\item Build a complete production-ready prediction platform (frontend, backend, database, ML services).
+    \\item Train and compare at least three models including a tabular-time-series hybrid.
+    \\item Add explainability (global feature importance + local SHAP) and recommendation generation.
+    \\item Maintain compatibility with modern Python/Node tooling and Android integration.
+\\end{itemize}
+
+\\section{Related Work}
+Recent literature in digital sleep phenotyping shows strong correlation between lifestyle factors and sleep outcomes. Tree-based models are widely adopted for tabular health data due to robustness and feature interpretability, while sequence models better capture temporal dynamics from interaction traces. However, many studies either remain offline or omit end-to-end deployment and human-readable explanations. This work contributes an integrated deployed framework where behavioral features, time-series inactivity signals, and model explanations operate together at inference time.
+
+\\section{System Architecture}
+The implemented architecture consists of four layers:
+\\begin{enumerate}
+    \\item \\textbf{Data capture layer}: lifestyle inputs and 5-minute binned screen activity.
+    \\item \\textbf{Inference layer}: Random Forest, XGBoost, and hybrid model inference services.
+    \\item \\textbf{Explainability layer}: feature importance and SHAP-based local attributions.
+    \\item \\textbf{Application layer}: REST APIs, dashboard, recommendation and history modules.
+\\end{enumerate}
+
+\\subsection{Technology Stack}
+\\begin{itemize}
+    \\item Backend/API: Python, FastAPI, SQLAlchemy, Alembic
+    \\item ML: scikit-learn, XGBoost, PyTorch, SHAP
+    \\item Frontend: Next.js/TypeScript and Android client (Kotlin + Jetpack Compose)
+    \\item Storage: SQLite (switchable to PostgreSQL)
+\\end{itemize}
+
+\\section{Data and Feature Engineering}
+\\subsection{Input Variables}
+The model uses only non-physiological inputs: evening caffeine, alcohol units, dinner time, stress level, mood score, physical activity, naps, previous sleep hours, work duration, hydration, bedtime consistency, and device-use behavior.
+
+\\subsection{Screen-Inactivity-Based Sleep Inference}
+Let $u_t$ be activity counts in fixed bins. We detect candidate sleep onset as the first night-time window where inactivity duration exceeds threshold $\\tau$ (default 30 minutes):
+\\begin{equation}
+\hat{t}_{sleep} = \arg\min_t \{t \in [20{:}00, 03{:}00] : \sum_{k=t}^{t+W} \mathbb{1}(u_k=0) \ge \tau\}.
+\\end{equation}
+Derived features include longest evening inactivity, night activity bursts, inferred sleep start hour, and blue-light exposure in the pre-sleep window.
+
+\\subsection{Engineered Features}
+In addition to raw variables, the system computes cross-features such as dinner-to-sleep gap, caffeine-stress interaction, activity-stress balance, and nap-sleep debt proxy. These improve behavioral context and model separability.
+
+\\section{Modeling Methodology}
+\\subsection{Task Formulation}
+\\begin{itemize}
+    \\item Regression target: sleep efficiency percentage $y \in [0,100]$.
+    \\item Classification target: sleep quality label $q \in \{0,1\}$ where thresholding is applied on efficiency score.
+\\end{itemize}
+
+\\subsection{Models}
+\\textbf{Model 1: Random Forest Regressor + quality thresholding}\\
+Ensemble bagging captures nonlinear interactions in tabular lifestyle features and provides stable feature importance.
+
+\\textbf{Model 2: XGBoost Regressor + quality thresholding}\\
+Gradient-boosted trees model complex interactions with regularization and strong generalization on structured data.
+
+\\textbf{Model 3: Hybrid Tabular + Time-Series Network}\\
+A 1D-CNN encodes sequential screen activity bins. Its embedding is concatenated with tabular embeddings and passed through dense layers to predict efficiency. This model explicitly fuses behavioral temporal signals with lifestyle context.
+
+\\subsection{Training Pipeline}
+\\begin{enumerate}
+    \\item Data cleaning and preprocessing
+    \\item Train/validation/test split
+    \\item Hyperparameter tuning for RF and XGBoost
+    \\item Hybrid training with early stopping
+    \\item Unified evaluation and model artifact export
+\\end{enumerate}
+
+\\section{Evaluation Metrics}
+For classification, we use Accuracy, Precision, Recall, F1-score, and ROC-AUC:
+\\begin{equation}
+F1 = \frac{2 \cdot Precision \cdot Recall}{Precision + Recall}.
+\\end{equation}
+For regression, we report MAE, RMSE, and $R^2$:
+\\begin{equation}
+RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}.
+\\end{equation}
+
+\\section{Experimental Results}
+Table~\\ref{tab:results} summarizes the measured performance from the implemented training pipeline.
+
+\\begin{table}[h]
+\\centering
+\\caption{Model performance comparison on the processed dataset.}
+\\label{tab:results}
+\\begin{tabular}{lcccccccc}
+\\toprule
+Model & Acc. & Prec. & Recall & F1 & ROC-AUC & MAE & RMSE & $R^2$ \\
+\\midrule
+Random Forest & 0.960 & 0.933 & 0.875 & 0.903 & 0.987 & 2.64 & 3.61 & 0.933 \\
+XGBoost & 0.947 & 0.875 & 0.875 & 0.875 & 0.971 & 3.07 & 4.25 & 0.907 \\
+Hybrid (CNN+Tabular) & 0.920 & 0.813 & 0.813 & 0.813 & 0.982 & 4.98 & 6.17 & 0.804 \\
+\\bottomrule
+\\end{tabular}
+\\end{table}
+
+The Random Forest model performs best overall for this dataset, while the hybrid model achieves competitive ROC-AUC and captures temporal behavior signals that are not represented in static inputs.
+
+\\section{Interpretability and Recommendation Layer}
+Global importance analysis identifies stress level, prior sleep duration, blue-light exposure, and late-night activity bursts as major drivers. Local SHAP explanations are converted into plain-language narratives and personalized suggestions (for example, reducing late-night checks, advancing dinner timing, and managing evening caffeine).
+
+This design allows users to understand not just the predicted label, but \\emph{why} it was predicted and \\emph{what to do next}.
+
+\\section{Discussion}
+The results indicate that interpretable behavioral modeling can provide high-quality sleep predictions without physiological sensors. The framework is practical for daily use because inputs are familiar to users and can be partially auto-collected from device usage. Compared to purely deep sequence baselines, tree-based ensembles remain highly competitive on medium-sized structured health datasets.
+
+\\section{Limitations}
+\\begin{itemize}
+    \\item Dataset diversity and demographic spread can be further expanded.
+    \\item Ground truth quality is limited by self-reported lifestyle logs.
+    \\item Device-usage permissions may vary across Android vendors and OS policies.
+\\end{itemize}
+
+\\section{Conclusion and Future Work}
+This paper presents a complete interpretable sleep prediction platform integrating full-stack deployment, hybrid ML modeling, and explainable recommendations. The system demonstrates that lifestyle and inactivity behavior can support accurate and transparent sleep efficiency assessment without wearables.
+
+Future work includes longitudinal personalization, uncertainty calibration, federated privacy-preserving training, and broader external validation cohorts.
+
+\\backmatter
+
+\\bmhead{Acknowledgments}
+The authors thank the department and project mentors for technical guidance.
+
+\\bmhead{Funding}
+No external funding was received for this work.
+
+\\bmhead{Data Availability}
+The processed dataset and reproducible training scripts are available in the project repository.
+
+\\bmhead{Code Availability}
+Source code for backend, frontend, Android app, and ML pipeline is available in the project workspace.
+
+\\bmhead{Competing Interests}
+The authors declare no competing interests.
+
+\\begin{thebibliography}{99}
+\\bibitem{sleepml1} Grandner MA. Sleep, health, and society. Sleep Med Clin. 2017.
+\\bibitem{xgb} Chen T, Guestrin C. XGBoost: A scalable tree boosting system. KDD. 2016.
+\\bibitem{rf} Breiman L. Random forests. Machine Learning. 2001.
+\\bibitem{shap} Lundberg SM, Lee SI. A unified approach to interpreting model predictions. NeurIPS. 2017.
+\\bibitem{digitalphenotyping} Insel TR. Digital phenotyping: Technology for a new science of behavior. JAMA. 2017.
+\\end{thebibliography}
+
+\\end{document}

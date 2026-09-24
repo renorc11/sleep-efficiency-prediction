@@ -1,0 +1,40 @@
+{
+  "generated_at_utc": "2026-09-09T06:40:20.875778+00:00",
+  "join_policy": "No cross-dataset participant joins were performed because attached cohorts use unrelated identifiers and collection periods.",
+  "sleep_efficiency_records": 825,
+  "available_sleep_efficiency_targets": 452,
+  "missing_sleep_efficiency_targets": 373,
+  "duplicate_target_participant_date_rows": 0,
+  "student_screen_feature_records": 3083,
+  "screen_participants": 49,
+  "project_model_feature_coverage": {
+    "caffeine_mg_evening": 0,
+    "alcohol_units": 0,
+    "dinner_hour": 0,
+    "stress_level": 0,
+    "mood_score": 0,
+    "physical_activity_min": 0,
+    "naps_count": 0,
+    "naps_total_min": 0,
+    "previous_sleep_hours": 0,
+    "work_hours": 0,
+    "blue_light_minutes": 0,
+    "bedtime_consistency": 0,
+    "hydration_liters": 0,
+    "inferred_sleep_start_hour": 0,
+    "longest_evening_inactivity_min": 0,
+    "nighttime_activity_bursts": 0,
+    "dinner_to_sleep_gap": 0,
+    "caffeine_stress_interaction": 0,
+    "activity_stress_balance": 0,
+    "nap_sleep_debt_proxy": 0
+  },
+  "complete_rows_for_existing_20_feature_model": 0,
+  "model_readiness": "not_retrainable_without_fabrication: external cohorts do not provide all 20 project inputs and cannot be cross-joined safely",
+  "raw_data_reference": "~/Documents/New project/ml/data/external_raw/final_project_dataset",
+  "outputs": {
+    "integrated_sleep_records": "~/Documents/New project/ml/data/processed/integrated_sleep_records.csv",
+    "model_contract_compatibility": "~/Documents/New project/ml/data/processed/model_contract_compatibility.csv",
+    "inventory": "~/Documents/New project/ml/data/interim/inventory/dataset_inventory.json"
+  }
+}

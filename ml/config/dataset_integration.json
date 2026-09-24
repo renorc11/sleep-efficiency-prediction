@@ -1,0 +1,93 @@
+{
+  "source_root": "~/Desktop/Final_Project_Dataset",
+  "raw_link_name": "final_project_dataset",
+  "timezone_policy": "Source time zones are not supplied. Unix timestamps are interpreted as UTC for date grouping; all other timestamps retain their source-local value.",
+  "missing_values": ["", "na", "n/a", "nan", "none", "null", "not available", "unknown"],
+  "project_model_features": [
+    "caffeine_mg_evening",
+    "alcohol_units",
+    "dinner_hour",
+    "stress_level",
+    "mood_score",
+    "physical_activity_min",
+    "naps_count",
+    "naps_total_min",
+    "previous_sleep_hours",
+    "work_hours",
+    "blue_light_minutes",
+    "bedtime_consistency",
+    "hydration_liters",
+    "inferred_sleep_start_hour",
+    "longest_evening_inactivity_min",
+    "nighttime_activity_bursts",
+    "dinner_to_sleep_gap",
+    "caffeine_stress_interaction",
+    "activity_stress_balance",
+    "nap_sleep_debt_proxy"
+  ],
+  "sources": {
+    "sleep_efficiency": {
+      "path": "Sleep_Efficiency.csv",
+      "kind": "lifestyle_sleep_target",
+      "participant_id_prefix": "sleep_efficiency",
+      "column_map": {
+        "ID": "source_participant_id",
+        "Bedtime": "bedtime",
+        "Wakeup time": "wakeup_time",
+        "Sleep duration": "total_sleep_duration_hours",
+        "Sleep efficiency": "sleep_efficiency",
+        "Caffeine consumption": "caffeine_consumption_level",
+        "Alcohol consumption": "alcohol_consumption_level",
+        "Exercise frequency": "exercise_frequency_per_week",
+        "Awakenings": "awakenings",
+        "Age": "age",
+        "Gender": "gender"
+      },
+      "sleep_efficiency_scale": "fraction_or_percent"
+    },
+    "sleep_health_lifestyle": {
+      "path": "ss.csv",
+      "kind": "lifestyle_quality_secondary",
+      "participant_id_prefix": "sleep_health",
+      "column_map": {
+        "Person ID": "source_participant_id",
+        "Sleep Duration": "total_sleep_duration_hours",
+        "Quality of Sleep": "sleep_quality_score",
+        "Physical Activity Level": "physical_activity_level_source",
+        "Stress Level": "stress_level_source",
+        "Daily Steps": "daily_steps",
+        "Occupation": "occupation",
+        "Age": "age",
+        "Gender": "gender"
+      }
+    },
+    "fitbit_sleep_score": {
+      "path": "sleep_score_data_fitbit.csv",
+      "kind": "wearable_sleep_benchmark",
+      "column_map": {
+        "timestamp": "timestamp",
+        "overall_score": "sleep_score",
+        "deep_sleep_in_minutes": "deep_sleep_minutes",
+        "resting_heart_rate": "resting_heart_rate",
+        "restlessness": "restlessness"
+      }
+    },
+    "student_app_usage": {
+      "glob": "dataset/app_usage/running_app_*.csv",
+      "kind": "screen_behavior",
+      "participant_id_pattern": "running_app_(u\\d+)\\.csv",
+      "timestamp_column": "timestamp",
+      "timestamp_format": "unix_seconds"
+    },
+    "student_psqi": {
+      "path": "dataset/survey/psqi.csv",
+      "kind": "survey_sleep_quality",
+      "participant_id_column": "uid"
+    },
+    "student_stress": {
+      "path": "dataset/survey/PerceivedStressScale.csv",
+      "kind": "survey_stress",
+      "participant_id_column": "uid"
+    }
+  }
+}
