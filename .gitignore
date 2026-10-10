@@ -25,3 +25,6 @@ ml/artifacts/*
 
 # Generated visual reports
 ml/reports/*.png
+
+# Local MMASH wearable dataset (not version-controlled)
+ml/data/processed/mmash/
