@@ -1,3 +1,23 @@
+## MMASH wearable feasibility study
+
+The deployed application uses lifestyle and screen-inactivity features only; wearable data is not accepted by the frontend or prediction API.
+
+A separate exploratory MMASH experiment evaluates wearable features for sleep-efficiency prediction. It contains 22 episodes from 21 participants and uses participant-aware validation. One unreliable HRV record is excluded only from the HRV extension, never replaced with zero.
+
+The local MMASH dataset is intentionally not version-controlled. To reproduce the experiment, place an authorized copy at:
+
+```text
+ml/data/processed/mmash/mmash_wearable_features_final.csv
+```
+
+Then run:
+
+```bash
+.venv/bin/python ml/scripts/train_mmash_wearable.py
+```
+
+Results are saved under `ml/reports/`. The wearable models did not consistently outperform a mean-prediction baseline, so these findings are exploratory and are not used by the deployed application.
+
 # Explainable Machine Learning for Lifestyle-Based Sleep Efficiency Prediction Using Behavioral and Screen Inactivity Signals
 
 Full-stack academic project that predicts sleep efficiency (%) and sleep quality label using only lifestyle behavior and screen inactivity patterns. No EEG/ECG/wearables are used.
