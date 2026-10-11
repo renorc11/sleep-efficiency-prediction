@@ -5,6 +5,7 @@ import LifestyleForm, { LifestylePayload } from "../components/LifestyleForm";
 import ResultDashboard, { PredictionResult, ModelMetricsSummary } from "../components/ResultDashboard";
 import ScreenTracker, { useScreenActivitySequence } from "../components/ScreenTracker";
 import { fetchModelMetrics, predict } from "../lib/api";
+import SleepAssistant from "../components/SleepAssistant";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -45,6 +46,7 @@ export default function Home() {
       <LifestyleForm onSubmit={handleSubmit} loading={loading} />
       {error && <p className="badge-poor">{error}</p>}
       {(result || metrics) && <ResultDashboard result={result} metrics={metrics} />}
+      <SleepAssistant />
     </main>
   );
 }

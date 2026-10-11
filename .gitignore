@@ -28,3 +28,17 @@ ml/reports/*.png
 
 # Local MMASH wearable dataset (not version-controlled)
 ml/data/processed/mmash/
+
+# Local database files
+sleep_app.db
+*.db-journal
+
+# Local BioMistral model weights (keep these on this machine)
+assistant/models/**/*.gguf
+assistant/models/**/*.safetensors
+
+# Local Python environment for the assistant
+assistant/.venv/
+
+# Downloaded model archives
+biomistral-v3-adapter.zip
