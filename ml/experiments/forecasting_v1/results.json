@@ -1,0 +1,700 @@
+{
+  "version": "forecasting_v1",
+  "protocol_notes": [
+    "Hyperparameters are fixed in common.py and were not tuned on any evaluation fold.",
+    "The *_residual variants (forecast deviation from personal history) were added after the first run showed direct models underperforming the personal-history baseline; both are reported.",
+    "Feature importances are fitted on all rows and are descriptive only, not validation evidence."
+  ],
+  "tasks": [
+    {
+      "task": "fitabase_cutoff2000_participant_grouped",
+      "dataset": "fitabase",
+      "target": "sleep_ratio_proxy_pct",
+      "validation": "GroupKFold(5) by participant",
+      "n_participants": 20,
+      "n_nights": 776,
+      "metrics": {
+        "baseline_training_mean": {
+          "mae": 4.559574168999042,
+          "rmse": 7.988825017188521,
+          "r2": -0.09939842087443762,
+          "n": 776
+        },
+        "baseline_personal_history_mean": {
+          "mae": 2.2763643325382605,
+          "rmse": 3.3489751138590087,
+          "r2": 0.80679732639376,
+          "n": 776
+        },
+        "baseline_previous_night": {
+          "mae": 2.989714085591431,
+          "rmse": 4.376295207819874,
+          "r2": 0.6700846582209412,
+          "n": 776
+        },
+        "random_forest": {
+          "mae": 3.510942244616558,
+          "rmse": 6.918647811536589,
+          "r2": 0.1754220087963807,
+          "n": 776
+        },
+        "xgboost": {
+          "mae": 4.589964388059054,
+          "rmse": 8.271120348313884,
+          "r2": -0.17846848096032142,
+          "n": 776
+        },
+        "random_forest_residual": {
+          "mae": 2.3932251545480807,
+          "rmse": 3.458316660449947,
+          "r2": 0.7939755301913614,
+          "n": 776
+        },
+        "xgboost_residual": {
+          "mae": 2.5140534526667255,
+          "rmse": 3.5751329376418015,
+          "r2": 0.7798221219822291,
+          "n": 776
+        },
+        "random_forest_history_only": {
+          "mae": 3.5412143726187213,
+          "rmse": 6.976318965548316,
+          "r2": 0.1616179930529138,
+          "n": 776
+        }
+      },
+      "paired_vs_best_baseline": {
+        "random_forest": {
+          "model": "random_forest",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 1.2345779120782983,
+          "ci95": [
+            0.03646407189636765,
+            3.9098095488390334
+          ],
+          "share_bootstrap_model_better": 0.0045
+        },
+        "xgboost": {
+          "model": "xgboost",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 2.3136000555207943,
+          "ci95": [
+            0.19226037447238545,
+            5.271212069707335
+          ],
+          "share_bootstrap_model_better": 0.0
+        },
+        "random_forest_residual": {
+          "model": "random_forest_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.11686082200982009,
+          "ci95": [
+            0.033605272853804526,
+            0.21378864453331825
+          ],
+          "share_bootstrap_model_better": 0.0005
+        },
+        "xgboost_residual": {
+          "model": "xgboost_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.23768912012846588,
+          "ci95": [
+            0.0931827946025454,
+            0.40783125119341324
+          ],
+          "share_bootstrap_model_better": 0.0
+        }
+      },
+      "notes": [
+        "cutoff 20:00 local; target = device sleep ratio proxy, not PSG efficiency"
+      ]
+    },
+    {
+      "task": "fitabase_cutoff2000_chronological",
+      "dataset": "fitabase",
+      "target": "sleep_ratio_proxy_pct",
+      "validation": "single chronological split: train nights before 2016-04-22, test on/after",
+      "n_participants": 18,
+      "n_nights": 242,
+      "metrics": {
+        "baseline_training_mean": {
+          "mae": 4.870685014028507,
+          "rmse": 8.697300158939626,
+          "r2": -0.004515277199317325,
+          "n": 242
+        },
+        "baseline_personal_history_mean": {
+          "mae": 2.1840380021495043,
+          "rmse": 2.8965123985106747,
+          "r2": 0.8885863473558302,
+          "n": 242
+        },
+        "baseline_previous_night": {
+          "mae": 2.8731813396413086,
+          "rmse": 3.8601218362815897,
+          "r2": 0.8021255804889926,
+          "n": 242
+        },
+        "random_forest": {
+          "mae": 2.3396538621077734,
+          "rmse": 3.2081220896933065,
+          "r2": 0.8633248987831059,
+          "n": 242
+        },
+        "xgboost": {
+          "mae": 2.4218490320895887,
+          "rmse": 3.3488663302889914,
+          "r2": 0.8510696345983313,
+          "n": 242
+        },
+        "random_forest_residual": {
+          "mae": 2.3740179506206633,
+          "rmse": 3.1502930749175757,
+          "r2": 0.868207849078162,
+          "n": 242
+        },
+        "xgboost_residual": {
+          "mae": 2.436278552229823,
+          "rmse": 3.2482850003342056,
+          "r2": 0.859881370029884,
+          "n": 242
+        },
+        "random_forest_history_only": {
+          "mae": 2.372797243210837,
+          "rmse": 3.242982349884976,
+          "r2": 0.8603384688757232,
+          "n": 242
+        }
+      },
+      "paired_vs_best_baseline": {
+        "random_forest": {
+          "model": "random_forest",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.15561585995826938,
+          "ci95": [
+            -0.07818429110813076,
+            0.48333431720640374
+          ],
+          "share_bootstrap_model_better": 0.146
+        },
+        "xgboost": {
+          "model": "xgboost",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.23781102994008443,
+          "ci95": [
+            -0.07068673323775888,
+            0.7021006034921425
+          ],
+          "share_bootstrap_model_better": 0.1025
+        },
+        "random_forest_residual": {
+          "model": "random_forest_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.1899799484711597,
+          "ci95": [
+            -0.008013640553876994,
+            0.44118632914527495
+          ],
+          "share_bootstrap_model_better": 0.0325
+        },
+        "xgboost_residual": {
+          "model": "xgboost_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.2522405500803189,
+          "ci95": [
+            0.006829805909362298,
+            0.5776806347142578
+          ],
+          "share_bootstrap_model_better": 0.021
+        }
+      },
+      "notes": [
+        "cutoff 20:00 local; target = device sleep ratio proxy, not PSG efficiency",
+        "participants appear in both periods; no test night precedes a training night"
+      ]
+    },
+    {
+      "task": "fitabase_cutoff2100_participant_grouped",
+      "dataset": "fitabase",
+      "target": "sleep_ratio_proxy_pct",
+      "validation": "GroupKFold(5) by participant",
+      "n_participants": 20,
+      "n_nights": 741,
+      "metrics": {
+        "baseline_training_mean": {
+          "mae": 4.944727875288305,
+          "rmse": 8.373261229281168,
+          "r2": -0.15896038793485978,
+          "n": 741
+        },
+        "baseline_personal_history_mean": {
+          "mae": 2.31068773669924,
+          "rmse": 3.404120134391056,
+          "r2": 0.808446951504512,
+          "n": 741
+        },
+        "baseline_previous_night": {
+          "mae": 3.075796985395027,
+          "rmse": 4.4936590458947965,
+          "r2": 0.6662052157366121,
+          "n": 741
+        },
+        "random_forest": {
+          "mae": 3.6880047964100027,
+          "rmse": 7.316942949944855,
+          "r2": 0.11500941778955565,
+          "n": 741
+        },
+        "xgboost": {
+          "mae": 3.865421020442594,
+          "rmse": 7.4949741766892215,
+          "r2": 0.07141942780139898,
+          "n": 741
+        },
+        "random_forest_residual": {
+          "mae": 2.4075853275067454,
+          "rmse": 3.4814369242753362,
+          "r2": 0.7996467582970751,
+          "n": 741
+        },
+        "xgboost_residual": {
+          "mae": 2.5223856090764,
+          "rmse": 3.5888854987411407,
+          "r2": 0.78708879560553,
+          "n": 741
+        },
+        "random_forest_history_only": {
+          "mae": 3.7136133826735422,
+          "rmse": 7.268584652889785,
+          "r2": 0.12666871715880723,
+          "n": 741
+        }
+      },
+      "paired_vs_best_baseline": {
+        "random_forest": {
+          "model": "random_forest",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 1.3773170597107627,
+          "ci95": [
+            0.04421474563838572,
+            4.305644759416843
+          ],
+          "share_bootstrap_model_better": 0.0055
+        },
+        "xgboost": {
+          "model": "xgboost",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 1.5547332837433534,
+          "ci95": [
+            0.15871413543041277,
+            4.527653544011265
+          ],
+          "share_bootstrap_model_better": 0.0
+        },
+        "random_forest_residual": {
+          "model": "random_forest_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.09689759080750505,
+          "ci95": [
+            -0.018136354408193847,
+            0.2327726630918482
+          ],
+          "share_bootstrap_model_better": 0.0585
+        },
+        "xgboost_residual": {
+          "model": "xgboost_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.21169787237715948,
+          "ci95": [
+            0.03990878563640615,
+            0.41914063714956
+          ],
+          "share_bootstrap_model_better": 0.005
+        }
+      },
+      "notes": [
+        "cutoff 21:00 local; target = device sleep ratio proxy, not PSG efficiency"
+      ]
+    },
+    {
+      "task": "walch_leave_one_subject_out",
+      "dataset": "walch",
+      "target": "psg_sleep_efficiency_pct",
+      "validation": "leave-one-subject-out (31 folds)",
+      "n_participants": 31,
+      "n_nights": 31,
+      "metrics": {
+        "baseline_training_mean": {
+          "mae": 4.051945212431425,
+          "rmse": 5.179826231831311,
+          "r2": -0.06777777777777727,
+          "n": 31
+        },
+        "random_forest": {
+          "mae": 4.206182609729336,
+          "rmse": 5.161444810013592,
+          "r2": -0.06021287206783832,
+          "n": 31
+        },
+        "xgboost": {
+          "mae": 3.7743461181928475,
+          "rmse": 4.58270531657807,
+          "r2": 0.16421540900849907,
+          "n": 31
+        }
+      },
+      "paired_vs_best_baseline": {
+        "random_forest": {
+          "model": "random_forest",
+          "baseline": "baseline_training_mean",
+          "mae_difference": 0.15423739729791186,
+          "ci95": [
+            -0.13810644823577375,
+            0.4364375690902081
+          ],
+          "share_bootstrap_model_better": 0.1295
+        },
+        "xgboost": {
+          "model": "xgboost",
+          "baseline": "baseline_training_mean",
+          "mae_difference": -0.27759909423857765,
+          "ci95": [
+            -1.1359788914630091,
+            0.6128941793051987
+          ],
+          "share_bootstrap_model_better": 0.7275
+        }
+      },
+      "notes": [
+        "one PSG night per subject; target = PSG sleep efficiency; cutoff 30 min before PSG start"
+      ]
+    },
+    {
+      "task": "studentlife_participant_grouped",
+      "dataset": "studentlife",
+      "target": "self_reported_sleep_hours",
+      "validation": "GroupKFold(5) by participant",
+      "n_participants": 49,
+      "n_nights": 1241,
+      "metrics": {
+        "baseline_training_mean": {
+          "mae": 0.8314587136262399,
+          "rmse": 1.1679438730512148,
+          "r2": -0.004529411054850163,
+          "n": 1241
+        },
+        "baseline_personal_history_mean": {
+          "mae": 0.7846838909049587,
+          "rmse": 1.1331268443774651,
+          "r2": 0.05446900907920671,
+          "n": 1241
+        },
+        "baseline_previous_night": {
+          "mae": 0.8909197058841657,
+          "rmse": 1.306975151499795,
+          "r2": -0.2579210156211551,
+          "n": 1241
+        },
+        "random_forest": {
+          "mae": 0.7803740580061764,
+          "rmse": 1.122450185931752,
+          "r2": 0.07220321406634422,
+          "n": 1241
+        },
+        "xgboost": {
+          "mae": 0.7904822874415026,
+          "rmse": 1.1441111117026808,
+          "r2": 0.036048644612099445,
+          "n": 1241
+        },
+        "random_forest_residual": {
+          "mae": 0.7762094939862347,
+          "rmse": 1.1150880612950174,
+          "r2": 0.0843340951218059,
+          "n": 1241
+        },
+        "xgboost_residual": {
+          "mae": 0.8010666521596264,
+          "rmse": 1.1548137003920869,
+          "r2": 0.01792972432820905,
+          "n": 1241
+        },
+        "random_forest_history_only": {
+          "mae": 0.7953597984288431,
+          "rmse": 1.1441038539131902,
+          "r2": 0.03606087442746342,
+          "n": 1241
+        }
+      },
+      "paired_vs_best_baseline": {
+        "random_forest": {
+          "model": "random_forest",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": -0.004309832898782201,
+          "ci95": [
+            -0.023867482290472898,
+            0.01464304049542316
+          ],
+          "share_bootstrap_model_better": 0.6685
+        },
+        "xgboost": {
+          "model": "xgboost",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.00579839653654397,
+          "ci95": [
+            -0.01610250172895357,
+            0.02746735416816753
+          ],
+          "share_bootstrap_model_better": 0.3
+        },
+        "random_forest_residual": {
+          "model": "random_forest_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": -0.00847439691872395,
+          "ci95": [
+            -0.03240057307090902,
+            0.014723893985686642
+          ],
+          "share_bootstrap_model_better": 0.7525
+        },
+        "xgboost_residual": {
+          "model": "xgboost_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.01638276125466765,
+          "ci95": [
+            -0.009443514450153756,
+            0.04220096787580386
+          ],
+          "share_bootstrap_model_better": 0.105
+        }
+      },
+      "notes": [
+        "target = self-reported sleep hours (not efficiency); cutoff 21:00 America/New_York (assumed)"
+      ]
+    },
+    {
+      "task": "studentlife_chronological",
+      "dataset": "studentlife",
+      "target": "self_reported_sleep_hours",
+      "validation": "single chronological split: train nights before 2013-04-28, test on/after",
+      "n_participants": 39,
+      "n_nights": 378,
+      "metrics": {
+        "baseline_training_mean": {
+          "mae": 1.3862709754946139,
+          "rmse": 1.7775062111428823,
+          "r2": -0.06266856078134309,
+          "n": 378
+        },
+        "baseline_personal_history_mean": {
+          "mae": 1.2739615418711279,
+          "rmse": 1.6930745303433072,
+          "r2": 0.03588746118000541,
+          "n": 378
+        },
+        "baseline_previous_night": {
+          "mae": 1.3484154573378213,
+          "rmse": 1.8422947841219959,
+          "r2": -0.1415470688520606,
+          "n": 378
+        },
+        "random_forest": {
+          "mae": 1.358289261194441,
+          "rmse": 1.7560272342864267,
+          "r2": -0.03714164329459457,
+          "n": 378
+        },
+        "xgboost": {
+          "mae": 1.3727290365431044,
+          "rmse": 1.7782215195645834,
+          "r2": -0.06352401626621385,
+          "n": 378
+        },
+        "random_forest_residual": {
+          "mae": 1.361408647812516,
+          "rmse": 1.7703750315134645,
+          "r2": -0.05415902186615362,
+          "n": 378
+        },
+        "xgboost_residual": {
+          "mae": 1.389374860876943,
+          "rmse": 1.8107662001235925,
+          "r2": -0.10280908918556575,
+          "n": 378
+        },
+        "random_forest_history_only": {
+          "mae": 1.3808295212691228,
+          "rmse": 1.779157684456826,
+          "r2": -0.06464411960147864,
+          "n": 378
+        }
+      },
+      "paired_vs_best_baseline": {
+        "random_forest": {
+          "model": "random_forest",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.08432771932331312,
+          "ci95": [
+            0.01760168196600049,
+            0.16942751028775482
+          ],
+          "share_bootstrap_model_better": 0.0035
+        },
+        "xgboost": {
+          "model": "xgboost",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.09876749467197657,
+          "ci95": [
+            0.024916105912771037,
+            0.19449119447507462
+          ],
+          "share_bootstrap_model_better": 0.0015
+        },
+        "random_forest_residual": {
+          "model": "random_forest_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.0874471059413883,
+          "ci95": [
+            0.028993890549530475,
+            0.15167218177671837
+          ],
+          "share_bootstrap_model_better": 0.0025
+        },
+        "xgboost_residual": {
+          "model": "xgboost_residual",
+          "baseline": "baseline_personal_history_mean",
+          "mae_difference": 0.11541331900581515,
+          "ci95": [
+            0.039234027057750434,
+            0.20757716889940975
+          ],
+          "share_bootstrap_model_better": 0.001
+        }
+      },
+      "notes": [
+        "target = self-reported sleep hours (not efficiency); cutoff 21:00 America/New_York (assumed)"
+      ]
+    }
+  ],
+  "feature_importance_descriptive": {
+    "fitabase_2000": {
+      "hist_mean": 0.3761156615261054,
+      "hist_mean_last7": 0.3570177530052156,
+      "prev_restless_min": 0.10150350209271825,
+      "prev_ratio_pct": 0.07992610676692273,
+      "prev_asleep_min": 0.009392269423187346,
+      "prev_onset_hour": 0.00812903968346957,
+      "hist_count": 0.007692392686750542,
+      "steps_day": 0.006456785680387146,
+      "steps_evening": 0.006354666018953547,
+      "prev_wake_hour": 0.006210008294535869,
+      "mvpa_minutes_day": 0.0061603683596152415,
+      "stepping_minutes_day": 0.005776105854804358,
+      "prev_minutes": 0.005583371216785466,
+      "mvpa_minutes_evening": 0.0053764883886914866,
+      "stepping_minutes_evening": 0.004953008654021203,
+      "prev_awake_min": 0.003567309001486645,
+      "hr_evening_mean": 0.001804311368337565,
+      "nights_observed_last7": 0.0017671409921733887,
+      "hr_day_mean": 0.0014261367751287116,
+      "hr_day_p05": 0.0012510449204551314,
+      "hr_prev_sleep_mean": 0.001201187384410379,
+      "weekend_night": 0.0010157467467765001,
+      "hr_day_coverage": 0.000775959019492065,
+      "nap_minutes_day": 0.0005217659189563084,
+      "prev_available": 1.3147616839322321e-05,
+      "activity_day_coverage": 7.11749560693636e-06,
+      "activity_evening_coverage": 1.605108173189886e-06
+    },
+    "studentlife": {
+      "hist_mean_last7": 0.16436711762881562,
+      "hist_count": 0.14194283696951546,
+      "hist_mean": 0.120226715519739,
+      "locked_day_frac": 0.05190332440336334,
+      "dark_day_frac": 0.04807955336906655,
+      "dark_prev_night_frac": 0.04520708442368249,
+      "locked_prev_night_frac": 0.04262213945608272,
+      "prev_night_longest_lock_min": 0.04027228966425936,
+      "charging_day_frac": 0.03942466117655436,
+      "weekend_night": 0.03925835355692674,
+      "prev_sleep_hours": 0.03728725533834316,
+      "charging_prev_night_frac": 0.03577103662453836,
+      "locked_evening_frac": 0.035567335748538556,
+      "dark_evening_frac": 0.03349903108653415,
+      "stress_day_mean": 0.02489032182583122,
+      "charging_evening_frac": 0.02257150792547239,
+      "lock_events_day": 0.01696043620124849,
+      "prev_sleep_rate": 0.015798110253693636,
+      "lock_events_prev_night": 0.013024477787457833,
+      "stress_day_count": 0.009277429402524483,
+      "lock_events_evening": 0.006937727520210006,
+      "sensing_day_coverage": 0.005313385113117034,
+      "sensing_prev_night_coverage": 0.005280371512702328,
+      "prev_available": 0.0029443967458560936,
+      "sensing_evening_coverage": 0.0015731007459267312,
+      "prev_night_lock_capped": 0.0
+    }
+  },
+  "legacy_reevaluation": {
+    "rows": 374,
+    "distinct_source_profiles": 132,
+    "deployed_test_rows": 75,
+    "deployed_test_rows_with_identical_profile_in_train_or_val": 66,
+    "corr_previous_sleep_hours_vs_same_night_duration": 0.8316295317201311,
+    "results": {
+      "random_row_5fold/random_forest": {
+        "mae": 2.6554842163207177,
+        "rmse": 3.763968069949218,
+        "r2": 0.9251536601894109,
+        "n": 374
+      },
+      "random_row_5fold/xgboost": {
+        "mae": 2.705062708309162,
+        "rmse": 3.8108700740201145,
+        "r2": 0.9232767501242742,
+        "n": 374
+      },
+      "random_row_5fold/baseline_training_mean": {
+        "mae": 12.027527636907553,
+        "rmse": 13.798055074203665,
+        "r2": -0.005806537127599265,
+        "n": 374
+      },
+      "profile_grouped_5fold/random_forest": {
+        "mae": 2.8002090831028097,
+        "rmse": 3.9658474347481047,
+        "r2": 0.9169096263898207,
+        "n": 374
+      },
+      "profile_grouped_5fold/xgboost": {
+        "mae": 2.83311183175738,
+        "rmse": 3.9727512470630004,
+        "r2": 0.9166200844166157,
+        "n": 374
+      },
+      "profile_grouped_5fold/baseline_training_mean": {
+        "mae": 12.34498435640081,
+        "rmse": 14.166432032435191,
+        "r2": -0.060228978687812074,
+        "n": 374
+      }
+    }
+  },
+  "rf_params": {
+    "n_estimators": 400,
+    "min_samples_leaf": 5,
+    "max_features": 0.5,
+    "random_state": 42,
+    "n_jobs": 1
+  },
+  "xgb_params": {
+    "n_estimators": 300,
+    "max_depth": 3,
+    "learning_rate": 0.03,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,
+    "reg_lambda": 1.0,
+    "random_state": 42
+  }
+}

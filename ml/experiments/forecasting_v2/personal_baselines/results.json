@@ -1,0 +1,1403 @@
+{
+  "version": "forecasting_v2",
+  "protocol": {
+    "min_history": 3,
+    "ewma_half_lives": [
+      3,
+      7,
+      14
+    ],
+    "trend": {
+      "min_history": 14,
+      "window": 14,
+      "damping": 0.5,
+      "adjustment_limit": "+/- 1 SD of window",
+      "fallback": "expanding_mean"
+    },
+    "decision_rule": "adopt only if paired participant-bootstrap 95% CI of dMAE vs expanding_mean is < 0 in both participant-independent and chronological evaluation and the relative improvement is >= 2%",
+    "decision_candidates": [
+      "mean_last7",
+      "mean_last14",
+      "trend_adjusted",
+      "ewma_selected"
+    ],
+    "protocol_correction": "After the first run the fixed EWMA half-lives were removed from the decision candidates (they select a half-life on evaluated data); ewma_selected remains.",
+    "walch": "not evaluated: one PSG night per subject, so no personal history exists"
+  },
+  "dataset_manifest": {
+    "n_files": 395,
+    "combined_sha256": "9e841733560c91ce3039a44cef1f6fb9bf677f88d3d9c22595fef947f59a43bf",
+    "files": {
+      "~/Desktop/Final_Project_Dataset/archive (8)/mturkfitbit_export_3.12.16-4.11.16/Fitabase Data 3.12.16-4.11.16/heartrate_seconds_merged.csv": "feabb4f4dcfb4a64f1616a01a940fef4cd7c516d493d46582e00745dd37504a2",
+      "~/Desktop/Final_Project_Dataset/archive (8)/mturkfitbit_export_3.12.16-4.11.16/Fitabase Data 3.12.16-4.11.16/minuteMETsNarrow_merged.csv": "f5f71bb0a5c6f378dbe9fa528acdcd43a62e9f8e8583cdec3f9bb9e5a506e73d",
+      "~/Desktop/Final_Project_Dataset/archive (8)/mturkfitbit_export_3.12.16-4.11.16/Fitabase Data 3.12.16-4.11.16/minuteSleep_merged.csv": "6cb2bcd0ea20e782233c886cce1731e1cd3ace12fc230f7c06b7a7d13067e7a3",
+      "~/Desktop/Final_Project_Dataset/archive (8)/mturkfitbit_export_3.12.16-4.11.16/Fitabase Data 3.12.16-4.11.16/minuteStepsNarrow_merged.csv": "9776fc1f3ca7dd22184e6c0ab42dd05167bf268ab5e6b1b176ccefc03d67fc14",
+      "~/Desktop/Final_Project_Dataset/archive (8)/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/heartrate_seconds_merged.csv": "64b945c3d86f598b8b8a9d26e46585e1ccdc99b82ab1ecfd9784e84ab856d93d",
+      "~/Desktop/Final_Project_Dataset/archive (8)/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/minuteMETsNarrow_merged.csv": "2d66a4b382419b65385ac7b15326c9bff662ba5406ce89ec4667c2ac2834fde5",
+      "~/Desktop/Final_Project_Dataset/archive (8)/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/minuteSleep_merged.csv": "2e12e0df4bc663f3fc8932cdfd3b4e4187f85877fd6057fd6261d2309c0368ba",
+      "~/Desktop/Final_Project_Dataset/archive (8)/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/minuteStepsNarrow_merged.csv": "5ffe29b2e27c337d111686c28fff2eb8757a8bcdcf6b5d6bff92162c6f562ce4",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u00.json": "b22cce62801b95f14980cad29729fd4d3983282a90c3a2d5bc7ae49c4d19a9fe",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u01.json": "d1666c5dc935161f901b13c64a7fa08f9e0e6df642a9f6f5eade937c8baf2692",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u02.json": "e9455c9b75b959acc13b02ca8722cdfc8dd565d512081cb010d486201e62f473",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u03.json": "1453bcccb0de6b6d6c73efc4a0d626948217eb7745ecae82ced8f9b409418d9c",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u04.json": "f290e3287dcee144210323d35c5d8c79730d399718069b784f70be2bf19ca2ec",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u05.json": "d06cc822f0fef978d633d758b9fc835211a8ca46dccf240cb34788d8c0f0f14d",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u07.json": "e597f7d85fb97ca30823f300326a0ed7d2a74949dcd8446f09200e9efeb57cb6",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u08.json": "ea499856ffb4fd7ad10fbf9d0987401a17a7308f9d969dc0aea11ad34d22da09",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u09.json": "2e0b12c4d1ce0568f157697108f3b9967532cf701e71ce062245fbff6e93039f",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u10.json": "120408e2e317299cc119a6e69f18263658766602689ca33a84deed9233d5dc01",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u12.json": "80551bb8cba1b984423db56acc2c3b9b7440cab0ff9e0c3ae10104e9ba1d31c2",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u13.json": "a645d8d5aa42496a755eed2ec00207f81b2c39772a74a56369fc883ada0123d7",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u14.json": "9e6ca1df55b5db7b5acd3c6da0a5b54394202a79071e989abaaf5831c1479ec6",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u15.json": "1a4aaf4890e817ee707a8ed1bf4611032a78c09811402857fc961ebb11cc327f",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u16.json": "344131e18233446c06e4d82384b6bcf1096ebad13182122e19ad958e651f87d2",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u17.json": "94d15d88b4fa5530b78794e5147fea5efe7843c705cf12bfdd627f8f8ab5a0bd",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u18.json": "4af9ff1d339ffdad15980978b5338928cf1e4d64e919eee2e43efa97884e6be0",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u19.json": "e3eeff42a1ebbe311406a9dfb2cc6a5bf0cf520d8a66964ffe897cd3bc86c543",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u20.json": "523680df1280d09cc5822642583cfcc0d53f7d02465fd6e2fb851abd63c50d8f",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u22.json": "c835ab4dae34e3bb470f742d50b655793a33529c59751b7b635bef97b3c69ead",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u23.json": "b13456c1555b7495b73a2ea0f74c23bf34e31525a70cf8480becb01bdef81571",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u24.json": "958e382f5e5bb05bc41aab103f88266e8a72671462d61fad3c660b3ec2515069",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u25.json": "c99d28962b2dfea934144489093cb0c562c3d8dcd621afff390822adba7774aa",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u27.json": "d4717881f744a39a0de96ea0e7c40a96f75b9687f84a530225518625a7102155",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u30.json": "9779cdcec1d4c896365e34b590ce5d9d33572dda103f3aaa4267d35e18c4bc87",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u31.json": "1b7b9aa948f2b2fb30f1053a365b6ef429308a8428b061d8194d0e294e48b295",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u32.json": "6fb7ba79cd2f7657ee07da2c0c1f7b1a07cb2d9c7f7f2ea934100043fc2b8f44",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u33.json": "38b99fd9310b492a911a079c19cb9b616ce35e542079a1cd9ea13abc2884b365",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u34.json": "f2941dc7a83d857413f9ed828c755667fb1cee5e3f4989e3f6b5da5064c36e12",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u35.json": "81b49e39ea81c1c41bff3242eef78cc20b102488a3f7664154caa17b5c7e6290",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u36.json": "7c7fd3e0a5f252ce4ed3d2100d08531d015d354ef71b47179a6a1224357744bc",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u39.json": "7562a88fec6d3294b253a75628ad3d4b4859c7d2aea96fcb5f2277a40ae29631",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u41.json": "9e2c1b93b88666ad8f9f239b0381ce439ac0e40eec89946e058cbd519cd31db6",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u42.json": "968a79431968b7fd0910990425e78017afa47118e097cf966160a857b7c3b99d",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u43.json": "863272a9418b7927646aab1330e3dc562f01049cb88d22e9225c4ab7ca5c458a",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u44.json": "f9ced94e0080e595bbbbc97153bd4685552971e5eeee2394318360e0130b6c69",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u45.json": "daccc5906450fb3b235c4e50360f9d43058ce19b5c3aff3d98c7833e90cf2330",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u46.json": "b0c4663714a8c3e596c0eb7e1de8f1d4340ff043461e3c479f9f72b97d8a2648",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u47.json": "b9ad180f899a60682ea9a3bc09b238b9e59e27e1d51b47c583bf8020883f846a",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u49.json": "b5d8bbea15a963d07be3ec79120f5439f083605ad6c6e57a8a58af7b0599e697",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u50.json": "8cfb3f6592124534087cdcdbc60d4d1c975d1e196fa925e932cb44c4267fa7d7",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u51.json": "cb72a8eda38d5abb3dfd51c6c3b20e563786b27faf0a592d4f02995079e3f0d7",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u52.json": "38019adfb0ac520b73f96c36841d89b29b77dd6622fd90ad6e06acf9412f52f4",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u53.json": "5a76f511bd902428fa26d07772a15cdf5d3a091f6d4b26fe1e5b5c0fdd473fe0",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u54.json": "87d83394326965580cc32acaf9a8db45ce1530bc12d1358dc18661f08a6a012a",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u56.json": "6080e7fb192ffe282805ed33fa312c18b98d1cbc9d98bc8a69c711b693d07886",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u57.json": "beea0f6f7fd14f97950eb9b43ecfd57b8e2b6fb6fd4be5159447f82c495cbd8d",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u58.json": "a6fbeb7be6335220f826e0d3f0852ac3d75933297eee39e069dc31f011927554",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Sleep/Sleep_u59.json": "1eff1a094d85290a181cd7bbcbde187b5b8437fa3728dbb5172d9293fa441fd2",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u00.json": "bcc32f4769f3479b747fe13d0da7582cdc6f070072bf7dd347f9b7679c98ec6d",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u01.json": "09e32fc76f7db6d27650e18358e63c85053091a2925466af1177da7a8fce99c5",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u02.json": "13133ce8ec1e7816e313473f8488fb430e42140772a6c5b359e03262c6d50ba3",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u03.json": "e18947e577d877edba5ff9a498a9c972f61d65f5298ec2fffc9816605b8ad9c9",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u04.json": "3c720c02c25bec165d16d643bcad4312f6edd87de6208ba3a3573410c5d4aff8",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u05.json": "1513195d412a55ef48ba56becbce2103b7c5a06c2ba4a0a7ca02bb60a2c657c5",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u07.json": "6ebe6487c119bb7733371aae0ff38a8485cf82799b0585bdfe232cfdfb982653",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u08.json": "ffde5807305a5dad967961aab290494070f30a838e4cc2fe3a74b245506daca7",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u09.json": "7f440dfc8e0c11e86b5a71e0f7aa718ac0876d4a5cb75effbae0314122ce3d56",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u10.json": "71514c2a9f760ddb864f634e1312440e7ec640c54777c9fa397131d4ec4d3a9a",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u12.json": "8fc905b7811a7f5d4944ec960a82e92a4f0ebfd7cd9daf438742dc3ef9667541",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u13.json": "2ffb836873cd605f551fa9e3d085baac4d9a773d63e32408b2fcf76b4f073b4e",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u14.json": "3efec02cede8ff166a8a0708d291c3c2bf58021268727854b25f930b46ebfa0b",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u15.json": "857f9b202b21054ac43880e03e65e9db69055a57deb1c8b82848f9c5a104039c",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u16.json": "fa1481fcd7211ed95cbc72d62fef0c47afd350f81f9440f2d8d0a0345954b519",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u17.json": "a91d8d5663e5af6ef041fa810a6fc88185eb4adc0ae9ed5b5a4d6123f549ee9e",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u18.json": "99f86437220dc160aa7da34419ae29011b693ec9e43758d484a9f520276ab36b",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u19.json": "d2a1fb8f0d3f39f2287932d6e66dca929ffb9c527a18b38a3a06dd0ea432ef99",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u20.json": "7e791ba17fbf150abd5decda69d8a0e7881385262c31e0de88334d020c7c796d",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u22.json": "4baeaa07b632e4c27a0b80a0a59d50a398792c0f3a28050a3c5e7c1b64a00ff6",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u23.json": "fefacd3d0670f5fefc8251149aa369aeb0bc0d3e8e40ba1bb2c49736a3a37aa7",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u24.json": "a19e148871ffc2c72d2365ab2ec0722f18df8ce15e2205aef05fe88cb3adbee4",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u25.json": "1176db8d9838afa73035a2fbd73903164371173fe2b129cd33449a177a26338f",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u27.json": "9a5903a13d887b6d35eb740de776ff7227369cb922257723e332af16270bf144",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u30.json": "7ba6ae624879704895627f3104248042b000dcfe72dd61194135919744f76b17",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u31.json": "df71f56d66003a28c63073b1e132480c4fb82fb7c8fab1460af50b4f2154ebad",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u32.json": "6830a923b1e3b02e5a9db6c383de4d219d8cd66d736b00f86ed328f36f1556ae",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u33.json": "cf93e802cbdce506b0d2c9ddd513f84baa7f71ce7acd6536ddd0cee52f54af03",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u34.json": "78fef1c467a1eecfec0ad310fe1a55ef8f4d952591e591504a89c78d0facc767",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u35.json": "28a0e47130305e4a6173b075c2852f622fa59ea0793b514514c77cbb5aeb24a3",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u36.json": "ad76f7e635ffa452d1b659d8972a0142ddf50d1f81e087e65908b14671f8582e",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u39.json": "2b3d9f976f97f180d5878dc6701e45c098682b4249828e45a7fc3695aba351ab",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u41.json": "48d6ec6921790a9187032a1c951b9c09aea3fd045a65aa5c7682975fd8cc5c72",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u42.json": "7e3421a6d6326f5c43cdc3fb2bc61c973b709eb61612d50d0f6ef0b0471833c9",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u43.json": "eec032cebaf08ee5404e7031bf9345f362345c88843fece1f9844583c4e6039b",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u44.json": "99e1b667ff12daad9c66821d040a82543f4eec84d72c1e7061d496bb3696da69",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u45.json": "b1fcd72d5e03a6b6f1f5b7c57d095d6b391c5bbda0730242788543877c7bb43c",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u46.json": "2d494ccfbfc52266c6843c4f9b2298f58221eed04aca9e261c84a6fdad2c9a93",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u47.json": "9e4b89519e21df3039fe79f2b409f4b336dce080748eb18932833cc70e3ad5a0",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u49.json": "a920de0f20f1c5262b5898402f90e03501d994b01a67dfc6252202075d982626",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u50.json": "f1c427f7ca038f9be72e6a68f220264f38cf53e9a40e50993ef479be6ebee674",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u51.json": "a74e494a6a634a64680767811773080eb75203268fb7bca53aacb8279092b696",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u52.json": "20a41eb7f863f3293ec2395bd2865919a7daadbde28762ea3a3133b0c0ceeda9",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u53.json": "7e57fc75facac602369f4ed512b61178c5f7ed1b68ce61b0388cb55aeedc00a5",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u54.json": "0ecff15219a130ba3e764b2148b130f1c75b8f859ea042aa539ee8116254da6c",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u56.json": "1b41b7f1bbaf695202de00a338031598175e7e9e5c1a2ae796fd1ae38dd28b4c",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u57.json": "431bc2f8390d4cf80807e1a13983a5e67d179ada9b3e85d125e6f7ebadcce678",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u58.json": "67e06b2e433076aba3caa49f1d33ee4bd8b6aaa3b081bce2dda5fc7ceebeda97",
+      "~/Desktop/Final_Project_Dataset/dataset/EMA/response/Stress/Stress_u59.json": "73aab275640cbb8c19beccf8d4478554084028398da482fddac9a4dc45cf6dd3",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u00.csv": "4ded5ead8c15f233b5b19549135a43e1e55ec943ed7a10fe4400b7f40b2fcf28",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u01.csv": "79103fffdee15e9da780cc11b1ef77d4b12865e8560e9322f5c0cd26f7e1de41",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u02.csv": "f0693667d7721245bc68ea93aeeb5c2abd223b37667ab03797c8977edebfc673",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u03.csv": "ff012cbf86c9c92ec2831c2b6021cb47daeab273b8688b7c56c82f21bc3c1740",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u04.csv": "3d6ada8c29ab0bd2ac912b4febf0df1e580b3fc2f87cbc01083da83bea31d528",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u05.csv": "4e5d30921a73990905af407751a8906603dc434b50d6a80c31ca4845b6058bc4",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u07.csv": "933ba815974bc6de415aa82186615f0ed18a9675fc521a5d1e08ed5b3bb5054a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u08.csv": "0384bb71cb2adb357daf3c2f107a72b52b6d1e682d95dd6228c722f770d422e3",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u09.csv": "dbb4d443768963060b9f92c38efd78078f7fb95c290ed85866524169d0300795",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u10.csv": "539c94ce9032874f47a7b611c6b42df9b02e7830af6f6c831253bf7526449123",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u12.csv": "91071a0eb5615c82f1f3ac910c72ecd62bce4f5e13cab88b03d93ba0d12c3fcc",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u13.csv": "e9875546e06d9ecba7df0b65a59df3350eba04d6a384626385f525f8fbd8b4cd",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u14.csv": "1df74f8281dcdd544066fd25de12488f1ad855438a234c8dc31c2fd6092fea9a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u15.csv": "a3d1e753b369b437a43cf679893ede3ecd373a47f64e63c959f54a14a026ea25",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u16.csv": "6e3cd2acdb77a47c32682fd1a98b56590378670e3a75ed5daff212f58b8a5842",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u17.csv": "dd25cc51f58de8475ddb4716d4f97aa8d928e785768960bc756147c82b8d94d3",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u18.csv": "0ecbf7b09108856233935276eb60d16d8dfadf288ec4afd8c5d0905f41cc1e5e",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u19.csv": "e6678ade83a506864c147f3033ba42333676d835664169ab646f2c2f6139dfdc",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u20.csv": "a2546a059900a75fe00c8953bba214062cc426fbaabfe61c2a8ab36c33f5b814",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u22.csv": "027269bdf3ba6295ce92a1b9764013774fb1bb5491f8630ddfb698d3f448355b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u23.csv": "7923e85ac18af9b09a384faefe5a76ee3695775c1ee61e26e8d3b3e61f0112eb",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u24.csv": "e81567d3f0d14a7a0c01959a4e115665358506f0bfc48d6595b85a408b0b96de",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u25.csv": "85c59a16e4d92eed566619420cde7a15e4e9843819962e14a4eb86ad23ff7c4b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u27.csv": "fbe7e0c00378227a4c8942d7265c236dbbd9e1d8163f870e00e8a3e616f54c5f",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u30.csv": "4b87454157206895906d74437d3db651a3dd6e01782610bb3de8c6fa3a6a5916",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u31.csv": "7aa3abc42adac2f3fe8c7f3d9465bf1759f2d5e6d9cb497ebac21051195a0e46",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u32.csv": "e989f2138d3f96494ff1145b95d7412372f5c85a6f7cf18423fbd912dd2d0218",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u33.csv": "a87328dd1d4094dc7e9dda08d5744857e09fe8c370bd88ea383e59543222a005",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u34.csv": "8e033ebd67d02f71df03a39cc665a36ddbc06cf2d1fb224dda9143984b831cfd",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u35.csv": "fb98cd5ad303b9c1337214d6a3e38dbb22099a26224f40ab3b221c1e3957158d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u36.csv": "99e944d6209e70ae11de2fe0ec55432d5619d5f838ec5cc12f2585140acd0c0b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u39.csv": "46d8a88eed7fb3a60fa6827a6f50d8a461e906ea52838040bc29956ac5598389",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u41.csv": "5f54f9b0fd84284dbf92bc0eff9c8626d3997802f2a19e7169a0b24c436ebbdc",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u42.csv": "46673c1dc05cf212dc01b0d5e1f0ffce0b91872b8c582e56a17f31a2c52b4bf9",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u43.csv": "1458a54a8b757e13dfc89d81a3655e560a28dd1d7f39dda7e7e236285585078d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u44.csv": "a7a9f212443af0a849934cf357ee16db70cc51af4a27801b1f88aa0a5ee40bd4",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u45.csv": "291825858d9b0ee31204f181ba6d99463c8de375331509fdb5e387827a222752",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u46.csv": "ba0727d7292b26e861e5d5e9f606ee2d33513d22b14ae744611b8c3b73f8ed41",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u47.csv": "8ea4da1bd126cc9ba40abe6f7c47581426330de87829dd410ea236807380de27",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u49.csv": "e5401c7055270de393ec01b29a6a4e8b62b6f74ab8262fbdf13a594b40d9d538",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u50.csv": "efd76088b02082705d1a9cc4d91a0065d915d0f9efc85287ff5a6f1ff759d622",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u51.csv": "0f583baf58e3d0b4b78e761cdbc82b830b5b63b073be71ddd29ef708d79e5453",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u52.csv": "1c452f229f7eecfca0ed2f8aa261b1366d07215485e7a210bad689a3c1a49a55",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u53.csv": "136550eb14d5a9a19b29b44079047fbb2fa39318a29f94aeb104a3eaf2a71fcd",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u54.csv": "521bdc2804d5ff5f9679348c61a87c5e18d24ca14a441b630ba23a3a08053408",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u56.csv": "84beac72490a52f37efa79a6ebd8dea2813bd6843b318b67e1cb76ee0b5c1d78",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u57.csv": "d69824b1d8b7ed70fd91f372ed254c58bdad16c0d7c2c1a7dc1421af38740b77",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u58.csv": "76e4a0a8e80db24bc7b8b76393bf4f80187083be970ca791a1c4c6a00b9a946b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/activity/activity_u59.csv": "818fe9c013ca9ac57d5a194d566b8dd312d0dc2b3b4cc28ef113a71cdd3fa7a4",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u00.csv": "d9db63fa1088a9db3b57321fd1d9ed4714d4d4d90de01d2b81adc99f4dcd3d16",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u01.csv": "77dae2d2775feb17f19541eee7681b8872490e183d1030791304d85677637d89",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u02.csv": "74685ab5e70fee4fca2cc864a528470ee503de1c1698d29d2eab248e24e51ee0",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u03.csv": "a36c957841926c2be8b0c0b7943b8d4f672105d058cb94cd397d4e65124dd78b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u04.csv": "ee50f7f4f91b8fb6a305f0ef00a13e7470dcca7737fd39ddaacd2358204df61d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u05.csv": "76aad3b88f63b88f86b8b1d5efc48df2ade07f5f8453738e928af6e5b422c6e0",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u07.csv": "679852946f0b2cd06fe2e6d80e19f7f2f19682ad6deefda8bfcc1d8601117071",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u08.csv": "04f541874673109be304ce849ae51c14e2971467805f68f887fc3d976c7d4841",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u09.csv": "9cad4e5fd6048709c1a16d635973bae92ded2e05b1de351f496f540d24629e7f",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u10.csv": "bb660ac996548fb3a173cf0467fec8f41336a069fb393f903c711948caf546d2",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u12.csv": "609d9e4401e79d54698c9cd80a328e86c7a6394cd75da1d400d1fba63ac8c539",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u13.csv": "7993b98288d842d82826452fa651a0bb9d1543f33bd24511a1c6f1494cd5769a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u14.csv": "dc6a3400d6fcefaa18adb381c20792af27dc20164c8024a323caf0bb62927696",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u15.csv": "b61b5e6b53acfd9bd7fc7a046d4ddd0e82d2771c4a4814ab73fedb1161925874",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u16.csv": "8a98fdcd1418ac366e250d4c30d33138512b5c62e1050046e98b51099a2a408b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u17.csv": "407584dda90caf002c990c451f2a1e5af4859de3a65a21b69119f899210bcf98",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u18.csv": "9b1fd59e3ed9e667fc253dd5926ebf829683716eff03245873a0962c39a77671",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u19.csv": "67b707ab2bcf8b57dce6a521fe542d6abe76cd71211d611b150c4897dbdd3237",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u20.csv": "f05082f1fc1a87b7bcf95fd7aac32ac170c50e3f3362327b281113f04200c07b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u22.csv": "382dea70895e5dd42964897eb13f16c8b44d71f91721b75026d6184020a828ea",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u23.csv": "becd1edd8b1fa43af105bcfa586406ac60221eac5b55d79988f503a3bc9ac605",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u24.csv": "02aa7fc44ac0cc83bef66530973ebe1ebed89264927635da25525b34119d9db2",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u25.csv": "0420a40e130e2e77c8b88bc7353c228e27d3e256c90b03cff19b35fab4665523",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u27.csv": "194aed7e03d577d9227a4f7da390d472bbb64e39636deb3423485466aca94d64",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u30.csv": "ddaee1cd7d2621c4fc70068437ae9a39ac02548b25ccdad8bcf471651b06fdff",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u31.csv": "836081a97ed07ee58ec1e86e97e3d2141b3032dc4318d3116c01ef19741a9e77",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u32.csv": "a4818928ccea85302fd789313cf0025a2e5813c7ad063b57e014142e999f72c8",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u33.csv": "e28e9472bc4754bd6e3db6d27d51bd9adec4e103c0468849682c82d24d4c5d0e",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u34.csv": "9c55f748358c0bca7db96c61dc3a5ea491ea826d908da032b0d1da1460a0e483",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u35.csv": "b827004c38329f10f2f8ed4ae49dd8847786d04a90e347d5c5e3bbf7c9d6538b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u36.csv": "e19aef914132d122057fffc66eebba80d6ed7e726a1f97f6d7938a930e9f69a9",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u39.csv": "06a9606a7f0255386e0585ce40174bcaddf3203f3f1550ec9f274cba9efff5e0",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u41.csv": "ad65623933a8d0540578c43f0ad625d715b9fc21a956cddacaff434c79d745a3",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u42.csv": "85d2b45022e56897e9448559cefba57bd8b5787001535f5b3a7b83a8a88e2b76",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u43.csv": "c18c46aa94049c0301c43ec2eb4169803ffcd0ae1eaa467ec47d7a22f0bc59bb",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u44.csv": "f6e370ce122f9d00ce032d5fb7b11eec2d3a54df776a849b9820cafd877a9f26",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u45.csv": "c42e63891bf1bb71644ba7191a87c36dca389c86c98e699888791d46e77357ac",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u46.csv": "11e80991a99a54c8eef6dec1dcbf8d74bc90d773dcee14b440b5f76498fface1",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u47.csv": "e61fb350191fe565e65af84221ae88ced790021549af54d19a926ae911758ca5",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u49.csv": "7ad38a517feaba57e431271cec4b95c9fae0c559dedeb2292df45f1e18eddb18",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u50.csv": "a22872278cbaaba3b3fff5e401b604cacc2ff5c83e699fbc95b31fa189e7d717",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u51.csv": "9497675c0a84b37ddca45476de9f1905e43e32c3a188d0407311f75dca1742ba",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u52.csv": "2af8dbb62a3f5101748fc650084cba510c1853c5f98db93778460dbec028990e",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u53.csv": "26ed434b0a6ff8626cdcec78847232f111a76270900313912dfd3fc751af55ce",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u54.csv": "17e6653bc812c16e4ddaffe31c4550708e301349b04135e89d5b1cf192499c45",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u56.csv": "fe9d97f61d46d68253b34527aa994d8feb14ed4fd03b15801aef646e1a334dd3",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u57.csv": "2427cff5bd533e328f1d571bbf26832523391e88d5bebe9e91310909a2e9925d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u58.csv": "d11143068124b995484a9828b9513e65337d6d58845f13b1a60f8ba19e36d7ab",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/dark/dark_u59.csv": "02273d8cffe43ed933f90faef67d7f1c3ae44f83fc10991d749158148834e9fa",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u00.csv": "714bb40b6c6c6a14989bdfadc4efda8da93041c9bfe96963abac74de432d58e8",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u01.csv": "30eeeee724e0dd7d423d35278730c5c5533cee688a24c07024ba5c29931d9dda",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u02.csv": "978dc2f02677dc3bf7f15bd41509e3c5350806a4ad5c8cbf216de445ddda9e8f",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u03.csv": "319a72fa0afe473187a1ffbcc49589a63eb40775b9d35aa506ea06730a2febd8",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u04.csv": "eae1bd11ac1bea7747154e0c1e49a1789d261aa433f016d830d35aed9361109d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u05.csv": "b73fdd07c870b77b7c5be73ce3b11ac44e84d84a225b23f710e2eec31be2e8fe",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u07.csv": "176bab888be303e142d6e15ab97e3bee925142bfd1c976fa1ab32071cb4c265d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u08.csv": "ac724d95b6e17aa0328239f118a9fa6baf150afead8501aac19a19bc6e0e509f",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u09.csv": "f03b6b32aa51593875d265189c59010a3b341332a2c098f130c4b0f2cbe2cc92",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u10.csv": "a7a8c1dbddf8ea82c89031f1951220569ee4ad6abb6d3e647cf72311ee774e9b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u12.csv": "5dcaf05190bd25daa48b0b46d052c1517fd521f94e759728062e37bf6e0ff608",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u13.csv": "9513625f4d4fb09ff1ea0cf05690d697ac2997ce68dc57cd55083a71753a6d7e",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u14.csv": "9c2d4d75e6d62a724e8a7cd0715f6e11f9cc8b2b6ea96c5ab2c658f27cf8275b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u15.csv": "cbf05e18ad827ecc49f38e549db20536fdf94821d4d97bec8f9427c2d99abd18",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u16.csv": "cdd30f85e9d5ab9433686782ce486ff7ad2b9a1acba796d5127792783b8c311a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u17.csv": "1b75b7cca237f2a8a9018cabda1a4243df59522c6b387d24e3829f0c14935668",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u18.csv": "d3cf8d94a9a68fb5bc56fa6811da81debda0b0dcdf6636866309ea2ba5e5d2ef",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u19.csv": "b8c1ad57f22a098350457238f4cee913a6c16249b72a52479ca4b0c30e8450e1",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u20.csv": "6c844417afef77a3e38bb766ad40b50988ace15148e45fd7371d62856273a4ff",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u22.csv": "36a39bc0bf50854d1c628914aa95824251a982218ff631f7f3964c78cc5592e0",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u23.csv": "97e78c9491eaf92fbf1a1f8d28f8860815c31bc6b84ed546a337c95fae45872a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u24.csv": "18e12adfc20aee188272a0bf87d329db6cfd51023e38044b9aabf2c6e0c95855",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u25.csv": "0599a800ffddbc19b85cfe3baa27a708d50a18a2da2f87a636621d149e6f973a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u27.csv": "53a318ddcf9713ca74611a09c73fd39a5e174f970b264632133dbe61cd14e99b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u30.csv": "a98ffd06e60d9c615f0a904dbf8392c04ec764735a821524e99c12a504221bbe",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u31.csv": "050db73d9ade23b005f6281031be34fe45a8d1a37928e639bd24db36731470b4",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u32.csv": "2103223446e4959adc9b5907b8e6235b606374eccdb1c32bdb07c887962d44c4",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u33.csv": "019685aced22c67e20809b7498bc956d68d5ebd3f1e8500513e3ac352a614cc9",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u34.csv": "5d3ac13d0dfd3964c65f30b0d32b7d104c66d76228d89f27709ed94288550c7f",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u35.csv": "1ef7a0d16a21d323b8295d186d0abde5a19eeb84108dbb569ebf1cddbfaf15b8",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u36.csv": "5c89aa385c93a72550c6829d2f2459dfb2c377bfd93317aee3816b1f1d4d372b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u39.csv": "e101a8aa9362e27f182c7ca5c9ffe94f3bf0cfee4903e093681280b829446f7d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u41.csv": "98de1fa320c54ea36c7efa9059bfaf48c4a6f1dd033ef1059baf674c6e8f0489",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u42.csv": "bc378adf13e03ce49efa7713fbd3b65cb54c3d4fd0dd37ebe43a321042303f13",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u43.csv": "56e9ed538bc9b4591f259fbef9e7ce974da96aeedaa41e16187f1d28508f965c",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u44.csv": "b1d6860d1e8ac6d598b750518362c3e7e2aa9587084c2ae901b1bbb77fbb8e0b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u45.csv": "109759828d96fb1b6023b4e967fbf18a8847f3c672f4991bac4a55a9cc286567",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u46.csv": "23b1e6717318484a67cf722c2fd573dd4c6170fe05e3c6962a81968a352a9203",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u47.csv": "2f10f22a24272f781d005974bff4a542aa36a92eb28831a25b4797d8d117ef43",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u49.csv": "4f3ec2ac5ed21a679c5a6b55570daca0b71c8b1435875501ab7949bec115328a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u50.csv": "6ca4589433b9132028f35b119a6fec4ead5228b321dc1145d61e3b10bebbc80a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u51.csv": "064bfe76208fda9ada6c2b53e9d19f81f5b7e458ac8380d60fcfe4ef81e95693",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u52.csv": "36c4dea64078e656646eba9dfe364e6a0f8842faea81be028dccfdec82ab50c8",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u53.csv": "c91379c43be70c254ce54228e3df700094ccb95fe4cc9de35c998a2ae55ce89c",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u54.csv": "781d712eb567e6867ae3f623604853901620ac4294cee140eddee63950b541c6",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u56.csv": "ca3ae89dd132ba5db3924f25e05fd1f41bc3633a99a6bcdc849a8ce5ad648634",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u57.csv": "fee785a1cffaab029d0bed203fb4e3e0f3b911d68f07dae51b92eaa94916fc3d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u58.csv": "c7aedeb65ee68f6f0d6dd7e6ee729ad3cfc7cc0fcaf3707cefdbf3fed7b7e79a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonecharge/phonecharge_u59.csv": "21901a8417d5b4786fe93a1c1eed110bf4d3e9b37ab887d805fa0a0aa8379410",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u00.csv": "4d6b3a705e40b98d640f6fb81d6ff699f5a505d480ea48288dee14496ba846c3",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u01.csv": "22fa0c1f7f97c73dc00c308c41710be4e6f2045a50bbbdff60b4c89ce0a42257",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u02.csv": "71493a138ea82320f8a9e872dc81533904c8f3353afb6feb47105a20495922bf",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u03.csv": "4ab9c573aef6caa7f6125c52a8d41fad480caf466232b919d37afb5b363b9c9d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u04.csv": "dc1ea30a94b0370c4c526d2317dc618ab798fcf66e97485aedff2ffc90964cd4",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u05.csv": "0bcd1cb15272c1a764507bad568301c73bc21022fcf207ad292bd635f2ff68d9",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u07.csv": "4f2021d3648f3e4e1de6661407cbd68488154865fd960267ff0829803d835f94",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u08.csv": "cd9b567f7ec09183fabd01d6770025b6006cdbd81059cf3e48b4b633840d1d6f",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u09.csv": "b25ea5446ecb94d8b3eaec2c05fafc37ac95d97b63e8ce3ea1dd2adacc836a37",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u10.csv": "e14e6c1063530af6017a0b75539932e9709422d368b7eb533ff34f3319fa67a5",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u12.csv": "ca7bd0fb23425a23a335931121c4db40da12be923f2b12e45c950ed7eec43200",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u13.csv": "07874339ab272961a32835608d4b0c1970d148e4cdcd5fb963d15faa3101f5d1",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u14.csv": "8acd931115d8467aede9a107a37cc7dda748b8fec0340311cdaff6843a43c9ac",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u15.csv": "0b49bee70da0f08701f387c7bd9ff0ed4ad1bafd01f52eff8215e74a894f8759",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u16.csv": "cf86caa45479c355f07b15ecd375507dd10c3b448c0d1e929aba50cde6b599b8",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u17.csv": "8d2a38e07d9761ddc6d18a31e28ece0413affb4fbf58c6ede4e60febec2bf00e",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u18.csv": "501728ed37059758f75cedf7ceadcbc68b9bc9372ee495cd7811cea567c0e582",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u19.csv": "5bbf66ed0cd79225a520d2cbb231e6bb62ca411b22b0925db9815055f9ab94bf",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u20.csv": "9b28c900f9a483820b01d044b4b59bf7100bf8d2423f76a7275aa2a3d56e5fde",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u22.csv": "e14442a43cdbb734ccb0daa1de9cb171cade435c3be1bec74a9350bdb4dfde31",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u23.csv": "e0726672a82cec12f00c2ca46ceed24a8a2973a69e82df7818f76d5cc57a25ea",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u24.csv": "938940c48fae8fc660449ed10d56231a431df93d3e27779b2db00802507ca2fe",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u25.csv": "52ec0a5fd86cee507b54d640ec9a7a8b6fc75260d60ac953bc5f813d39db2330",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u27.csv": "8d4c1bb6b7b87c273d3d13a1dd85687cdc6860059943becb8c6aa2c8a305b36e",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u30.csv": "0e1a7bf677a7536109679bb8cdcd6aa4e6c255e0000589fe61b33e9bf9ba2235",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u31.csv": "92e27ec75b3ee5ffe555fc2f50b98b692ae76d0163d4406ab31357e806d7f6e1",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u32.csv": "b750f12c0251a73c705628218107ec21ffd4e5105d80ed6e22380a943f88e848",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u33.csv": "e0ae9aa48d3ac9fdd45ee18d5f474baee1fa73e9234d326a2652e5d2f33b81e3",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u34.csv": "c2284f71bd1383f1e0870079f7ff6b1efe849793dca1ba27777c541dd885f5c3",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u35.csv": "ffa68882585ed57eeffb3e5691360f0a9a0bdace2b9551111eb6eec442312a24",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u36.csv": "280e56b062f991ba12edb12f55b13fbd893234e3905bfbc7927978eb396a5a56",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u39.csv": "eaad1c0a665a5acf9b15abddd2ef2cce9a0d24786c43dde68bf0ab611ad779ac",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u41.csv": "ed1c8616642cde610a74ad06c2e4099640aafd9b28b2ca365bc2689ab0085441",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u42.csv": "ffd59203666b11dd5e54d7edbcff86c8010092ffd055633ee5d237424be1052d",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u43.csv": "356740dc28d4224be7225cc20206b79a9a57b7f4ab5a0a406281fe02e2a0c887",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u44.csv": "6bd4c33aba84e4304ccd4dc5153e306dad59fe9b5ce159ecc5fed2f6671ecb2c",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u45.csv": "dbd323838bcb0bf24528cb12c113292d533b223a26f45b4dcf62108ccf732f1a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u46.csv": "3dd275bba4abd23151513a51f646c583aa973283ee19673e38e4a42650cdd956",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u47.csv": "de61815e8dc94b71cf48dc53aa3be13e8fa4e0da4c65380c782aee05ca52428a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u49.csv": "509c59f93fd2b46cacdb970225eaab9c13eb63a220999247c053a3f1910935eb",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u50.csv": "f933f1b8b14530797e7a4d3f5757717224814a5bd0e8b78e64ff301ff1b2b57e",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u51.csv": "abe64ff89e711628ddb16d42f5252961c4e621dd6de7a4be26a0cbc5072bdb49",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u52.csv": "263ee2a48e3f81bbe1003939e4363057505ede4d8b9e5fd60ffb33706d931ed1",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u53.csv": "821dd0cd0b648da58d800d28a0cf6c1a1ac3b50b0052f0248cdd7bb2b0a04cb7",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u54.csv": "5f690a19f7536111ef13586f3c630bbc9108e86442ab8f048fffc0e3bb70e08a",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u56.csv": "d75e3972e2814e2de67cf60287e5a17871f1bdacf33d5c8c8e251029b91ce2ee",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u57.csv": "16fb487bb40a9b3e399d75e169f289a5e2691ea7c05130677f6d20cbc46e29b3",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u58.csv": "4853441e0b477dc04b7762bc10d5345587b75b89420b2437130613a5d7b2932b",
+      "~/Desktop/Final_Project_Dataset/dataset/sensing/phonelock/phonelock_u59.csv": "207b0d0190f1f64b25fb11b34de6abec50f4712b76f1acdd61a4e33797cdc46a",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/1066528_heartrate.txt": "31533209b9a515c331eb41800f676885e652ebda9077794d44ccbfb90342c3e7",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/1360686_heartrate.txt": "ca7dea5968f0d2776e47144d8ef6b1b7925026fede03df352db02dacb90a2436",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/1449548_heartrate.txt": "64bcca6fad58fb3af07deb7c83c75ed203ffeb4c56739a818df38b1fa1736c4f",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/1455390_heartrate.txt": "745b88c668443eec40e3a072b619c899619a07ee524e4e1461f8d82170dcae58",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/1818471_heartrate.txt": "38a6dff7ab41572123565c2d383e37eda1253b49d859944bfaf25f936d7d672d",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/2598705_heartrate.txt": "8296752e1e35254089361d4e8061be97c96274f2f39b628eff2771b4f9c31a1e",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/2638030_heartrate.txt": "b060cfd9e2762e0e8cb9c516de7e22886dd636fcf8143b6d423a3694b8715d96",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/3509524_heartrate.txt": "e13e97da0d41bfe765b0fe10d73257a03a8b64fdb13d42d277892e3cd29c7f04",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/3997827_heartrate.txt": "2f936506b0df3addc2b55f7475db9fbe6f7113c0a89cc16fdc325e6c6be116c2",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/4018081_heartrate.txt": "be430ff7b9253c2c25ba4a1adb627964533c2339f46676b8a4da3c0331ac7987",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/4314139_heartrate.txt": "7c97fc39acdde127ab2a53b792b59da193ac0b9a8c512cfe94716671418d8c27",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/4426783_heartrate.txt": "a9d16fd4a08b8ea221e1cb5e9fb09a4482ff0c918690d92e6154744a2e9f9d5a",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/46343_heartrate.txt": "d4a5607f38f2826bee7bfbfcf547e20f78552500a4dca92d234980b8bb2d2e35",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/5132496_heartrate.txt": "ecc21fe3c2b69b4b2f219ca3d2ffa87b4d080e83616777965c74366df2f2fdde",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/5383425_heartrate.txt": "9b6af9046a4c516f948f307e8e130a823b244056ae705e2bb8abd89bb3e76eb8",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/5498603_heartrate.txt": "5c761d785824a5260b10bcd3db9003cd2e99c2bd2fcc19b33672bb18bf95545d",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/5797046_heartrate.txt": "b604456fa323da8647a1be531970e9cb1bc2ecbe3332fab3956ee2099e5ab295",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/6220552_heartrate.txt": "ccd00eb897af251d8f3b318338a5c5f30535666455a38fd7d0d7bb0f43367f97",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/759667_heartrate.txt": "11acb925eff586d9d52c13518de7ab8f68666cc781d9652798cc1b70f4091ef9",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/7749105_heartrate.txt": "dc79b8371afdbe00d32e71b7d022a0b5369f5fef3a585c3ab492f2e18912fceb",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/781756_heartrate.txt": "bff3c34446b48bb0f7b3641385036c84197ca1d10b634d8eb6f3654ef89a03b1",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/8000685_heartrate.txt": "e55de33f616651c28dde4ab6e39cdcfce09aea71134e6637fab5cfde4470d024",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/8173033_heartrate.txt": "cf506dd0d701680ecff05f23e56c6ab155b294b5a8d1ff4f68e9e28ca0a36b3c",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/8258170_heartrate.txt": "9b6916730ed38d5481c0d9bdf139ce9ec6f1a835bd0f090355dc312c76a63729",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/844359_heartrate.txt": "192549983fab7d0c2ef95e752541c2f333f4c841b9e424f278e771533e7c2467",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/8530312_heartrate.txt": "b0ca407ad0537f72988564bf6666320ccb52564e2d540d6c25b3cbe51242a4e8",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/8686948_heartrate.txt": "22d737b6350bed5a70be35530820cd5c62f78847ea50550e131c7255b739f92d",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/8692923_heartrate.txt": "f4b857aff674373a6a559c407529ff209bc60f238e26c4d18f661c68327c85bd",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/9106476_heartrate.txt": "ee6a39842ff71e24e5dbd2e8ef12b70ce1afdd026d2e4ab4f378c7d819c12516",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/9618981_heartrate.txt": "de4da3e112a473d5ae212b302b89b99542580793afc2794388fc49fbd047c731",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/heart_rate/9961348_heartrate.txt": "9427e712ffb4d2ef3e83e6606f6e2a7fb78b8247de5fb5e16e58453b3708b5c6",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/1066528_labeled_sleep.txt": "528f424f7c02ba9a72aa7043e92ad070a72fc8ca5dd1bdaf3d7de79d3e181b43",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/1360686_labeled_sleep.txt": "345c6e658cea863b427da52d5ce39a4ebd168d3b465b9a32afaafc524c2d19d6",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/1449548_labeled_sleep.txt": "4ebf9e4506841e936a09e3e532e211697385f847d73f3bf779a37833866bc7d0",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/1455390_labeled_sleep.txt": "e9876130a8e60c7c7922c3cd075998fbe7487110b58717783e2040f1309db453",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/1818471_labeled_sleep.txt": "fa55e6b7adf687238cc30b6159fe72e18c60fd08d9bf6c3b1c23be9f259dac3a",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/2598705_labeled_sleep.txt": "57c01fb968a11efe9f6cf856de589bfcc700e8638d656e5746131ce26aee0f2d",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/2638030_labeled_sleep.txt": "d7ac001ab6596d98bf077648603c1c3f02b04520df62d8040f4c69a1d4c9b0cd",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/3509524_labeled_sleep.txt": "5355e9ac8f812ef38826fc37332798edba4583e8549516244fa1db1da2d13abd",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/3997827_labeled_sleep.txt": "cbc17a9fac7d3f45fe80c337b8f028421b4ca0d6d702457fd3ec2ae3b15b1aab",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/4018081_labeled_sleep.txt": "4021b20889f7ff56bfd24395616214144fd8794a26d7d2e214a00725729241bf",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/4314139_labeled_sleep.txt": "34c4a7d562bdbe0cfb307dd375597066720c928dfa3238e60fb878c677230db2",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/4426783_labeled_sleep.txt": "f12cd05a74a91014cbf9df327a54e32aa32ff7fe0c4959be610a32cea1af647d",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/46343_labeled_sleep.txt": "dcc450e4d04d4ddf39f3d6ed414142328503014ff20c31752a83cb3cb14b8c45",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/5132496_labeled_sleep.txt": "dcd97ad2dfb659f1ba135f8499ba9b721d12278bf5c480d145cd23d053d934ef",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/5383425_labeled_sleep.txt": "10af34ea9a31f2284dafa034827e3050c0ea584b71107133e694715c5990df1b",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/5498603_labeled_sleep.txt": "0bdc0d01ac2317acfb68fc6350e43e52cc4bedbf71884964c0c6d1efc970f404",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/5797046_labeled_sleep.txt": "65322b3f4809bf0db23d8c2c308e9e420e8dee3c00362e101bc9ed7cebe5a521",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/6220552_labeled_sleep.txt": "14e849b5a449fc436fdfddd4c72ed4b359482c4e5483e5bcbe2da8ee8f02fdf7",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/759667_labeled_sleep.txt": "e82238ed85367240b601edcd60802d640b820e1d542cbbbb17f3f0ce23d9d419",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/7749105_labeled_sleep.txt": "13be3a033e2316561a80f879e8e1a0780154db23346571946ef92b4b715f40cf",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/781756_labeled_sleep.txt": "afafe3b32980def187f34d8c09dbe88aaf7aae31e6908d9b95ad06d33f4a61c2",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/8000685_labeled_sleep.txt": "dd7a8d14dbf35c7e56e8391b7de15e30a05fc067427552a7eeb37ec922a90a71",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/8173033_labeled_sleep.txt": "f2d3fe32311a35161978d6d3bc85c65535e42081eda60948ee6b8cb6c25f1af7",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/8258170_labeled_sleep.txt": "caee858de45cd29b86cc21503a69e5991bfeeecd534052d03f346a3b049d3b44",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/844359_labeled_sleep.txt": "a54486d4870231a0c68452eeabbd7d57aabd7acc680c264f3802bdb9a6c65e42",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/8530312_labeled_sleep.txt": "de1de085634a200f8e30f078035098931d91600cddb3c3e3ffc84f87b4b6b721",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/8686948_labeled_sleep.txt": "0014bd67a50f729da036bcba954c0938e3dbed63804ac903286932d405777d2d",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/8692923_labeled_sleep.txt": "2572858c6644e660671236579c6d0f31333b285fe339e73f7c0b6ddf0ef7ff0d",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/9106476_labeled_sleep.txt": "21911940e6b8b314004d39a039fd4582b7d83bd63b6724d16e28a7e99fc6d629",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/9618981_labeled_sleep.txt": "68263f683415e11861005d32ff4f6ca1762e26ce519ef84bec9413b2afdb9187",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/labels/9961348_labeled_sleep.txt": "e40ec17850e67c13e0c8b2e5fff9186777cc31d4d5fed98f144238df75af87ca",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/1066528_steps.txt": "a46632b22f994995d179365f4e0c5f68c494ce75fe040bb245fe0e3c52d7f25e",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/1360686_steps.txt": "d8f6d7db74fe1b1479e85c48a5db84bdf408e1f140a451533f3dca7cfedfa22f",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/1449548_steps.txt": "22ecf19f803d280624e62b233705699eecd24f016a54bf6038674e146115b609",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/1455390_steps.txt": "72ab7e40b3ef53771632ce5955ec7de504c4fbf65dc5d8079ada96e6fd71a6ab",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/1818471_steps.txt": "3722a71c1ba6646f09aca35519bdcb6336671cfd403f62f1d81937073b1df5ff",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/2598705_steps.txt": "c568a3c9075a4241a34ceeb88ae9093673d8608f0cb99cd14e6d8ac121c6dba9",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/2638030_steps.txt": "86cf33313f3420121088c3c268d77649d4eb401ee0bce6f69b65ba979d8b553e",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/3509524_steps.txt": "8fcedb3de4bbb2b337fb43a6151247cd961fab067961ea94359531d331e1d535",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/3997827_steps.txt": "950d61fda896467aa0d5e48a38b64d749afa2fa915aa72ffdd0176b154898283",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/4018081_steps.txt": "8093248cb37dcfa9e0b5d5b81883403ac723909af26d0a93e62cfd0639704bfe",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/4314139_steps.txt": "457b1397847302310e0253c786a913f4213ac5f0edaf129c344bb0e939881ce5",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/4426783_steps.txt": "ae986a3eff098a83823adf4db3082f028e2b4f7b604f42a2c72ac3b0d8d7450b",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/46343_steps.txt": "b6584c64a91fbb9e4bb6f0d50d0814963420fb094f0e9c4bd95ab513558253e3",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/5132496_steps.txt": "628d355fba66220aace9ef275ba99ded0edab316bbaf16d8a56b1dded34f06a5",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/5383425_steps.txt": "b99871858cf2e1df88953b618fb5588673fa847d0b8e6b32aa938d7f3bfbb0cf",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/5498603_steps.txt": "0c79e238dfe7ba2565b49781a9aca9d0a3b9c53493fb06d27ac2cdeb8a030e8b",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/5797046_steps.txt": "edb0d3e383f0c35e74dd0c929fb6b464250e49704bfddf0737eb760761cc0e4b",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/6220552_steps.txt": "d3705adf1a87cb92b5b1e554b267242a97b01c18085d0e72280cc23b4488f204",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/759667_steps.txt": "da019e435d48f59eeb1de00bcd0986d1462434c58f016d35883b7e4df478b696",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/7749105_steps.txt": "ddd307af3713c1cc2b2d7849169aa10d03c1ba4185c359847d4f2665dea87117",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/781756_steps.txt": "392d515ab950442b519ac7f4049c15592ba55947fb5e4b2d6fe2cb45c18bc4e8",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/8000685_steps.txt": "d4b672ee693eeb90fff58f757736844dea76a22b95f3333aa0518f7acaeb33e7",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/8173033_steps.txt": "db9f15a4455b371d5b26bf96ee173fca5ad8872e88824956957ab86f5885725e",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/8258170_steps.txt": "caa6b92f8a95a5577893389b0414eb37c49fa3baa30686ad7aeac439be98b5d1",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/844359_steps.txt": "f836622a58e9b90cc1d9dc040e61e6bb54e756fcf4f32707f28b1ebf39f1acb3",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/8530312_steps.txt": "be50c9c5afeb69429c8414e4927ef03cd0b9b8f8f76050092bb6525a71c63c26",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/8686948_steps.txt": "f7a828da65000b93613fcc6b7cd80b62db034f68bc0951172154d9e4d534758d",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/8692923_steps.txt": "22673ad40d11743265ad3bdf1ea243252007e86a66630e0f38a4c960378c8092",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/9106476_steps.txt": "81d773737be59724f0a4a5b33b486b9ad342437be4699c7be0b8094bd0c5ff7f",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/9618981_steps.txt": "b1d3ae849d0db015a62cd4b8c5e2b55f008ed0dce1041bd3eaf04376641554e0",
+      "~/Desktop/Final_Project_Dataset/motion-and-heart-rate-from-a-wrist-worn-wearable-and-labeled-sleep-from-polysomnography-1.0.0/steps/9961348_steps.txt": "cb1afa57db4ccc2a396f42934742687124eb092e63d1071cccbd5b733d43a209"
+    }
+  },
+  "results": {
+    "fitabase": {
+      "dataset": "fitabase",
+      "target": "sleep_ratio_proxy_pct",
+      "target_nights_total": 776,
+      "insufficient_history_nights": 59,
+      "history_count_per_prediction": {
+        "median": 23.0,
+        "q25": 12.0,
+        "q75": 37.0,
+        "min": 3,
+        "max": 61
+      },
+      "history_span_days_median": 30.0,
+      "days_since_last_valid_night": {
+        "median": 1.0,
+        "q95": 2.0
+      },
+      "trend_applied_share": 0.7252440725244073,
+      "participant_independent": {
+        "expanding_mean": {
+          "mae": 2.1952282348408514,
+          "rmse": 3.1443316673753867,
+          "n_predictions": 717,
+          "n_participants": 18,
+          "mae_ci95": [
+            1.8383167717041897,
+            2.699995586904885
+          ],
+          "participant_mae": {
+            "median": 2.022664622503464,
+            "q25": 1.681584841571703,
+            "q75": 2.4926550247355523,
+            "min": 1.241047070852558,
+            "max": 5.4263366991941515
+          }
+        },
+        "mean_last7": {
+          "mae": 2.2592716573816767,
+          "rmse": 3.244786869476627,
+          "n_predictions": 717,
+          "n_participants": 18,
+          "mae_ci95": [
+            1.879625744219002,
+            2.7843089373098135
+          ],
+          "participant_mae": {
+            "median": 2.2284834689661293,
+            "q25": 1.6750552997494343,
+            "q75": 2.541515213982129,
+            "min": 1.302081478368765,
+            "max": 5.599198954384915
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": 0.06404342254082479,
+            "ci95": [
+              -0.014259757020006928,
+              0.13958178529948015
+            ]
+          }
+        },
+        "mean_last14": {
+          "mae": 2.1983514646745563,
+          "rmse": 3.15359290362926,
+          "n_predictions": 717,
+          "n_participants": 18,
+          "mae_ci95": [
+            1.8410533246100138,
+            2.693642337783789
+          ],
+          "participant_mae": {
+            "median": 2.104946920002493,
+            "q25": 1.656384992234664,
+            "q75": 2.504188244693392,
+            "min": 1.3132564970573068,
+            "max": 5.30001394498279
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": 0.0031232298337046083,
+            "ci95": [
+              -0.05080795242412329,
+              0.05430608413789882
+            ]
+          }
+        },
+        "ewma_h3": {
+          "mae": 2.207704624758993,
+          "rmse": 3.1957214751331753,
+          "n_predictions": 717,
+          "n_participants": 18,
+          "mae_ci95": [
+            1.8298828984142206,
+            2.746259668129698
+          ],
+          "participant_mae": {
+            "median": 2.1259097138508682,
+            "q25": 1.6273032825152247,
+            "q75": 2.457100962327788,
+            "min": 1.2676771462639036,
+            "max": 5.639588682749719
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": 0.012476389918140953,
+            "ci95": [
+              -0.055988390489605015,
+              0.0788741208409591
+            ]
+          }
+        },
+        "ewma_h7": {
+          "mae": 2.1657806098210215,
+          "rmse": 3.1380204372588607,
+          "n_predictions": 717,
+          "n_participants": 18,
+          "mae_ci95": [
+            1.8087535211995598,
+            2.668031002457233
+          ],
+          "participant_mae": {
+            "median": 2.059260733255572,
+            "q25": 1.6236249704346624,
+            "q75": 2.441821031995474,
+            "min": 1.2617699435592034,
+            "max": 5.363461561790888
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.029447625019830507,
+            "ci95": [
+              -0.07245163156197236,
+              0.010923441059909705
+            ]
+          }
+        },
+        "ewma_h14": {
+          "mae": 2.1700004204327117,
+          "rmse": 3.1325952479230272,
+          "n_predictions": 717,
+          "n_participants": 18,
+          "mae_ci95": [
+            1.8194008672637965,
+            2.663810347560051
+          ],
+          "participant_mae": {
+            "median": 2.0325094410814177,
+            "q25": 1.6525431166734819,
+            "q75": 2.4369349931371,
+            "min": 1.2526954947919766,
+            "max": 5.315284093101035
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.025227814408140297,
+            "ci95": [
+              -0.05117959935936654,
+              -0.0007558087467216684
+            ]
+          }
+        },
+        "trend_adjusted": {
+          "mae": 2.2167144913307637,
+          "rmse": 3.2074015870501973,
+          "n_predictions": 717,
+          "n_participants": 18,
+          "mae_ci95": [
+            1.8438632487841948,
+            2.741784713311035
+          ],
+          "participant_mae": {
+            "median": 2.1400712048079633,
+            "q25": 1.659702249832377,
+            "q75": 2.4829797380903265,
+            "min": 1.3200681634911748,
+            "max": 5.568865625145113
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": 0.021486256489911888,
+            "ci95": [
+              -0.05083890955462181,
+              0.08730065557629825
+            ]
+          }
+        },
+        "ewma_selected": {
+          "mae": 2.1720858017008333,
+          "rmse": 3.141618927946822,
+          "n_predictions": 717,
+          "n_participants": 18,
+          "mae_ci95": [
+            1.8212688949711604,
+            2.6762745774616548
+          ],
+          "participant_mae": {
+            "median": 2.059260733255572,
+            "q25": 1.658873680220441,
+            "q75": 2.4223482877341307,
+            "min": 1.2617699435592034,
+            "max": 5.363461561790888
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.023142433140018334,
+            "ci95": [
+              -0.059179424334766556,
+              0.011584392663480814
+            ]
+          }
+        }
+      },
+      "ewma_half_life_selected_per_fold": [
+        7,
+        14
+      ],
+      "chronological": {
+        "test_from_day": "2016-04-22",
+        "results": {
+          "expanding_mean": {
+            "mae": 2.1899009188198777,
+            "rmse": 2.9020905251512645,
+            "n_predictions": 241,
+            "n_participants": 17,
+            "mae_ci95": [
+              1.8300010204444577,
+              2.6022034794020823
+            ],
+            "participant_mae": {
+              "median": 2.083360318019054,
+              "q25": 1.6643642337303048,
+              "q75": 2.452057462391541,
+              "min": 1.0562566165592537,
+              "max": 4.141580838153352
+            }
+          },
+          "mean_last7": {
+            "mae": 2.198707040070175,
+            "rmse": 2.927348992524806,
+            "n_predictions": 241,
+            "n_participants": 17,
+            "mae_ci95": [
+              1.8421114087528982,
+              2.5928407397039317
+            ],
+            "participant_mae": {
+              "median": 2.1852948414609394,
+              "q25": 1.5903048566485753,
+              "q75": 2.6311358617751948,
+              "min": 1.0204806781685818,
+              "max": 3.919683328738518
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": 0.008806121250297543,
+              "ci95": [
+                -0.1120957217939074,
+                0.13170497906214237
+              ]
+            }
+          },
+          "mean_last14": {
+            "mae": 2.1364055407432354,
+            "rmse": 2.874617970652438,
+            "n_predictions": 241,
+            "n_participants": 17,
+            "mae_ci95": [
+              1.811146875728811,
+              2.4908310204847304
+            ],
+            "participant_mae": {
+              "median": 2.121625377625508,
+              "q25": 1.6422340617763038,
+              "q75": 2.5268434097670998,
+              "min": 1.0644746493904291,
+              "max": 3.793711633532302
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.0534953780766421,
+              "ci95": [
+                -0.14822419037468706,
+                0.04188586431358398
+              ]
+            }
+          },
+          "ewma_h3": {
+            "mae": 2.115554870887194,
+            "rmse": 2.835613671926092,
+            "n_predictions": 241,
+            "n_participants": 17,
+            "mae_ci95": [
+              1.759968548714628,
+              2.5232504176839687
+            ],
+            "participant_mae": {
+              "median": 2.0984450743025542,
+              "q25": 1.6043105585427788,
+              "q75": 2.5066740509214336,
+              "min": 0.9995189073601409,
+              "max": 4.034437381296795
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.07434604793268362,
+              "ci95": [
+                -0.19208111908293515,
+                0.034782900350351656
+              ]
+            }
+          },
+          "ewma_h7": {
+            "mae": 2.093390253220699,
+            "rmse": 2.8236645908346274,
+            "n_predictions": 241,
+            "n_participants": 17,
+            "mae_ci95": [
+              1.7615382618697129,
+              2.4726726899193836
+            ],
+            "participant_mae": {
+              "median": 2.1092558600265776,
+              "q25": 1.5638617880248558,
+              "q75": 2.486686520739992,
+              "min": 1.1041928334773479,
+              "max": 3.818527173973227
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.09651066559917816,
+              "ci95": [
+                -0.17037653928500596,
+                -0.01855807031381777
+              ]
+            }
+          },
+          "ewma_h14": {
+            "mae": 2.123168859926275,
+            "rmse": 2.8478898703219953,
+            "n_predictions": 241,
+            "n_participants": 17,
+            "mae_ci95": [
+              1.798558839476454,
+              2.496189848787693
+            ],
+            "participant_mae": {
+              "median": 2.0773627409346744,
+              "q25": 1.620229460192374,
+              "q75": 2.4939405025690613,
+              "min": 1.078070153693436,
+              "max": 3.82629293487704
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.06673205889360265,
+              "ci95": [
+                -0.12008024539998131,
+                -0.01535696045888765
+              ]
+            }
+          },
+          "trend_adjusted": {
+            "mae": 2.1466390242838624,
+            "rmse": 2.8907709591345916,
+            "n_predictions": 241,
+            "n_participants": 17,
+            "mae_ci95": [
+              1.7980949681713136,
+              2.552247761278528
+            ],
+            "participant_mae": {
+              "median": 2.09997287824854,
+              "q25": 1.6031016084837768,
+              "q75": 2.49288631316745,
+              "min": 0.6049074367960543,
+              "max": 4.008694449922784
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.04326189453601467,
+              "ci95": [
+                -0.1734744714291896,
+                0.07967255577416837
+              ]
+            }
+          },
+          "ewma_selected": {
+            "mae": 2.123168859926275,
+            "rmse": 2.8478898703219953,
+            "n_predictions": 241,
+            "n_participants": 17,
+            "mae_ci95": [
+              1.798558839476454,
+              2.496189848787693
+            ],
+            "participant_mae": {
+              "median": 2.0773627409346744,
+              "q25": 1.620229460192374,
+              "q75": 2.4939405025690613,
+              "min": 1.078070153693436,
+              "max": 3.82629293487704
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.06673205889360265,
+              "ci95": [
+                -0.12008024539998131,
+                -0.01535696045888765
+              ]
+            }
+          }
+        },
+        "ewma_half_life_selected": 14
+      },
+      "by_history_length": {
+        "3-6": {
+          "n": 72,
+          "participants": 18,
+          "expanding_mean": 1.6356592464851676,
+          "mean_last7": 1.6356592464851676,
+          "mean_last14": 1.6356592464851676,
+          "ewma_h3": 1.654049054422568,
+          "ewma_h7": 1.630412895607802,
+          "ewma_h14": 1.6299467448815192,
+          "trend_adjusted": 1.6356592464851676
+        },
+        "7-13": {
+          "n": 125,
+          "participants": 18,
+          "expanding_mean": 2.4289964824861086,
+          "mean_last7": 2.4637005531503,
+          "mean_last14": 2.4289964824861086,
+          "ewma_h3": 2.425482137177628,
+          "ewma_h7": 2.404324553648595,
+          "ewma_h14": 2.414578644833634,
+          "trend_adjusted": 2.4289964824861086
+        },
+        "14-27": {
+          "n": 220,
+          "participants": 17,
+          "expanding_mean": 2.2678154384708042,
+          "mean_last7": 2.366607691042143,
+          "mean_last14": 2.3301333591849924,
+          "ewma_h3": 2.3284298177564122,
+          "ewma_h7": 2.284172614237389,
+          "ewma_h14": 2.2703032687673748,
+          "trend_adjusted": 2.332271503314696
+        },
+        "28-max": {
+          "n": 300,
+          "participants": 13,
+          "expanding_mean": 2.17889073953206,
+          "mean_last7": 2.2450468380755706,
+          "mean_last14": 2.140655450310877,
+          "ewma_h3": 2.161309523267196,
+          "ewma_h7": 2.1080547480653693,
+          "ewma_h14": 2.124150286952527,
+          "trend_adjusted": 2.18297511165743
+        }
+      },
+      "interval_80_coverage": {
+        "nominal": 0.8,
+        "empirical": 0.7615062761506276,
+        "by_history_length": {
+          "3-6": 0.7638888888888888,
+          "7-13": 0.656,
+          "14-27": 0.7818181818181819,
+          "28-max": 0.79
+        }
+      },
+      "decision": {
+        "rule": "CI below zero in both evaluations and >= 2% relative improvement",
+        "verdicts": {
+          "mean_last7": {
+            "grouped_ci_below_zero": false,
+            "chronological_ci_below_zero": false,
+            "relative_improvement_grouped": -0.029173924389446357,
+            "adopt": false
+          },
+          "mean_last14": {
+            "grouped_ci_below_zero": false,
+            "chronological_ci_below_zero": false,
+            "relative_improvement_grouped": -0.0014227358158642829,
+            "adopt": false
+          },
+          "trend_adjusted": {
+            "grouped_ci_below_zero": false,
+            "chronological_ci_below_zero": false,
+            "relative_improvement_grouped": -0.009787709609825416,
+            "adopt": false
+          },
+          "ewma_selected": {
+            "grouped_ci_below_zero": false,
+            "chronological_ci_below_zero": true,
+            "relative_improvement_grouped": 0.010542153555024816,
+            "adopt": false
+          }
+        },
+        "selected": "expanding_mean"
+      }
+    },
+    "studentlife": {
+      "dataset": "studentlife",
+      "target": "self_reported_sleep_hours",
+      "target_nights_total": 1241,
+      "insufficient_history_nights": 150,
+      "history_count_per_prediction": {
+        "median": 16.0,
+        "q25": 9.0,
+        "q75": 26.0,
+        "min": 3,
+        "max": 60
+      },
+      "history_span_days_median": 20.0,
+      "days_since_last_valid_night": {
+        "median": 1.0,
+        "q95": 6.0
+      },
+      "trend_applied_share": 0.5811182401466545,
+      "participant_independent": {
+        "expanding_mean": {
+          "mae": 0.8145447727468936,
+          "rmse": 1.1735535359539935,
+          "n_predictions": 1091,
+          "n_participants": 47,
+          "mae_ci95": [
+            0.7101739664009656,
+            0.9188387832645767
+          ],
+          "participant_mae": {
+            "median": 0.7054014724587816,
+            "q25": 0.4979993806182596,
+            "q75": 0.9292238787771294,
+            "min": 0.11249999999999982,
+            "max": 1.565959158724105
+          }
+        },
+        "mean_last7": {
+          "mae": 0.7910490594037799,
+          "rmse": 1.167320114867455,
+          "n_predictions": 1091,
+          "n_participants": 47,
+          "mae_ci95": [
+            0.6828624918297075,
+            0.8997524053762305
+          ],
+          "participant_mae": {
+            "median": 0.6710317460317461,
+            "q25": 0.4808085317460319,
+            "q75": 0.9097883597883597,
+            "min": 0.11249999999999982,
+            "max": 1.582904761904762
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.023495713343113716,
+            "ci95": [
+              -0.05674125132574503,
+              0.002940244916662786
+            ]
+          }
+        },
+        "mean_last14": {
+          "mae": 0.7938652980586987,
+          "rmse": 1.1587083428800853,
+          "n_predictions": 1091,
+          "n_participants": 47,
+          "mae_ci95": [
+            0.6900781905024698,
+            0.897234541874405
+          ],
+          "participant_mae": {
+            "median": 0.702022472477018,
+            "q25": 0.4850562198218448,
+            "q75": 0.9262103174603173,
+            "min": 0.11249999999999982,
+            "max": 1.5461940836940837
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.020679474688194973,
+            "ci95": [
+              -0.0449653935599386,
+              -0.004249250735560036
+            ]
+          }
+        },
+        "ewma_h3": {
+          "mae": 0.7899213427058835,
+          "rmse": 1.1662624703822555,
+          "n_predictions": 1091,
+          "n_participants": 47,
+          "mae_ci95": [
+            0.6791171684357973,
+            0.9026011472872671
+          ],
+          "participant_mae": {
+            "median": 0.6546666468062565,
+            "q25": 0.49309817423197577,
+            "q75": 0.8983619639876319,
+            "min": 0.07263331541365936,
+            "max": 1.6056641437910626
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.02462343004100997,
+            "ci95": [
+              -0.05975562122119974,
+              0.004409674792543627
+            ]
+          }
+        },
+        "ewma_h7": {
+          "mae": 0.7931376484388266,
+          "rmse": 1.1561535126853113,
+          "n_predictions": 1091,
+          "n_participants": 47,
+          "mae_ci95": [
+            0.688111883631707,
+            0.900194743076282
+          ],
+          "participant_mae": {
+            "median": 0.6855070213579308,
+            "q25": 0.492183531542481,
+            "q75": 0.9318305034386879,
+            "min": 0.09416201745523578,
+            "max": 1.5775328447896946
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.021407124308067006,
+            "ci95": [
+              -0.04723198214793862,
+              -0.0030510009619842187
+            ]
+          }
+        },
+        "ewma_h14": {
+          "mae": 0.8022161495079395,
+          "rmse": 1.1614097499789557,
+          "n_predictions": 1091,
+          "n_participants": 47,
+          "mae_ci95": [
+            0.6996224440977166,
+            0.9054499798543079
+          ],
+          "participant_mae": {
+            "median": 0.6969258200971689,
+            "q25": 0.4934538487785578,
+            "q75": 0.9233142403643873,
+            "min": 0.1031131243337553,
+            "max": 1.5708075263551162
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.012328623238954077,
+            "ci95": [
+              -0.027087013644590926,
+              -0.0024441850620798597
+            ]
+          }
+        },
+        "trend_adjusted": {
+          "mae": 0.7921715704162553,
+          "rmse": 1.1675431227587614,
+          "n_predictions": 1091,
+          "n_participants": 47,
+          "mae_ci95": [
+            0.6819981824715745,
+            0.9035345660984977
+          ],
+          "participant_mae": {
+            "median": 0.6518223017851797,
+            "q25": 0.48443563030587944,
+            "q75": 0.9034254228185671,
+            "min": 0.11249999999999982,
+            "max": 1.5934633070392454
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.0223732023306383,
+            "ci95": [
+              -0.05514158898367736,
+              0.005871131379390886
+            ]
+          }
+        },
+        "ewma_selected": {
+          "mae": 0.7899213427058835,
+          "rmse": 1.1662624703822555,
+          "n_predictions": 1091,
+          "n_participants": 47,
+          "mae_ci95": [
+            0.6791171684357973,
+            0.9026011472872671
+          ],
+          "participant_mae": {
+            "median": 0.6546666468062565,
+            "q25": 0.49309817423197577,
+            "q75": 0.8983619639876319,
+            "min": 0.07263331541365936,
+            "max": 1.6056641437910626
+          },
+          "paired_vs_expanding_mean": {
+            "estimate": -0.02462343004100997,
+            "ci95": [
+              -0.05975562122119974,
+              0.004409674792543627
+            ]
+          }
+        }
+      },
+      "ewma_half_life_selected_per_fold": [
+        3
+      ],
+      "chronological": {
+        "test_from_day": "2013-04-28",
+        "results": {
+          "expanding_mean": {
+            "mae": 1.2739615418711279,
+            "rmse": 1.6930745303433072,
+            "n_predictions": 378,
+            "n_participants": 39,
+            "mae_ci95": [
+              1.0932769086113774,
+              1.4502349343096905
+            ],
+            "participant_mae": {
+              "median": 1.0999999999999996,
+              "q25": 0.762057908561055,
+              "q75": 1.534485043896429,
+              "min": 0.3920445261437908,
+              "max": 2.183170995670996
+            }
+          },
+          "mean_last7": {
+            "mae": 1.20539808515999,
+            "rmse": 1.6715295154279692,
+            "n_predictions": 378,
+            "n_participants": 39,
+            "mae_ci95": [
+              1.016405661341451,
+              1.4163736081358504
+            ],
+            "participant_mae": {
+              "median": 1.0642857142857143,
+              "q25": 0.7244897959183674,
+              "q75": 1.4642857142857144,
+              "min": 0.25,
+              "max": 2.2357142857142858
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.06856345671113807,
+              "ci95": [
+                -0.15224699472004397,
+                0.00268710450323244
+              ]
+            }
+          },
+          "mean_last14": {
+            "mae": 1.217652750688465,
+            "rmse": 1.6627565739094026,
+            "n_predictions": 378,
+            "n_participants": 39,
+            "mae_ci95": [
+              1.0373177630618768,
+              1.4054765688801845
+            ],
+            "participant_mae": {
+              "median": 1.047648185148185,
+              "q25": 0.7593864468864469,
+              "q75": 1.498299319727891,
+              "min": 0.3035714285714286,
+              "max": 2.183170995670996
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.05630879118266305,
+              "ci95": [
+                -0.12175847426763896,
+                -0.010565134113923546
+              ]
+            }
+          },
+          "ewma_h3": {
+            "mae": 1.1885585064173974,
+            "rmse": 1.6587251236414478,
+            "n_predictions": 378,
+            "n_participants": 39,
+            "mae_ci95": [
+              1.0010208531533882,
+              1.4030249216411492
+            ],
+            "participant_mae": {
+              "median": 1.0369241662628448,
+              "q25": 0.7264980686443598,
+              "q75": 1.4733034000146141,
+              "min": 0.2926287914018899,
+              "max": 2.3044875784713863
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.08540303545373086,
+              "ci95": [
+                -0.17554649200487568,
+                -0.009489070147240146
+              ]
+            }
+          },
+          "ewma_h7": {
+            "mae": 1.2098225049642832,
+            "rmse": 1.6528207860214907,
+            "n_predictions": 378,
+            "n_participants": 39,
+            "mae_ci95": [
+              1.027692232354184,
+              1.405365926519023
+            ],
+            "participant_mae": {
+              "median": 1.0411915474602145,
+              "q25": 0.7608262833709791,
+              "q75": 1.5004676549300466,
+              "min": 0.329692979652783,
+              "max": 2.237743605309526
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.06413903690684497,
+              "ci95": [
+                -0.13308628259519234,
+                -0.014075500281354406
+              ]
+            }
+          },
+          "ewma_h14": {
+            "mae": 1.2381922910128973,
+            "rmse": 1.6668715719700464,
+            "n_predictions": 378,
+            "n_participants": 39,
+            "mae_ci95": [
+              1.0594932326325979,
+              1.42282986967525
+            ],
+            "participant_mae": {
+              "median": 1.0355184842602454,
+              "q25": 0.760381565668433,
+              "q75": 1.5186667968452872,
+              "min": 0.35651686867761123,
+              "max": 2.210346768307898
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.03576925085823046,
+              "ci95": [
+                -0.07558840103102658,
+                -0.008837665351934495
+              ]
+            }
+          },
+          "trend_adjusted": {
+            "mae": 1.1936521383084935,
+            "rmse": 1.6636198442827734,
+            "n_predictions": 378,
+            "n_participants": 39,
+            "mae_ci95": [
+              1.004969114819697,
+              1.4083410589392642
+            ],
+            "participant_mae": {
+              "median": 1.0155152422009635,
+              "q25": 0.7548149285896584,
+              "q75": 1.4529571463970146,
+              "min": 0.2875199967288318,
+              "max": 2.2518888483147474
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.08030940356263447,
+              "ci95": [
+                -0.16551366121813885,
+                -0.0054481977528205725
+              ]
+            }
+          },
+          "ewma_selected": {
+            "mae": 1.2381922910128973,
+            "rmse": 1.6668715719700464,
+            "n_predictions": 378,
+            "n_participants": 39,
+            "mae_ci95": [
+              1.0594932326325979,
+              1.42282986967525
+            ],
+            "participant_mae": {
+              "median": 1.0355184842602454,
+              "q25": 0.760381565668433,
+              "q75": 1.5186667968452872,
+              "min": 0.35651686867761123,
+              "max": 2.210346768307898
+            },
+            "paired_vs_expanding_mean": {
+              "estimate": -0.03576925085823046,
+              "ci95": [
+                -0.07558840103102658,
+                -0.008837665351934495
+              ]
+            }
+          }
+        },
+        "ewma_half_life_selected": 14
+      },
+      "by_history_length": {
+        "3-6": {
+          "n": 180,
+          "participants": 47,
+          "expanding_mean": 0.5410648148148147,
+          "mean_last7": 0.5410648148148147,
+          "mean_last14": 0.5410648148148147,
+          "ewma_h3": 0.5469316199393295,
+          "ewma_h7": 0.5433499161993905,
+          "ewma_h14": 0.5421792781230194,
+          "trend_adjusted": 0.5410648148148147
+        },
+        "7-13": {
+          "n": 277,
+          "participants": 43,
+          "expanding_mean": 0.623650136466021,
+          "mean_last7": 0.6224858174316658,
+          "mean_last14": 0.623650136466021,
+          "ewma_h3": 0.6274061505641225,
+          "ewma_h7": 0.6235374504032966,
+          "ewma_h14": 0.6234346062685252,
+          "trend_adjusted": 0.623650136466021
+        },
+        "14-27": {
+          "n": 382,
+          "participants": 35,
+          "expanding_mean": 0.723790378253692,
+          "mean_last7": 0.7195213163799551,
+          "mean_last14": 0.7166230366492147,
+          "ewma_h3": 0.7263049013856068,
+          "ewma_h7": 0.7196201027042267,
+          "ewma_h14": 0.7203052970359075,
+          "trend_adjusted": 0.7289839049361087
+        },
+        "28-max": {
+          "n": 252,
+          "participants": 17,
+          "expanding_mean": 1.3572923337547462,
+          "mean_last7": 1.2633219954648527,
+          "mean_last14": 1.278628117913832,
+          "ewma_h3": 1.2385576082042697,
+          "ewma_h7": 1.26942633546088,
+          "ewma_h14": 1.3086410303449223,
+          "trend_adjusted": 1.2525578459158195
+        }
+      },
+      "interval_80_coverage": {
+        "nominal": 0.8,
+        "empirical": 0.6663611365719523,
+        "by_history_length": {
+          "3-6": 0.6777777777777778,
+          "7-13": 0.703971119133574,
+          "14-27": 0.7198952879581152,
+          "28-max": 0.5357142857142857
+        }
+      },
+      "decision": {
+        "rule": "CI below zero in both evaluations and >= 2% relative improvement",
+        "verdicts": {
+          "mean_last7": {
+            "grouped_ci_below_zero": false,
+            "chronological_ci_below_zero": false,
+            "relative_improvement_grouped": 0.028845207936058565,
+            "adopt": false
+          },
+          "mean_last14": {
+            "grouped_ci_below_zero": true,
+            "chronological_ci_below_zero": true,
+            "relative_improvement_grouped": 0.025387769193407836,
+            "adopt": true
+          },
+          "trend_adjusted": {
+            "grouped_ci_below_zero": false,
+            "chronological_ci_below_zero": true,
+            "relative_improvement_grouped": 0.02746712406635308,
+            "adopt": false
+          },
+          "ewma_selected": {
+            "grouped_ci_below_zero": false,
+            "chronological_ci_below_zero": true,
+            "relative_improvement_grouped": 0.030229682719554198,
+            "adopt": false
+          }
+        },
+        "selected": "mean_last14"
+      }
+    }
+  }
+}
