@@ -16,15 +16,11 @@ import {
   XAxis,
   YAxis
 } from "recharts";
+import PersonalizedInsights from "./PersonalizedInsights";
+import type { PredictionResult } from "../lib/types";
 
-export type PredictionResult = {
-  predicted_sleep_efficiency: number;
-  sleep_quality_label: string;
-  inferred_sleep_time: string;
-  model_outputs: Record<string, number>;
-  top_influencing_factors: Array<{ feature: string; impact: number; value: number; direction?: string; feature_key?: string; insight?: string }>;
-  recommendations: string[];
-};
+// Re-exported so existing imports from this module keep working.
+export type { PredictionResult };
 
 type ModelMetrics = {
   mae: number;
@@ -34,7 +30,6 @@ type ModelMetrics = {
   precision: number;
   recall: number;
   f1: number;
-  roc_auc: number;
 };
 
 export type ModelMetricsSummary = Record<string, ModelMetrics>;
@@ -68,7 +63,7 @@ export default function ResultDashboard({ result, metrics }: { result: Predictio
     : [];
 
   const clsChartData = metrics
-    ? ["accuracy", "precision", "recall", "f1", "roc_auc"].map((metric) => ({
+    ? ["accuracy", "precision", "recall", "f1"].map((metric) => ({
         metric: formatMetricName(metric.toUpperCase()),
         rf: (metrics.rf?.[metric as keyof ModelMetrics] ?? 0) * 100,
         xgb: (metrics.xgb?.[metric as keyof ModelMetrics] ?? 0) * 100,
@@ -86,7 +81,7 @@ export default function ResultDashboard({ result, metrics }: { result: Predictio
     : [];
 
   const radarData = metrics
-    ? ["accuracy", "precision", "recall", "f1", "roc_auc"].map((metric) => ({
+    ? ["accuracy", "precision", "recall", "f1"].map((metric) => ({
         metric: formatMetricName(metric.toUpperCase()),
         RF: (metrics.rf?.[metric as keyof ModelMetrics] ?? 0) * 100,
         XGB: (metrics.xgb?.[metric as keyof ModelMetrics] ?? 0) * 100,
@@ -140,33 +135,48 @@ export default function ResultDashboard({ result, metrics }: { result: Predictio
             </div>
             <p className="chart-note">Higher values indicate a better predicted sleep-efficiency outcome for the current record.</p>
           </div>
+
+          <PersonalizedInsights
+            insights={result.personalized_recommendations}
+            diagnostics={result.prediction_diagnostics}
+          />
         </>
       )}
 
       {metrics && (
         <>
           <h3>Detailed Metrics by Model</h3>
+          <p className="disclosure">
+            Historical results on the stored 75-row test split. That split was examined during development, so it is
+            not an untouched hold-out, and there is no external validation. The target is a sleep-efficiency index
+            constructed from the Kaggle Sleep Health dataset rather than a measured value, and the screen-activity
+            sequences used in training are synthetic. Regression metrics (MAE, RMSE, R2) are primary. The
+            threshold-derived metrics are secondary: both the index and the regression output are cut at 85, so they
+            measure agreement on that band, not a separately trained classifier. ROC-AUC is not shown because it was
+            computed from a rescaled regression output rather than a classifier probability.
+          </p>
           <div className="metrics-grid">
             {Object.entries(metrics).map(([model, m]) => (
               <div key={model} className="metric-card">
                 <h4>{model.toUpperCase()}</h4>
+                <p><em>Regression (primary)</em></p>
+                <p>MAE: <strong>{m.mae.toFixed(3)}</strong></p>
+                <p>RMSE: <strong>{m.rmse.toFixed(3)}</strong></p>
+                <p>R2: <strong>{m.r2.toFixed(3)}</strong></p>
+                <p><em>Threshold-derived at 85 (secondary)</em></p>
                 <p>Accuracy: <strong>{toPercent(m.accuracy)}</strong></p>
                 <p>Precision: <strong>{toPercent(m.precision)}</strong></p>
                 <p>Recall: <strong>{toPercent(m.recall)}</strong></p>
                 <p>F1: <strong>{toPercent(m.f1)}</strong></p>
-                <p>ROC-AUC: <strong>{toPercent(m.roc_auc)}</strong></p>
-                <p>MAE: <strong>{m.mae.toFixed(3)}</strong></p>
-                <p>RMSE: <strong>{m.rmse.toFixed(3)}</strong></p>
-                <p>R2: <strong>{m.r2.toFixed(3)}</strong></p>
               </div>
             ))}
           </div>
 
-          <h3>Classification Metrics Comparison (%)</h3>
+          <h3>Threshold-Derived Metrics at 85 (%, secondary)</h3>
           <div className="chart-card">
             <p className="chart-caption">
-              Accuracy, precision, recall, F1, and ROC-AUC are shown together so each model can be compared in a more
-              complete way than a single score.
+              Accuracy, precision, recall and F1 after cutting both the index and each model's regression output at
+              85. They describe agreement on that band and are secondary to the regression metrics.
             </p>
             <div style={{ width: "100%", height: 360 }}>
               <ResponsiveContainer>
@@ -218,10 +228,10 @@ export default function ResultDashboard({ result, metrics }: { result: Predictio
             </div>
           </div>
 
-          <h3>Model Radar (Classification Strength)</h3>
+          <h3>Model Radar (Threshold-Derived Metrics, secondary)</h3>
           <div className="chart-card">
             <p className="chart-caption">
-              The radar view summarizes balance across classification metrics. Exact values are also printed above in
+              The radar view summarizes balance across the threshold-derived metrics. Exact values are also printed above in
               the detailed model cards and bar charts for easy review.
             </p>
             <div style={{ width: "100%", height: 380 }}>
@@ -243,7 +253,7 @@ export default function ResultDashboard({ result, metrics }: { result: Predictio
 
       {result && (
         <>
-          <h3>Top Influencing Factors</h3>
+          <h3>Top Influencing Factors (XGBoost TreeSHAP)</h3>
           <ul>
             {result.top_influencing_factors.map((f) => (
               <li key={`${f.feature}-${f.impact}`}>
@@ -252,7 +262,7 @@ export default function ResultDashboard({ result, metrics }: { result: Predictio
             ))}
           </ul>
 
-          <h3>Recommendations</h3>
+          <h3>{result.personalized_recommendations ? "Quick Rule-based Tips" : "Recommendations"}</h3>
           <ul>
             {result.recommendations.map((r, i) => (
               <li key={i}>{r}</li>

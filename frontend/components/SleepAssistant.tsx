@@ -1,14 +1,30 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { chat } from "../lib/api";
+import type { PredictionResult } from "../lib/types";
 
 type Message = {
   role: "user" | "assistant";
   content: string;
 };
 
-export default function SleepAssistant() {
+function predictionMessage(prediction: PredictionResult): string | null {
+  const insights = prediction.personalized_recommendations;
+  if (!insights && !prediction.generated_explanation) return null;
+  const label = insights
+    ? insights.fallback_used
+      ? "Explanation of your latest prediction (deterministic, from the model explanations and retrieved evidence):"
+      : "Explanation of your latest prediction (written by BioMistral and validated):"
+    : "Explanation of your latest prediction:";
+  if (!insights) return `${label}\n\n${prediction.generated_explanation}`;
+  const recs = insights.recommendations
+    .map((r) => `${r.priority}. ${r.title}: ${r.action}${r.source_ids.length ? ` (Sources: ${r.source_ids.join(", ")})` : ""}`)
+    .join("\n");
+  return `${label}\n\n${insights.summary}${recs ? `\n\nRecommendations:\n${recs}` : ""}\n\n${insights.uncertainty[0] ?? ""}`.trim();
+}
+
+export default function SleepAssistant({ prediction = null }: { prediction?: PredictionResult | null }) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
@@ -20,6 +36,17 @@ export default function SleepAssistant() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const announced = useRef<PredictionResult | null>(null);
+
+  // Post each new prediction's explanation and recommendations into the chat once.
+  useEffect(() => {
+    if (!prediction || announced.current === prediction) return;
+    announced.current = prediction;
+    const content = predictionMessage(prediction);
+    if (content) {
+      setMessages((previous) => [...previous, { role: "assistant", content }]);
+    }
+  }, [prediction]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

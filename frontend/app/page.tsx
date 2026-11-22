@@ -44,9 +44,16 @@ export default function Home() {
       </div>
       <ScreenTracker summary={inactivitySummary} />
       <LifestyleForm onSubmit={handleSubmit} loading={loading} />
-      {error && <p className="badge-poor">{error}</p>}
+      {loading && (
+        <p className="small loading-note" role="status">
+          Running the three models, their explanations, evidence retrieval and BioMistral recommendations. This can
+          take up to about 45 seconds; if BioMistral is unavailable, validated deterministic recommendations are shown
+          instead.
+        </p>
+      )}
+      {error && <p className="badge-poor" role="alert">{error}</p>}
       {(result || metrics) && <ResultDashboard result={result} metrics={metrics} />}
-      <SleepAssistant />
+      <SleepAssistant prediction={result} />
     </main>
   );
 }

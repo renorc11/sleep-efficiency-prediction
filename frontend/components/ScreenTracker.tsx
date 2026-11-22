@@ -54,5 +54,14 @@ export function useScreenActivitySequence() {
 }
 
 export default function ScreenTracker({ summary }: { summary: string }) {
-  return <p className="small">Screen behavior tracking active: {summary}</p>;
+  return (
+    <div className="small">
+      <p style={{ margin: "0 0 4px" }}>Screen behavior tracking active: {summary}</p>
+      <p className="disclosure" style={{ marginTop: 0 }}>
+        Activity is recorded only from this browser tab, in five-minute bins from midnight, and is sent with your
+        prediction. Inactivity is an indirect behavioral proxy, not a measurement of sleep. The models were trained on
+        synthetic activity sequences and have not been validated on real browser or phone activity.
+      </p>
+    </div>
+  );
 }
