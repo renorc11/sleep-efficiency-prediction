@@ -7,6 +7,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import java.util.concurrent.TimeUnit
 
 object ApiClient {
     private val json = Json {
@@ -15,7 +16,19 @@ object ApiClient {
     }
 
     private val client: OkHttpClient = OkHttpClient.Builder()
-        .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
+        .connectTimeout(10, TimeUnit.SECONDS)
+        // POST /predict runs three models, their explanations, evidence retrieval and
+        // BioMistral (server budget about 45 s). OkHttp's 10 s default read timeout
+        // would make every prediction fail.
+        .readTimeout(90, TimeUnit.SECONDS)
+        .callTimeout(100, TimeUnit.SECONDS)
+        .apply {
+            // BODY logging wrote the usage timeline and lifestyle answers to logcat in
+            // every build. Log request metadata only, and only in debug builds.
+            if (BuildConfig.DEBUG) {
+                addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC })
+            }
+        }
         .build()
 
     val api: SleepApi = Retrofit.Builder()

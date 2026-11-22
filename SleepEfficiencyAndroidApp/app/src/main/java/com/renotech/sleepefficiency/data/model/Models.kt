@@ -56,8 +56,9 @@ data class ModelMetric(
     val accuracy: Double,
     val precision: Double,
     val recall: Double,
-    val f1: Double,
-    val roc_auc: Double
+    val f1: Double
+    // roc_auc removed: the API no longer returns it (it was computed from a rescaled
+    // regression output, not a classifier probability). Extra keys are ignored.
 )
 
 @Serializable

@@ -122,6 +122,13 @@ private fun PermissionCard(
         Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text("Usage Access Permission", style = MaterialTheme.typography.titleMedium)
             Text(if (hasPermission) "Permission granted. Screen sequence collection enabled." else "Permission required for automatic screen activity collection.")
+            Text(
+                "What is collected: only whether any app was in use in each five-minute period since " +
+                    "midnight today (no app names or content). It is sent to your configured backend " +
+                    "with each prediction. Inactivity is an indirect proxy, not a measurement of sleep, " +
+                    "and the models were trained on synthetic activity data, not real phone usage.",
+                style = MaterialTheme.typography.bodySmall
+            )
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Button(onClick = onPermissionClick) { Text("Open Settings") }
                 TextButton(onClick = onRefreshPermission) { Text("I Enabled It") }
@@ -334,10 +341,11 @@ private fun MetricsCard(metrics: Map<String, ModelMetric>) {
                 Card {
                     Column(Modifier.padding(10.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
                         Text(name.uppercase(), style = MaterialTheme.typography.titleSmall)
+                        Text("Regression (primary)", style = MaterialTheme.typography.labelMedium)
+                        Text("MAE: ${"%.3f".format(m.mae)} | RMSE: ${"%.3f".format(m.rmse)} | R2: ${"%.3f".format(m.r2)}")
+                        Text("Threshold-derived at 85 (secondary)", style = MaterialTheme.typography.labelMedium)
                         Text("Accuracy: ${"%.2f".format(m.accuracy * 100)}% | F1: ${"%.2f".format(m.f1 * 100)}%")
                         Text("Precision: ${"%.2f".format(m.precision * 100)}% | Recall: ${"%.2f".format(m.recall * 100)}%")
-                        Text("ROC-AUC: ${"%.2f".format(m.roc_auc * 100)}%")
-                        Text("MAE: ${"%.3f".format(m.mae)} | RMSE: ${"%.3f".format(m.rmse)} | R2: ${"%.3f".format(m.r2)}")
                     }
                 }
             }

@@ -19,7 +19,7 @@ Standalone Android Studio project for lifestyle-based sleep efficiency predictio
 
 ## Setup
 1. Open this folder in Android Studio:
-   - `~/Documents/New project/SleepEfficiencyAndroidApp`
+   - `<repository root>/SleepEfficiencyAndroidApp`
 2. Let Gradle sync and install missing SDK packages.
 3. Ensure backend is running.
 4. Run app on emulator or physical device.
@@ -39,5 +39,18 @@ For physical device testing, replace this with your Mac local IP, e.g.:
 
 ## Notes
 - This does not use EEG/ECG/wearables.
-- Screen data is inferred from app foreground usage events.
+- Screen data is inferred from app foreground usage events. Each foreground interval
+  (resume to pause) is marked active, so continuous use of one app is no longer
+  recorded as inactivity.
+- The deployed models were trained on **synthetic** activity sequences. They have not
+  been trained or validated on Android-observed usage, so phone-based predictions are
+  exploratory. Inactivity is an indirect proxy, not a measurement of sleep.
+- The sequence covers local midnight to now. A bedtime before midnight on the
+  previous evening is not included; this is a known limitation shared with the
+  backend's sleep-time inference.
+- `POST /predict` can take up to about 45 s while the backend generates
+  recommendations; the HTTP client uses a 90 s read timeout.
+- Request logging is debug-only and metadata-only (no request bodies).
+- The app shows the original prediction fields. The backend's newer
+  `personalized_recommendations` field is ignored by this client for now.
 - If metrics are missing, run ML training pipeline in backend project first.

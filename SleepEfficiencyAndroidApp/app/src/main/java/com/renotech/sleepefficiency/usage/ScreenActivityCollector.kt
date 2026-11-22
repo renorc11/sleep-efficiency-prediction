@@ -26,18 +26,38 @@ class ScreenActivityCollector(private val context: Context) {
 
         val bins = MutableList(BINS) { 0 }
 
-        val events = usageStatsManager.queryEvents(startOfDay, now)
-        val event = UsageEvents.Event()
-
-        while (events.hasNextEvent()) {
-            events.getNextEvent(event)
-            if (event.eventType == UsageEvents.Event.MOVE_TO_FOREGROUND ||
-                event.eventType == UsageEvents.Event.ACTIVITY_RESUMED
-            ) {
-                val index = ((event.timeStamp - startOfDay) / BIN_MS).toInt()
+        // Mark every bin overlapped by [start, end], clamped to today so far.
+        fun markInterval(start: Long, end: Long) {
+            val first = ((maxOf(start, startOfDay) - startOfDay) / BIN_MS).toInt()
+            val last = ((minOf(end, now) - startOfDay) / BIN_MS).toInt()
+            for (index in first..last) {
                 if (index in 0 until BINS) bins[index] = 1
             }
         }
+
+        val events = usageStatsManager.queryEvents(startOfDay, now)
+        val event = UsageEvents.Event()
+        // Foreground start time per activity. Previously only the bin in which an app
+        // came to the foreground was marked, so an hour in one app looked like 55
+        // minutes of inactivity. Each foreground interval is now marked until the
+        // matching pause/background event. (MOVE_TO_FOREGROUND/BACKGROUND share their
+        // values with ACTIVITY_RESUMED/PAUSED; both names are checked for clarity.)
+        val openSince = HashMap<String, Long>()
+
+        while (events.hasNextEvent()) {
+            events.getNextEvent(event)
+            val key = "${event.packageName}/${event.className}"
+            val type = event.eventType
+            if (type == UsageEvents.Event.MOVE_TO_FOREGROUND || type == UsageEvents.Event.ACTIVITY_RESUMED) {
+                openSince[key] = event.timeStamp
+            } else if (type == UsageEvents.Event.MOVE_TO_BACKGROUND || type == UsageEvents.Event.ACTIVITY_PAUSED) {
+                // A pause without a resume today began before midnight; it is ignored
+                // rather than assumed active, to avoid marking sleep time as activity.
+                openSince.remove(key)?.let { started -> markInterval(started, event.timeStamp) }
+            }
+        }
+        // Activities still in the foreground when the query ran.
+        openSince.values.forEach { started -> markInterval(started, now) }
 
         val currentIndex = ((now - startOfDay) / BIN_MS).toInt().coerceIn(0, BINS - 1)
         bins[currentIndex] = 1
