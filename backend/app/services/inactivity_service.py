@@ -53,9 +53,19 @@ def infer_sleep_from_sequence(sequence: list[int], sleep_time_hint: str | None =
                 j += 1
             run_len = j - i
             candidate_idx = i % len(sequence)
-            # Only consider realistic bedtime candidates (20:00-03:00) and observed starts.
+
+            # Only accept inactivity runs that genuinely begin after screen activity.
+            started_after_activity = sequence[(candidate_idx - 1) % len(sequence)] == 1
+
+            # Only consider realistic bedtime candidates (20:00-03:00).
             in_bedtime_window = (candidate_idx >= 20 * 12) or (candidate_idx <= 3 * 12)
-            if run_len >= 6 and in_bedtime_window and candidate_idx <= current_idx:
+
+            if (
+                run_len >= 6
+                and in_bedtime_window
+                and candidate_idx <= current_idx
+                and started_after_activity
+            ):
                 candidates.append((candidate_idx, run_len))
                 if run_len > best_len:
                     best_len = run_len
@@ -82,7 +92,7 @@ def infer_sleep_from_sequence(sequence: list[int], sleep_time_hint: str | None =
 
     # 22:00 to 07:00 window
     night_idxs = list(range(22 * 12, 24 * 12)) + list(range(0, 7 * 12))
-    bursts = sum(1 for x in (observed[i] for i in night_idxs) if x == 1)
+    bursts = sum(1 for i in night_idxs if i <= current_idx and sequence[i] == 1)
 
     return InactivityFeatures(
         inferred_sleep_start_idx=sleep_start_idx,

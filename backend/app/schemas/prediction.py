@@ -1,5 +1,6 @@
 from datetime import datetime
-from pydantic import BaseModel, Field, conlist
+from typing import Any, Literal
+from pydantic import BaseModel, Field, conlist, field_validator
 
 
 class LifestyleInput(BaseModel):
@@ -25,14 +26,78 @@ class PredictionRequest(BaseModel):
     # Optional rough bedtime hint from user in HH:MM (24h), used to stabilize inference.
     sleep_time_hint: str | None = Field(default=None, pattern=r"^([01]\d|2[0-3]):[0-5]\d$")
 
+    @field_validator("screen_activity_sequence")
+    @classmethod
+    def _sequence_must_be_binary(cls, value: list[int]) -> list[int]:
+        # The models were trained on binary bins; other values are outside the
+        # input domain and would be silently passed to the Hybrid CNN.
+        invalid = sorted({item for item in value if item not in (0, 1)})
+        if invalid:
+            raise ValueError(
+                "screen_activity_sequence must contain only 0 (no interaction) "
+                f"or 1 (interaction); found {invalid[:5]}."
+            )
+        return value
+
+
+class PersonalizedRecommendation(BaseModel):
+    """One recommendation. Wording may come from BioMistral; every number,
+    attribution, source, priority and confidence is filled in by code."""
+
+    title: str
+    priority: int
+    wording_source: Literal["biomistral", "mixed", "template"]
+    factor_key: str
+    related_features: list[str]
+    kind: Literal["improve", "maintain"]
+    model_evidence: dict[str, Any]
+    scientific_evidence: dict[str, Any] | None
+    source_ids: list[str]
+    reason: str
+    action: str
+    confidence: Literal["low", "moderate", "high"]
+    safety_note: str
+
+
+class PersonalizedRecommendationResult(BaseModel):
+    summary: str
+    prediction_context: dict[str, Any]
+    model_explanation: dict[str, Any]
+    recommendations: list[PersonalizedRecommendation]
+    retrieved_sources: list[dict[str, Any]]
+    uncertainty: list[str]
+    generation_status: Literal["generated", "fallback"]
+    fallback_used: bool
+    fallback_reason: str | None = None
+    validation_issues: list[str] = []
+    warnings: list[str] = []
+
 
 class PredictionResponse(BaseModel):
+
     predicted_sleep_efficiency: float
+
     sleep_quality_label: str
+
     inferred_sleep_time: str
+
     model_outputs: dict
+
     top_influencing_factors: list[dict]
+
     recommendations: list[str]
+
+    generated_explanation: str
+
+    explanation_status: str
+
+    # Additive diagnostics. Optional so existing clients and fixtures keep
+    # working; `model_outputs` is deliberately unchanged because the web and
+    # Android clients iterate over every key in it.
+    prediction_diagnostics: dict[str, Any] | None = None
+
+    # Automatic SHAP -> RAG -> BioMistral recommendations (additive).
+    personalized_recommendations: PersonalizedRecommendationResult | None = None
 
 
 class PredictionHistoryItem(BaseModel):
@@ -41,3 +106,13 @@ class PredictionHistoryItem(BaseModel):
     predicted_sleep_efficiency: float
     sleep_quality_label: str
     inferred_sleep_time: str
+
+
+class LocalExplanationResponse(BaseModel):
+    """Additive-model diagnostics; does not alter the prediction response contract."""
+
+    inferred_sleep_time: str
+    model_predictions: dict[str, float]
+    model_explanations: dict[str, Any]
+    prediction_diagnostics: dict[str, Any] | None = None
+    warnings: list[str]

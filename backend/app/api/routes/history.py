@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -10,7 +10,11 @@ router = APIRouter(prefix="/history", tags=["history"])
 
 
 @router.get("", response_model=list[PredictionHistoryItem])
-def history(limit: int = 20, db: Session = Depends(get_db)) -> list[PredictionHistoryItem]:
+def history(
+    # Bounded: previously any value (including negative or huge) was accepted.
+    limit: int = Query(default=20, ge=1, le=200),
+    db: Session = Depends(get_db),
+) -> list[PredictionHistoryItem]:
     stmt = select(PredictionRecord).order_by(PredictionRecord.created_at.desc()).limit(limit)
     rows = db.scalars(stmt).all()
     return [

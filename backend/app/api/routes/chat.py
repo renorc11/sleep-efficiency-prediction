@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from app.services.chat_service import generate_chat_response
@@ -21,8 +21,9 @@ class ChatResponse(BaseModel):
 
 
 @router.post("", response_model=ChatResponse)
-async def chat(request: ChatRequest) -> ChatResponse:
-    message = request.message.strip()
+async def chat( request: Request,
+    chat_request: ChatRequest,) -> ChatResponse:
+    message = chat_request.message.strip()
 
     if not message:
         raise HTTPException(
@@ -30,8 +31,16 @@ async def chat(request: ChatRequest) -> ChatResponse:
             detail="Message cannot be empty.",
         )
 
+    knowledge_service = getattr(request.app.state, "knowledge_service", None)
+    if knowledge_service is None:
+        raise HTTPException(
+            status_code=503,
+            detail="The sleep knowledge base is unavailable, so the assistant cannot answer right now.",
+        )
+
     try:
-        reply = await generate_chat_response(message)
+
+        reply = await generate_chat_response(message,knowledge_service,)
         return ChatResponse(reply=reply)
 
     except RuntimeError as exc:
