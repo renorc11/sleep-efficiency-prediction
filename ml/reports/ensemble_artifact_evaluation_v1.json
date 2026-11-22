@@ -1,0 +1,364 @@
+{
+  "report_version": "v1",
+  "generated_at_utc": "2026-11-20T10:50:24.255313+00:00",
+  "read_only_evaluation": true,
+  "dataset": {
+    "dataset_path": "ml/data/processed/dataset_engineered.csv",
+    "sequence_path": "ml/data/processed/sequences.npy",
+    "split_path": "ml/data/processed/split.json",
+    "test_rows": 75,
+    "target_min": 50.0,
+    "target_max": 98.0,
+    "feature_count": 20,
+    "feature_columns": [
+      "caffeine_mg_evening",
+      "alcohol_units",
+      "dinner_hour",
+      "stress_level",
+      "mood_score",
+      "physical_activity_min",
+      "naps_count",
+      "naps_total_min",
+      "previous_sleep_hours",
+      "work_hours",
+      "blue_light_minutes",
+      "bedtime_consistency",
+      "hydration_liters",
+      "inferred_sleep_start_hour",
+      "longest_evening_inactivity_min",
+      "nighttime_activity_bursts",
+      "dinner_to_sleep_gap",
+      "caffeine_stress_interaction",
+      "activity_stress_balance",
+      "nap_sleep_debt_proxy"
+    ]
+  },
+  "deployed_artifact_set": {
+    "aggregation": "0.2 * rf + 0.3 * xgb + 0.5 * hybrid; evaluated without production clipping",
+    "hybrid_input": "StandardScaler-transformed tabular features plus sequence shaped [n, 1, 288]",
+    "artifacts": {
+      "rf_regressor.joblib": {
+        "path": "ml/artifacts/rf_regressor.joblib",
+        "bytes": 3269265,
+        "sha256": "1a12988e58b46b439703f2a09cad15ea56dd8909f4b6f6e61523bb21921e482e"
+      },
+      "xgb_regressor.json": {
+        "path": "ml/artifacts/xgb_regressor.json",
+        "bytes": 1190771,
+        "sha256": "3cdc5a117cff99312c91b8e37066c7619d46043175797a13cad9ef1b9da7c201"
+      },
+      "hybrid.pt": {
+        "path": "ml/artifacts/hybrid.pt",
+        "bytes": 30242,
+        "sha256": "0636e4064677faf31509361320177e2b7acf600fb03d579bd61e19432c3ce874"
+      },
+      "hybrid_tabular_scaler.joblib": {
+        "path": "ml/artifacts/hybrid_tabular_scaler.joblib",
+        "bytes": 1095,
+        "sha256": "a143e5fe2c112a7987e459c0163ec18c1a7da98fe5e5db5578b47dc46cc3f38e"
+      }
+    }
+  },
+  "stacking_artifact_set": {
+    "aggregation": "LinearRegression meta-model over RF, XGBoost, and Hybrid predictions",
+    "hybrid_input": "numpy mean/std standardized tabular features plus sequence shaped [n, 288]",
+    "meta_coefficients": [
+      0.7465703327935472,
+      0.26669721808197305,
+      -0.0104957852034429
+    ],
+    "meta_intercept": -0.19689809181431883,
+    "artifacts": {
+      "stacking_final_rf.joblib": {
+        "path": "ml/artifacts/stacking_final_rf.joblib",
+        "bytes": 3656625,
+        "sha256": "177f3178f6a10214b5bbb5f31f44bbf14bd4fe5a00811fd3fef460765e182854"
+      },
+      "stacking_final_xgb.json": {
+        "path": "ml/artifacts/stacking_final_xgb.json",
+        "bytes": 1287241,
+        "sha256": "10bfeae422e524422886161f6c68a4d08ba260d55a4391326aa6405b162d4c62"
+      },
+      "stacking_final_hybrid_cnn.pt": {
+        "path": "ml/artifacts/stacking_final_hybrid_cnn.pt",
+        "bytes": 31314,
+        "sha256": "6647ac37abcc4b1eb20ba1afaedb73516c5dcf536a77849bea9238cbee8afa13"
+      },
+      "stacking_cnn_scaler_mean.npy": {
+        "path": "ml/artifacts/stacking_cnn_scaler_mean.npy",
+        "bytes": 208,
+        "sha256": "a27a5c2ebf231775ac126015082c4dc0324c1a605f4d140d65e87556f2addc80"
+      },
+      "stacking_cnn_scaler_std.npy": {
+        "path": "ml/artifacts/stacking_cnn_scaler_std.npy",
+        "bytes": 208,
+        "sha256": "408722664d4d2128a14067c039db4f52e1f67300317d31a000f02103b2b9fb3a"
+      },
+      "stacking_meta_model.joblib": {
+        "path": "ml/artifacts/stacking_meta_model.joblib",
+        "bytes": 592,
+        "sha256": "a279de4d5b8c9e1d7fd6bbe288e64f4bbf52a4121124d71f0db76432d7bbeacb"
+      }
+    }
+  },
+  "results": {
+    "deployed_artifacts": {
+      "metrics": {
+        "rf": {
+          "mae": 2.6412401292066336,
+          "rmse": 3.6059209981503026,
+          "r2": 0.9329937656774293,
+          "prediction_min": 54.24768585889376,
+          "prediction_max": 93.90719261092856,
+          "invalid_non_finite": 0,
+          "invalid_outside_0_100": 0
+        },
+        "xgb": {
+          "mae": 3.0720479488372803,
+          "rmse": 4.248138019855545,
+          "r2": 0.9070006012916565,
+          "prediction_min": 51.92950439453125,
+          "prediction_max": 94.45980834960938,
+          "invalid_non_finite": 0,
+          "invalid_outside_0_100": 0
+        },
+        "hybrid": {
+          "mae": 4.97580099105835,
+          "rmse": 6.1650306318501285,
+          "r2": 0.8041366338729858,
+          "prediction_min": 58.955074310302734,
+          "prediction_max": 101.33325958251953,
+          "invalid_non_finite": 0,
+          "invalid_outside_0_100": 2
+        },
+        "fixed_weight_0_2_0_3_0_5_raw": {
+          "mae": 3.484166257554867,
+          "rmse": 4.447349379316808,
+          "r2": 0.8980739266241025,
+          "prediction_min": 56.63273266738422,
+          "prediction_max": 97.60390000192297,
+          "invalid_non_finite": 0,
+          "invalid_outside_0_100": 0
+        }
+      },
+      "residual_correlations": {
+        "rf__xgb": 0.9286917478310366,
+        "rf__hybrid": 0.4917128092574816,
+        "rf__fixed_weight_0_2_0_3_0_5_raw": 0.7706141019415933,
+        "xgb__hybrid": 0.5326691341241906,
+        "xgb__fixed_weight_0_2_0_3_0_5_raw": 0.8078302503370581,
+        "hybrid__fixed_weight_0_2_0_3_0_5_raw": 0.9265044893200959
+      },
+      "target_range_metrics": {
+        "low_under_70": {
+          "n": 30,
+          "models": {
+            "rf": {
+              "mae": 3.166282456099248,
+              "rmse": 4.051009398295741
+            },
+            "xgb": {
+              "mae": 4.2627644538879395,
+              "rmse": 5.388172598007867
+            },
+            "hybrid": {
+              "mae": 4.9923014640808105,
+              "rmse": 6.603213493162197
+            },
+            "fixed_weight_0_2_0_3_0_5_raw": {
+              "mae": 3.8855254615144235,
+              "rmse": 5.201481142355809
+            }
+          }
+        },
+        "mid_70_to_under_85": {
+          "n": 29,
+          "models": {
+            "rf": {
+              "mae": 2.4475250230834904,
+              "rmse": 3.614012972216388
+            },
+            "xgb": {
+              "mae": 2.215932607650757,
+              "rmse": 3.4509253767374553
+            },
+            "hybrid": {
+              "mae": 4.80219030380249,
+              "rmse": 5.833317384243915
+            },
+            "fixed_weight_0_2_0_3_0_5_raw": {
+              "mae": 3.0511650024622368,
+              "rmse": 3.8243564671657744
+            }
+          }
+        },
+        "high_85_and_above": {
+          "n": 16,
+          "models": {
+            "rf": {
+              "mae": 2.007894396131178,
+              "rmse": 2.5508338205143963
+            },
+            "xgb": {
+              "mae": 2.3911633491516113,
+              "rmse": 2.9279998394283395
+            },
+            "hybrid": {
+              "mae": 5.259531497955322,
+              "rmse": 5.89330669851599
+            },
+            "fixed_weight_0_2_0_3_0_5_raw": {
+              "mae": 3.516432524986092,
+              "rmse": 3.9339165133895135
+            }
+          }
+        }
+      }
+    },
+    "stacking_artifacts": {
+      "metrics": {
+        "rf": {
+          "mae": 2.6666221886730015,
+          "rmse": 3.69587633110095,
+          "r2": 0.9296089152199303,
+          "prediction_min": 53.99490164434139,
+          "prediction_max": 93.99669183735632,
+          "invalid_non_finite": 0,
+          "invalid_outside_0_100": 0
+        },
+        "xgb": {
+          "mae": 2.9946157932281494,
+          "rmse": 4.030741341606957,
+          "r2": 0.9162755012512207,
+          "prediction_min": 53.03021240234375,
+          "prediction_max": 94.51754760742188,
+          "invalid_non_finite": 0,
+          "invalid_outside_0_100": 0
+        },
+        "hybrid": {
+          "mae": 4.751015663146973,
+          "rmse": 5.763819466087265,
+          "r2": 0.8288000822067261,
+          "prediction_min": 58.059120178222656,
+          "prediction_max": 101.63288879394531,
+          "invalid_non_finite": 0,
+          "invalid_outside_0_100": 2
+        },
+        "fixed_weight_0_2_0_3_0_5_raw": {
+          "mae": 3.313120136654665,
+          "rmse": 4.2097689853312765,
+          "r2": 0.9086729719716958,
+          "prediction_min": 56.72247180683459,
+          "prediction_max": 97.535176671359,
+          "invalid_non_finite": 0,
+          "invalid_outside_0_100": 0
+        },
+        "stacking_linear_meta_model": {
+          "mae": 2.684710310584173,
+          "rmse": 3.723046434245163,
+          "r2": 0.9285701558994537,
+          "prediction_min": 53.6270537584802,
+          "prediction_max": 94.19245074448453,
+          "invalid_non_finite": 0,
+          "invalid_outside_0_100": 0
+        }
+      },
+      "residual_correlations": {
+        "rf__xgb": 0.9094014662560603,
+        "rf__hybrid": 0.48061751084543375,
+        "rf__fixed_weight_0_2_0_3_0_5_raw": 0.7673120329377501,
+        "rf__stacking_linear_meta_model": 0.993236012746772,
+        "xgb__hybrid": 0.5347510660073098,
+        "xgb__fixed_weight_0_2_0_3_0_5_raw": 0.8144140765725122,
+        "xgb__stacking_linear_meta_model": 0.9508549528076312,
+        "hybrid__fixed_weight_0_2_0_3_0_5_raw": 0.9219078795987153,
+        "hybrid__stacking_linear_meta_model": 0.48965993103603533,
+        "fixed_weight_0_2_0_3_0_5_raw__stacking_linear_meta_model": 0.7842577501034942
+      },
+      "target_range_metrics": {
+        "low_under_70": {
+          "n": 30,
+          "models": {
+            "rf": {
+              "mae": 3.2234719058953454,
+              "rmse": 4.176874381149994
+            },
+            "xgb": {
+              "mae": 3.902182102203369,
+              "rmse": 4.802549106519602
+            },
+            "hybrid": {
+              "mae": 4.6133623123168945,
+              "rmse": 6.009670094402411
+            },
+            "fixed_weight_0_2_0_3_0_5_raw": {
+              "mae": 3.599871050794081,
+              "rmse": 4.748954268134677
+            },
+            "stacking_linear_meta_model": {
+              "mae": 3.3107464951376073,
+              "rmse": 4.265813067971293
+            }
+          }
+        },
+        "mid_70_to_under_85": {
+          "n": 29,
+          "models": {
+            "rf": {
+              "mae": 2.411704685614608,
+              "rmse": 3.6814450643622276
+            },
+            "xgb": {
+              "mae": 2.2475669384002686,
+              "rmse": 3.4809923388257933
+            },
+            "hybrid": {
+              "mae": 4.7118330001831055,
+              "rmse": 5.485305229047017
+            },
+            "fixed_weight_0_2_0_3_0_5_raw": {
+              "mae": 2.880455490990772,
+              "rmse": 3.7024568548812136
+            },
+            "stacking_linear_meta_model": {
+              "mae": 2.2992769249651874,
+              "rmse": 3.6049210170204997
+            }
+          }
+        },
+        "high_85_and_above": {
+          "n": 16,
+          "models": {
+            "rf": {
+              "mae": 2.0845669431744467,
+              "rmse": 2.5985110656947494
+            },
+            "xgb": {
+              "mae": 2.6469545364379883,
+              "rmse": 3.308886014061641
+            },
+            "hybrid": {
+              "mae": 5.080134868621826,
+              "rmse": 5.785588466615068
+            },
+            "fixed_weight_0_2_0_3_0_5_raw": {
+              "mae": 3.559666842909066,
+              "rmse": 3.992549333671394
+            },
+            "stacking_linear_meta_model": {
+              "mae": 2.209490475980896,
+              "rmse": 2.7018230166171464
+            }
+          }
+        }
+      }
+    }
+  },
+  "compatibility_limitations": [
+    "The deployed and stacking artifact sets were trained separately and must not be mixed.",
+    "The stacking RF and XGBoost final models use train-plus-validation development data, whereas deployed RF and XGBoost artifacts use the baseline training path.",
+    "The deployed HybridNet and stacking HybridCNN use different module layouts and sequence-convolution padding behavior.",
+    "Both Hybrid output heads are unconstrained linear regressors; no clipping was applied in this evaluation.",
+    "The held-out split is internal validation only and does not establish external generalization."
+  ]
+}

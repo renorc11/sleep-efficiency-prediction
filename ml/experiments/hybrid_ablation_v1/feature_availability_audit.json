@@ -1,0 +1,139 @@
+{
+  "synthetic_sequence_limitation": "288-bin sequences are synthetic activity/inactivity sequences, not observed device activity or real screen-inactivity measurements.",
+  "prediction_time_mismatch": "Training preprocessing derives sequence summaries from full-day simulated sequences, while API inactivity inference masks future bins. Sequence-derived summaries are excluded from primary experiments.",
+  "legacy_features": [
+    "caffeine_mg_evening",
+    "alcohol_units",
+    "dinner_hour",
+    "stress_level",
+    "mood_score",
+    "physical_activity_min",
+    "naps_count",
+    "naps_total_min",
+    "previous_sleep_hours",
+    "work_hours",
+    "blue_light_minutes",
+    "bedtime_consistency",
+    "hydration_liters",
+    "inferred_sleep_start_hour",
+    "longest_evening_inactivity_min",
+    "nighttime_activity_bursts",
+    "dinner_to_sleep_gap",
+    "caffeine_stress_interaction",
+    "activity_stress_balance",
+    "nap_sleep_debt_proxy"
+  ],
+  "primary_safe_features": [
+    "caffeine_mg_evening",
+    "alcohol_units",
+    "dinner_hour",
+    "stress_level",
+    "physical_activity_min",
+    "work_hours",
+    "blue_light_minutes",
+    "bedtime_consistency",
+    "hydration_liters"
+  ],
+  "features": [
+    {
+      "feature": "caffeine_mg_evening",
+      "decision": "retain_primary",
+      "reason": "Synthetic proxy; intended self-report before sleep."
+    },
+    {
+      "feature": "alcohol_units",
+      "decision": "retain_primary",
+      "reason": "Synthetic proxy; intended self-report before sleep; source construction has disorder-confounding risk."
+    },
+    {
+      "feature": "dinner_hour",
+      "decision": "retain_primary",
+      "reason": "Synthetic proxy; intended known before sleep."
+    },
+    {
+      "feature": "stress_level",
+      "decision": "retain_primary",
+      "reason": "Source stress value; intended known before sleep."
+    },
+    {
+      "feature": "mood_score",
+      "decision": "exclude_primary",
+      "reason": "Generated partly from source Quality of Sleep, which also drives the target."
+    },
+    {
+      "feature": "physical_activity_min",
+      "decision": "retain_primary",
+      "reason": "Derived from source activity; intended accumulated daily value before bedtime."
+    },
+    {
+      "feature": "naps_count",
+      "decision": "exclude_primary",
+      "reason": "Generated from current source sleep duration, a target-generating variable."
+    },
+    {
+      "feature": "naps_total_min",
+      "decision": "exclude_primary",
+      "reason": "Generated from naps count and current source sleep duration."
+    },
+    {
+      "feature": "previous_sleep_hours",
+      "decision": "exclude_primary",
+      "reason": "Generated from current source sleep duration rather than an independently observed prior night."
+    },
+    {
+      "feature": "work_hours",
+      "decision": "retain_primary",
+      "reason": "Synthetic occupation-based proxy; intended known before sleep."
+    },
+    {
+      "feature": "blue_light_minutes",
+      "decision": "retain_primary",
+      "reason": "Synthetic proxy from expected sleep timing, stress, and steps; conceptually pre-sleep but not observed device exposure."
+    },
+    {
+      "feature": "bedtime_consistency",
+      "decision": "retain_primary",
+      "reason": "Synthetic stress/occupation-based proxy; conceptually historical behavior."
+    },
+    {
+      "feature": "hydration_liters",
+      "decision": "retain_primary",
+      "reason": "Synthetic activity/blood-pressure proxy; intended daily self-report."
+    },
+    {
+      "feature": "inferred_sleep_start_hour",
+      "decision": "exclude_primary",
+      "reason": "Derived from the full synthetic sequence and uses overnight inactivity unavailable before outcome."
+    },
+    {
+      "feature": "longest_evening_inactivity_min",
+      "decision": "exclude_primary",
+      "reason": "Derived from the full synthetic sequence, including the imposed sleep window."
+    },
+    {
+      "feature": "nighttime_activity_bursts",
+      "decision": "exclude_primary",
+      "reason": "Derived from the full synthetic sequence; exactly duplicates a raw nighttime sequence summary."
+    },
+    {
+      "feature": "dinner_to_sleep_gap",
+      "decision": "exclude_primary",
+      "reason": "Depends on inferred sleep start, which is sequence-derived and post-outcome at intended prediction time."
+    },
+    {
+      "feature": "caffeine_stress_interaction",
+      "decision": "exclude_primary",
+      "reason": "Deterministic duplicate of retained primary inputs; excluded to keep the primary representation non-redundant."
+    },
+    {
+      "feature": "activity_stress_balance",
+      "decision": "exclude_primary",
+      "reason": "Deterministic duplicate of retained primary inputs; excluded to keep the primary representation non-redundant."
+    },
+    {
+      "feature": "nap_sleep_debt_proxy",
+      "decision": "exclude_primary",
+      "reason": "Depends on previous_sleep_hours, which is generated from current source sleep duration."
+    }
+  ]
+}

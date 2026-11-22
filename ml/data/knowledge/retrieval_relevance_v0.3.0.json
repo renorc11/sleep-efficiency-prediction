@@ -1,0 +1,18 @@
+
+{
+  "dataset_version": "0.3.0",
+  "judgment_version": "0.1.0",
+  "judgment_method": "Manual semantic relevance assessment based on each evaluation question.",
+  "relevance_judgments": {
+    "Q-001": ["SLEEP-003"],
+    "Q-002": ["SLEEP-001", "SLEEP-002", "SLEEP-003"],
+    "Q-003": ["SLEEP-002"],
+    "Q-004": ["CAFF-001"],
+    "Q-005": ["ALC-001"],
+    "Q-006": ["SCREEN-002"],
+    "Q-007": ["NAP-001"],
+    "Q-008": ["REG-001"],
+    "Q-009": ["ENV-001"],
+    "Q-010": ["DIS-001"]
+  }
+}

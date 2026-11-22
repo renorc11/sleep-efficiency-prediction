@@ -1,0 +1,485 @@
+{
+  "report_version": "v1",
+  "generated_at_utc": "2026-11-20T11:09:14.177440+00:00",
+  "read_only_development_experiment": true,
+  "selection_data": {
+    "oof_prediction_matrix": "ml/data/processed/stacking_oof_predictions.csv",
+    "rows": 299,
+    "base_prediction_columns": [
+      "rf_prediction",
+      "xgb_prediction",
+      "hybrid_cnn_prediction"
+    ],
+    "target_column": "sleep_efficiency",
+    "target_min": 50.0,
+    "target_max": 98.0,
+    "test_split_used_for_selection": false
+  },
+  "methodology": {
+    "base_models": "Existing RF, XGBoost, and Hybrid out-of-fold predictions stored by the existing stacking experiment.",
+    "outer_cross_validation": {
+      "n_splits": 5,
+      "shuffle": true,
+      "random_state": 42
+    },
+    "nested_linear_stacking": "LinearRegression fit on each outer-fold training partition of existing OOF base predictions.",
+    "nested_convex_blend": {
+      "candidate_weights": "non-negative weights summing to one",
+      "grid_step": 0.05,
+      "selection_objective": "MAE within each outer-fold training partition"
+    },
+    "full_oof_linear_note": "Reported as an optimistic diagnostic only because fitting and scoring use the same OOF rows."
+  },
+  "results": {
+    "metrics": {
+      "rf_oof": {
+        "mae": 2.623888900615965,
+        "rmse": 3.7007462071551016,
+        "r2": 0.9271856121941596,
+        "prediction_min": 54.77592827158372,
+        "prediction_max": 94.868575637613,
+        "invalid_non_finite": 0,
+        "invalid_outside_0_100": 0,
+        "residual_distribution": {
+          "mean": 0.04807151404770068,
+          "std": 3.706637559011061,
+          "median": 0.21062828520400956,
+          "q05": -6.64093937481035,
+          "q25": -1.6021783448191833,
+          "q75": 2.193013215986177,
+          "q95": 4.6836052501862175,
+          "skew": -0.03429711076604554
+        }
+      },
+      "xgb_oof": {
+        "mae": 2.7664434264940754,
+        "rmse": 3.8133697029718268,
+        "r2": 0.9226863066082767,
+        "prediction_min": 53.840126037597656,
+        "prediction_max": 95.90930938720705,
+        "invalid_non_finite": 0,
+        "invalid_outside_0_100": 0,
+        "residual_distribution": {
+          "mean": -0.10385756604289666,
+          "std": 3.818345695392729,
+          "median": -0.17867296142577516,
+          "q05": -6.346917787353516,
+          "q25": -2.0503309399414036,
+          "q75": 2.294668154296879,
+          "q95": 5.537115211059572,
+          "skew": -0.11322126136072666
+        }
+      },
+      "hybrid_oof": {
+        "mae": 5.397653216879344,
+        "rmse": 6.7666809723884755,
+        "r2": 0.7565610872058743,
+        "prediction_min": 58.32722854614258,
+        "prediction_max": 101.1946258544922,
+        "invalid_non_finite": 0,
+        "invalid_outside_0_100": 3,
+        "residual_distribution": {
+          "mean": -0.018663357891376242,
+          "std": 6.7779991740168,
+          "median": -0.709681993164061,
+          "q05": -9.867277953124997,
+          "q25": -4.687211269775389,
+          "q75": 4.398192324707033,
+          "q95": 12.096042824707029,
+          "skew": 0.44688895123387007
+        }
+      },
+      "current_fixed_0_2_0_3_0_5_oof": {
+        "mae": 3.6464414392391737,
+        "rmse": 4.692607405773509,
+        "r2": 0.8829242252515646,
+        "prediction_min": 57.162044372359375,
+        "prediction_max": 97.6077757964679,
+        "invalid_non_finite": 0,
+        "invalid_outside_0_100": 0,
+        "residual_distribution": {
+          "mean": -0.030874645949016576,
+          "std": 4.700372573861435,
+          "median": -0.38399191695421564,
+          "q05": -7.824834617611652,
+          "q25": -3.0657960397543462,
+          "q75": 2.632883433734115,
+          "q95": 8.13306287430466,
+          "skew": 0.25926616868028995
+        }
+      },
+      "equal_weight_oof": {
+        "mae": 3.163380299288321,
+        "rmse": 4.179739062956915,
+        "r2": 0.9071168496383744,
+        "prediction_min": 56.471781158115235,
+        "prediction_max": 96.67350246676943,
+        "invalid_non_finite": 0,
+        "invalid_outside_0_100": 0,
+        "residual_distribution": {
+          "mean": -0.024816469962187063,
+          "std": 4.186672378552932,
+          "median": -0.01553683049505139,
+          "q05": -7.146320148316205,
+          "q25": -2.584843458455417,
+          "q75": 2.3839438975291998,
+          "q95": 6.549399883359045,
+          "skew": 0.15565418662299071
+        }
+      },
+      "nested_linear_stacking_oof": {
+        "mae": 2.720155009143006,
+        "rmse": 3.8234516796689237,
+        "r2": 0.9222769546056369,
+        "prediction_min": 54.2810121002689,
+        "prediction_max": 95.30643512306915,
+        "invalid_non_finite": 0,
+        "invalid_outside_0_100": 0,
+        "residual_distribution": {
+          "mean": -0.013231746240631982,
+          "std": 3.8298385603159444,
+          "median": -0.046194082075317056,
+          "q05": -6.7349799364383305,
+          "q25": -1.8334330763274487,
+          "q75": 2.217485765263241,
+          "q95": 5.080274847905049,
+          "skew": -0.0612828080063488
+        }
+      },
+      "nested_convex_blend_oof": {
+        "mae": 2.6309679380176187,
+        "rmse": 3.7021849302417555,
+        "r2": 0.9271289857202503,
+        "prediction_min": 54.96468342657397,
+        "prediction_max": 94.85267068005287,
+        "invalid_non_finite": 0,
+        "invalid_outside_0_100": 0,
+        "residual_distribution": {
+          "mean": 0.01157222014318387,
+          "std": 3.7083733309955376,
+          "median": 0.028379041994369913,
+          "q05": -6.586504475516644,
+          "q25": -1.7228679228873176,
+          "q75": 2.1100560815433127,
+          "q95": 4.847229677215481,
+          "skew": -0.03303541899476027
+        }
+      },
+      "existing_full_oof_linear_stacking_optimistic": {
+        "mae": 2.6138738234138654,
+        "rmse": 3.6842418264109167,
+        "r2": 0.9278336310260228,
+        "prediction_min": 54.66931638725248,
+        "prediction_max": 95.03065548264041,
+        "invalid_non_finite": 0,
+        "invalid_outside_0_100": 0,
+        "residual_distribution": {
+          "mean": 9.196656814018688e-15,
+          "std": 3.6904182629789974,
+          "median": -0.012843779884491369,
+          "q05": -6.409578576112966,
+          "q25": -1.7351695395748372,
+          "q75": 2.1488449163288053,
+          "q95": 4.854300665475912,
+          "skew": -0.05530981775477824
+        }
+      }
+    },
+    "residual_correlations": {
+      "rf_oof__xgb_oof": 0.9394892092765844,
+      "rf_oof__hybrid_oof": 0.5509610369756532,
+      "rf_oof__current_fixed_0_2_0_3_0_5_oof": 0.7839213922091517,
+      "rf_oof__equal_weight_oof": 0.8780517949570606,
+      "rf_oof__nested_linear_stacking_oof": 0.9912105243554769,
+      "rf_oof__nested_convex_blend_oof": 0.9970550022805728,
+      "rf_oof__existing_full_oof_linear_stacking_optimistic": 0.9956242562770583,
+      "xgb_oof__hybrid_oof": 0.5644350074268303,
+      "xgb_oof__current_fixed_0_2_0_3_0_5_oof": 0.7988394227383134,
+      "xgb_oof__equal_weight_oof": 0.8858611878258827,
+      "xgb_oof__nested_linear_stacking_oof": 0.9631013374430809,
+      "xgb_oof__nested_convex_blend_oof": 0.9600439269301103,
+      "xgb_oof__existing_full_oof_linear_stacking_optimistic": 0.9664966342444868,
+      "hybrid_oof__current_fixed_0_2_0_3_0_5_oof": 0.9454579368119884,
+      "hybrid_oof__equal_weight_oof": 0.8738379820358386,
+      "hybrid_oof__nested_linear_stacking_oof": 0.5375519860884697,
+      "hybrid_oof__nested_convex_blend_oof": 0.5530981341072297,
+      "hybrid_oof__existing_full_oof_linear_stacking_optimistic": 0.5444701553116248,
+      "current_fixed_0_2_0_3_0_5_oof__equal_weight_oof": 0.9844151109056817,
+      "current_fixed_0_2_0_3_0_5_oof__nested_linear_stacking_oof": 0.7786215213470228,
+      "current_fixed_0_2_0_3_0_5_oof__nested_convex_blend_oof": 0.7900070627207791,
+      "current_fixed_0_2_0_3_0_5_oof__existing_full_oof_linear_stacking_optimistic": 0.7851331367860599,
+      "equal_weight_oof__nested_linear_stacking_oof": 0.8753999937626563,
+      "equal_weight_oof__nested_convex_blend_oof": 0.8845847654315978,
+      "equal_weight_oof__existing_full_oof_linear_stacking_optimistic": 0.8814681277388464,
+      "nested_linear_stacking_oof__nested_convex_blend_oof": 0.9958229990502607,
+      "nested_linear_stacking_oof__existing_full_oof_linear_stacking_optimistic": 0.995941194909604,
+      "nested_convex_blend_oof__existing_full_oof_linear_stacking_optimistic": 0.9989939599001783
+    },
+    "target_range_metrics": {
+      "low_under_70": {
+        "n": 114,
+        "models": {
+          "rf_oof": {
+            "mae": 2.9024589722425915,
+            "rmse": 4.006110449053427
+          },
+          "xgb_oof": {
+            "mae": 3.3017718812834094,
+            "rmse": 4.430451396332194
+          },
+          "hybrid_oof": {
+            "mae": 5.055155742202491,
+            "rmse": 6.155207669381586
+          },
+          "current_fixed_0_2_0_3_0_5_oof": {
+            "mae": 3.68073654740311,
+            "rmse": 4.697424060596812
+          },
+          "equal_weight_oof": {
+            "mae": 3.3517919770266724,
+            "rmse": 4.37090371754627
+          },
+          "nested_linear_stacking_oof": {
+            "mae": 3.1483403898747624,
+            "rmse": 4.299310906436245
+          },
+          "nested_convex_blend_oof": {
+            "mae": 2.967946984274602,
+            "rmse": 4.058809413422765
+          },
+          "existing_full_oof_linear_stacking_optimistic": {
+            "mae": 2.978406167541257,
+            "rmse": 4.073105125114576
+          }
+        }
+      },
+      "mid_70_to_under_85": {
+        "n": 123,
+        "models": {
+          "rf_oof": {
+            "mae": 2.5898303708538344,
+            "rmse": 3.803859305203494
+          },
+          "xgb_oof": {
+            "mae": 2.5617191318696806,
+            "rmse": 3.631188360386209
+          },
+          "hybrid_oof": {
+            "mae": 5.827437736578219,
+            "rmse": 7.404609080517631
+          },
+          "current_fixed_0_2_0_3_0_5_oof": {
+            "mae": 3.782653212568048,
+            "rmse": 4.8823120229532755
+          },
+          "equal_weight_oof": {
+            "mae": 3.167843199911087,
+            "rmse": 4.248202419535965
+          },
+          "nested_linear_stacking_oof": {
+            "mae": 2.586427724451721,
+            "rmse": 3.7954300694980936
+          },
+          "nested_convex_blend_oof": {
+            "mae": 2.5497284638569337,
+            "rmse": 3.7627156748374255
+          },
+          "existing_full_oof_linear_stacking_optimistic": {
+            "mae": 2.5097210925722977,
+            "rmse": 3.7144802079646264
+          }
+        }
+      },
+      "high_85_and_above": {
+        "n": 62,
+        "models": {
+          "rf_oof": {
+            "mae": 2.179247142475748,
+            "rmse": 2.79877487000732
+          },
+          "xgb_oof": {
+            "mae": 2.1882764005717616,
+            "rmse": 2.806904366578571
+          },
+          "hybrid_oof": {
+            "mae": 5.174769607043854,
+            "rmse": 6.510116413454021
+          },
+          "current_fixed_0_2_0_3_0_5_oof": {
+            "mae": 3.3131561093982005,
+            "rmse": 4.281808746101124
+          },
+          "equal_weight_oof": {
+            "mae": 2.8080921051145746,
+            "rmse": 3.6496569071956944
+          },
+          "nested_linear_stacking_oof": {
+            "mae": 2.198144083556035,
+            "rmse": 2.816944629260449
+          },
+          "nested_convex_blend_oof": {
+            "mae": 2.1725299387993653,
+            "rmse": 2.778604160290503
+          },
+          "existing_full_oof_linear_stacking_optimistic": {
+            "mae": 2.1502302534620954,
+            "rmse": 2.753768404097277
+          }
+        }
+      }
+    },
+    "nested_linear_fold_coefficients": [
+      {
+        "fold": 1,
+        "train_rows": 239,
+        "validation_rows": 60,
+        "coefficients": [
+          0.8282645450698173,
+          0.17773890642140305,
+          -0.0032216270881116602
+        ],
+        "intercept": -0.31651662623599464
+      },
+      {
+        "fold": 2,
+        "train_rows": 239,
+        "validation_rows": 60,
+        "coefficients": [
+          0.8677422829068373,
+          0.14307577577478325,
+          -0.03371791684883495
+        ],
+        "intercept": 2.130183713437134
+      },
+      {
+        "fold": 3,
+        "train_rows": 239,
+        "validation_rows": 60,
+        "coefficients": [
+          0.7590860317452515,
+          0.2569555043939056,
+          0.007634037696486765
+        ],
+        "intercept": -1.809890646627565
+      },
+      {
+        "fold": 4,
+        "train_rows": 239,
+        "validation_rows": 60,
+        "coefficients": [
+          0.5567914339481626,
+          0.49630805201299694,
+          -0.038491966592800485
+        ],
+        "intercept": -1.3123618424780545
+      },
+      {
+        "fold": 5,
+        "train_rows": 240,
+        "validation_rows": 59,
+        "coefficients": [
+          0.7143764191426532,
+          0.2700495477956923,
+          0.011997084512079804
+        ],
+        "intercept": 0.28195359812826837
+      }
+    ],
+    "nested_linear_coefficient_summary": {
+      "mean": [
+        0.7452521425625442,
+        0.26882555727975627,
+        -0.011160077664236106
+      ],
+      "std": [
+        0.12099278793553156,
+        0.13784091122694203,
+        0.023496702911704064
+      ]
+    },
+    "nested_linear_intercept_summary": {
+      "mean": -0.20532636075524238,
+      "std": 1.5414738438756828
+    },
+    "nested_convex_fold_weights": [
+      {
+        "fold": 1,
+        "train_rows": 239,
+        "validation_rows": 60,
+        "weights": [
+          0.9,
+          0.1,
+          0.0
+        ],
+        "selection_objective": "MAE on the outer-fold training partition only"
+      },
+      {
+        "fold": 2,
+        "train_rows": 239,
+        "validation_rows": 60,
+        "weights": [
+          0.9,
+          0.1,
+          0.0
+        ],
+        "selection_objective": "MAE on the outer-fold training partition only"
+      },
+      {
+        "fold": 3,
+        "train_rows": 239,
+        "validation_rows": 60,
+        "weights": [
+          0.9,
+          0.1,
+          0.0
+        ],
+        "selection_objective": "MAE on the outer-fold training partition only"
+      },
+      {
+        "fold": 4,
+        "train_rows": 239,
+        "validation_rows": 60,
+        "weights": [
+          0.7,
+          0.3,
+          0.0
+        ],
+        "selection_objective": "MAE on the outer-fold training partition only"
+      },
+      {
+        "fold": 5,
+        "train_rows": 240,
+        "validation_rows": 59,
+        "weights": [
+          0.7,
+          0.3,
+          0.0
+        ],
+        "selection_objective": "MAE on the outer-fold training partition only"
+      }
+    ],
+    "nested_convex_weight_summary": {
+      "mean": [
+        0.8200000000000001,
+        0.18000000000000002,
+        0.0
+      ],
+      "std": [
+        0.10954451150103325,
+        0.10954451150103323,
+        0.0
+      ]
+    }
+  },
+  "holdout_assessment": {
+    "independent_holdout_available": false,
+    "reason": "The stored test split has already been examined, the validation partition participates in existing development procedures, and the provided OOF matrix combines stored development rows.",
+    "recommended_future_validation": "Lock a new external or participant-level holdout before any approved retraining or final production-policy claim."
+  },
+  "limitations": [
+    "This experiment reuses existing cross-fitted base predictions; it does not retrain base models.",
+    "Nested meta evaluation reduces direct meta-model fitting optimism, but does not replace external validation.",
+    "The 75-row historical test split was excluded from selection and cannot be described as untouched final confirmation.",
+    "No candidate is authorized for production deployment by this report."
+  ]
+}

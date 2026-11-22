@@ -1,0 +1,1081 @@
+{
+  "dataset_name": "Sleep Efficiency Knowledge Base",
+  "dataset_version": "0.3.0",
+  "created_date": "2026-11-16",
+  "language": "en",
+  "purpose": "Evidence-attributed reference knowledge for a retrieval-augmented LLM that explains lifestyle-based sleep-efficiency predictions and provides cautious educational recommendations.",
+  "architecture": {
+    "prediction_models": [
+      "Random Forest Regressor",
+      "XGBoost Regressor",
+      "Hybrid MLP + 1D-CNN"
+    ],
+    "interpretability": "SHAP",
+    "knowledge_retrieval": "RAG",
+    "generation": "LLM",
+    "integration_rule": "Keep this knowledge base separate from user records, model training data, predictions and SHAP outputs. At inference time, retrieve relevant evidence and combine it with the prediction context."
+  },
+  "important_use_constraints": [
+    "This dataset is educational and is not a diagnostic or treatment system.",
+    "Do not infer causation from SHAP values or observational associations.",
+    "Do not treat phone inactivity as proof of sleep; it is only a possible behavioral proxy.",
+    "Do not equate sleep efficiency with adequate sleep duration.",
+    "Preserve source IDs and evidence limitations when retrieving or generating answers.",
+    "Do not present a population recommendation as an individualized medical requirement.",
+    "The smartphone-app validation study is adjacent evidence only; it does not validate screen inactivity as a sleep detector."
+  ],
+  "schema_version": "1.0",
+  "source_registry": [
+    {
+      "source_id": "SRC-001",
+      "title": "Sleep is essential to health: an American Academy of Sleep Medicine position statement",
+      "authors": [
+        "Kannan Ramar",
+        "Raman K. Malhotra",
+        "Kelly A. Carden",
+        "Jennifer L. Martin",
+        "Fariha Abbasi-Feinberg",
+        "R. Nisha Aurora",
+        "Vishesh K. Kapur",
+        "Eric J. Olson",
+        "Carol L. Rosen",
+        "James A. Rowley",
+        "Anita V. Shelgikar",
+        "Lynn Marie Trotti"
+      ],
+      "organization": "American Academy of Sleep Medicine",
+      "year": 2021,
+      "publication_type": "professional_society_position_statement",
+      "journal": "Journal of Clinical Sleep Medicine",
+      "doi": "10.5664/jcsm.9476",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34170250/",
+      "access_status": "PubMed record and free PMC full text",
+      "verification_status": "bibliographic_metadata_and_full_text_verified",
+      "evidence_notes": "AASM position statement: healthy sleep includes adequate duration, quality, appropriate timing, regularity and absence of sleep disorders.",
+      "limitations": [
+        "A position statement is not a personalized clinical assessment.",
+        "Adult recommendations should not be applied to children."
+      ],
+      "pmid": "34170250",
+      "pmcid": "PMC8494094",
+      "volume": "17",
+      "issue": "10",
+      "pages": "2115-2119"
+    },
+    {
+      "source_id": "SRC-002",
+      "title": "Healthy Sleep",
+      "authors": [],
+      "organization": "National Institutes of Health",
+      "year": null,
+      "publication_type": "government_health_guidance",
+      "journal": null,
+      "doi": null,
+      "url": "https://health.nih.gov/health-topics-a-z/healthy-sleep",
+      "access_status": "public_webpage",
+      "verification_status": "official_page_identified",
+      "evidence_notes": "Practical public-health guidance on regular schedules, light, activity, caffeine, alcohol, meals, naps and sleep environment.",
+      "limitations": [
+        "General educational guidance; recommendations may need adaptation for shift workers, older adults and people with medical conditions."
+      ]
+    },
+    {
+      "source_id": "SRC-003",
+      "title": "Sleep Deprivation and Deficiency - Healthy Sleep Habits",
+      "authors": [],
+      "organization": "National Heart, Lung, and Blood Institute, NIH",
+      "year": null,
+      "publication_type": "government_health_guidance",
+      "journal": null,
+      "doi": null,
+      "url": "https://www.nhlbi.nih.gov/health/sleep-deprivation/healthy-sleep-habits",
+      "access_status": "public_webpage",
+      "verification_status": "official_page_identified",
+      "evidence_notes": "Guidance on caffeine, alcohol, meals, activity, environment and short naps.",
+      "limitations": [
+        "General guidance; not a substitute for individualized clinical advice."
+      ]
+    },
+    {
+      "source_id": "SRC-004",
+      "title": "Recommended Amount of Sleep for a Healthy Adult: A Joint Consensus Statement of the American Academy of Sleep Medicine and Sleep Research Society",
+      "authors": [
+        "Nathaniel F. Watson",
+        "M. Safwan Badr",
+        "Gregory Belenky",
+        "Donald L. Bliwise",
+        "Orfeu M. Buxton",
+        "Daniel Buysse",
+        "David F. Dinges",
+        "James Gangwisch",
+        "Michael A. Grandner",
+        "Clete Kushida",
+        "Raman K. Malhotra",
+        "Jennifer L. Martin",
+        "Sanjay R. Patel",
+        "Stuart F. Quan",
+        "Esra Tasali"
+      ],
+      "organization": "American Academy of Sleep Medicine and Sleep Research Society",
+      "year": 2015,
+      "publication_type": "expert_consensus_statement",
+      "journal": "Sleep",
+      "doi": "10.5665/sleep.4716",
+      "pmid": "26039963",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26039963/",
+      "access_status": "PubMed record and free PMC full text",
+      "verification_status": "bibliographic_metadata_verified",
+      "evidence_notes": "Joint AASM/SRS consensus statement recommending adults regularly obtain at least seven hours of sleep per night.",
+      "limitations": [
+        "A population-level recommendation, not an exact requirement for every individual."
+      ],
+      "volume": "38",
+      "issue": "6",
+      "pages": "843-844"
+    },
+    {
+      "source_id": "SRC-005",
+      "title": "The effect of caffeine on subsequent sleep: A systematic review and meta-analysis",
+      "authors": [
+        "Carissa Gardiner",
+        "Jonathon Weakley",
+        "Louise M. Burke",
+        "Gregory D. Roach",
+        "Charli Sargent",
+        "Nirav Maniar",
+        "Andrew Townshend",
+        "Shona L. Halson"
+      ],
+      "organization": "Sleep Medicine Reviews",
+      "year": 2023,
+      "publication_type": "systematic_review_and_meta_analysis",
+      "journal": "Sleep Medicine Reviews",
+      "doi": "10.1016/j.smrv.2023.101764",
+      "pmid": "36870101",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36870101/",
+      "access_status": "PubMed record and free full text",
+      "verification_status": "bibliographic_metadata_verified",
+      "evidence_notes": "Systematic review and meta-analysis including 24 studies; pooled caffeine effects include reduced total sleep time and sleep efficiency and increased sleep-onset latency and wake after sleep onset.",
+      "limitations": [
+        "Effects vary with dose, timing, habitual use and individual sensitivity; pooled estimates do not predict an individual's response."
+      ],
+      "volume": "69",
+      "pages": "101764"
+    },
+    {
+      "source_id": "SRC-006",
+      "title": "Sleep hygiene - What do we mean? A bibliographic review",
+      "authors": [
+        "Carla De Pasquale",
+        "Mary El Kazzi",
+        "Kate Sutherland",
+        "Alexandra E. Shriane",
+        "Grace E. Vincent",
+        "Peter A. Cistulli",
+        "Yu Sun Bin"
+      ],
+      "organization": "Sleep Medicine Reviews",
+      "year": 2024,
+      "publication_type": "bibliographic_review",
+      "journal": "Sleep Medicine Reviews",
+      "doi": "10.1016/j.smrv.2024.101930",
+      "pmid": "38761649",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38761649/",
+      "access_status": "PubMed record and publisher record",
+      "verification_status": "full_bibliographic_metadata_and_abstract_verified",
+      "evidence_notes": "Bibliographic review of 548 adult studies (250 observational and 298 intervention); the authors found inconsistent definitions and reporting of sleep-hygiene components.",
+      "limitations": [
+        "The review documents heterogeneity; it does not establish that every commonly listed sleep-hygiene practice has a large causal effect."
+      ],
+      "volume": "75",
+      "pages": "101930",
+      "issue": null
+    },
+    {
+      "source_id": "SRC-007",
+      "title": "Sleep timing, sleep consistency, and health in adults: a systematic review",
+      "authors": [
+        "Jean-Philippe Chaput",
+        "Caroline Dutil",
+        "Ryan Featherstone",
+        "Robert Ross",
+        "Lora Giangregorio",
+        "Travis J. Saunders",
+        "Ian Janssen",
+        "Veronica J. Poitras",
+        "Michelle E. Kho",
+        "Amanda Ross-White",
+        "Sarah Zankar",
+        "Julie Carrier"
+      ],
+      "organization": "Applied Physiology, Nutrition, and Metabolism",
+      "year": 2020,
+      "publication_type": "systematic_review",
+      "journal": "Applied Physiology, Nutrition, and Metabolism",
+      "doi": "10.1139/apnm-2020-0032",
+      "pmid": "33054339",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33054339/",
+      "access_status": "PubMed record and free full text",
+      "verification_status": "bibliographic_metadata_and_abstract_verified",
+      "evidence_notes": "Systematic review of 41 articles and 92,340 adults; evidence quality ranged from very low to moderate and no universal timing or variability thresholds were established.",
+      "limitations": [
+        "Mostly observational evidence; no universal cutoff for late timing or high variability could be established."
+      ],
+      "volume": "45",
+      "issue": "10 (Suppl. 2)",
+      "pages": "S232-S247"
+    },
+    {
+      "source_id": "SRC-008",
+      "title": "The importance of sleep regularity: a consensus statement of the National Sleep Foundation sleep timing and variability panel",
+      "authors": [
+        "Tracey L. Sletten",
+        "Matthew D. Weaver",
+        "Russell G. Foster",
+        "David Gozal",
+        "Elizabeth B. Klerman",
+        "Shantha M. W. Rajaratnam",
+        "Till Roenneberg",
+        "Joseph S. Takahashi",
+        "Fred W. Turek",
+        "Michael V. Vitiello",
+        "Michael W. Young",
+        "Charles A. Czeisler"
+      ],
+      "organization": "National Sleep Foundation",
+      "year": 2023,
+      "publication_type": "expert_consensus_statement",
+      "journal": "Sleep Health",
+      "doi": "10.1016/j.sleh.2023.07.016",
+      "pmid": "37684151",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37684151/",
+      "access_status": "PubMed record",
+      "verification_status": "bibliographic_metadata_verified",
+      "evidence_notes": "Expert panel consensus supports the importance of consistency in sleep onset and offset timing for health, safety and performance.",
+      "limitations": [
+        "Consensus summarizes available evidence; it does not establish a single optimal bedtime for everyone."
+      ],
+      "volume": "9",
+      "issue": "6",
+      "pages": "801-820"
+    },
+    {
+      "source_id": "SRC-010",
+      "title": "Sleep and circadian hygiene practices association with sleep quality among Brazilian adults",
+      "authors": [
+        "Laura Castro-Santos",
+        "Márcia de Oliveira Lima",
+        "Anny Kariny Pereira Pedrosa",
+        "Renan Serenini",
+        "Risia Cristina Egito de Menezes",
+        "Giovana Longo-Silva"
+      ],
+      "organization": "PubMed-indexed peer-reviewed study",
+      "year": 2023,
+      "publication_type": "observational_study",
+      "journal": "Sleep Medicine: X",
+      "doi": "10.1016/j.sleepx.2023.100088",
+      "pmid": "38162593",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38162593/",
+      "access_status": "PubMed record and free PMC full text",
+      "verification_status": "bibliographic_metadata_and_full_text_verified",
+      "evidence_notes": "Observational study of 2,050 Brazilian adults aged 18-65; examined associations between sleep/circadian hygiene practices and sleep outcomes. Findings are associations, not causal effects.",
+      "limitations": [
+        "Observational associations cannot establish causality; full bibliographic metadata and full text should be checked before high-confidence use."
+      ],
+      "volume": "6",
+      "pages": "100088"
+    },
+    {
+      "source_id": "SRC-011",
+      "title": "Temporal Associations Between Daytime Napping and Nocturnal Sleep: An Exploration of Random Slopes",
+      "authors": [
+        "Michael P. Mead",
+        "Phat Huynh",
+        "Trung Q. Le",
+        "Leah A. Irish"
+      ],
+      "organization": "PubMed-indexed peer-reviewed study",
+      "year": 2022,
+      "publication_type": "micro_longitudinal_observational_study",
+      "journal": "Annals of Behavioral Medicine",
+      "doi": "10.1093/abm/kaac006",
+      "pmid": "35195690",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35195690/",
+      "access_status": "PubMed record and free PMC full text",
+      "verification_status": "bibliographic_metadata_and_full_text_verified",
+      "evidence_notes": "14-day study in 384 college students using self-reported naps and actigraphy; day-level associations varied across individuals and do not establish causation.",
+      "limitations": [
+        "Student sample limits generalizability; observational design does not establish causation."
+      ],
+      "volume": "56",
+      "issue": "11",
+      "pages": "1101-1109",
+      "pmcid": "PMC9923793"
+    },
+    {
+      "source_id": "SRC-012",
+      "title": "Sleep apnea symptoms",
+      "authors": [],
+      "organization": "National Heart, Lung, and Blood Institute, NIH",
+      "year": null,
+      "publication_type": "government_health_guidance",
+      "journal": null,
+      "doi": null,
+      "url": "https://www.nhlbi.nih.gov/health/sleep-apnea",
+      "access_status": "public_webpage",
+      "verification_status": "official_topic_page_identified",
+      "evidence_notes": "Clinical-awareness information about sleep apnea and symptoms that warrant medical evaluation.",
+      "limitations": [
+        "Symptoms alone do not diagnose sleep apnea."
+      ]
+    },
+    {
+      "source_id": "SRC-013",
+      "title": "Consumer Sleep Technology: An American Academy of Sleep Medicine Position Statement",
+      "authors": [
+        "Seema Khosla",
+        "Maryann C. Deak",
+        "Dominic Gault",
+        "Cathy A. Goldstein",
+        "Dennis Hwang",
+        "Younghoon Kwon",
+        "Daniel O'Hearn",
+        "Sharon Schutte-Rodin",
+        "Michael Yurcheshen",
+        "Ilene M. Rosen",
+        "Douglas B. Kirsch",
+        "Ronald D. Chervin",
+        "Kelly A. Carden",
+        "Kannan Ramar",
+        "R. Nisha Aurora",
+        "David A. Kristo",
+        "Raman K. Malhotra",
+        "Jennifer L. Martin",
+        "Eric J. Olson",
+        "Carol L. Rosen",
+        "James A. Rowley",
+        "American Academy of Sleep Medicine Board of Directors"
+      ],
+      "organization": "American Academy of Sleep Medicine",
+      "year": 2018,
+      "publication_type": "professional_society_position_statement",
+      "journal": "Journal of Clinical Sleep Medicine",
+      "doi": "10.5664/jcsm.7128",
+      "pmid": "29734997",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29734997/",
+      "access_status": "PubMed record and free PMC full text",
+      "verification_status": "bibliographic_metadata_and_full_text_verified",
+      "evidence_notes": "Discusses consumer sleep technology, validation, and limitations of using consumer devices for clinical interpretation.",
+      "limitations": [
+        "Consumer-device performance varies by device, algorithm, population and metric."
+      ],
+      "volume": "14",
+      "issue": "5",
+      "pages": "877-880",
+      "pmcid": "PMC5940440"
+    },
+    {
+      "source_id": "SRC-014",
+      "title": "Sleep physiology, pathophysiology, and sleep hygiene",
+      "authors": [
+        "Navya Baranwal",
+        "Phoebe K. Yu",
+        "Noah S. Siegel"
+      ],
+      "organization": "PubMed-indexed review",
+      "year": 2023,
+      "publication_type": "narrative_review",
+      "journal": "Progress in Cardiovascular Diseases",
+      "doi": "10.1016/j.pcad.2023.02.005",
+      "pmid": "36841492",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36841492/",
+      "access_status": "PubMed record and abstract",
+      "verification_status": "bibliographic_metadata_verified",
+      "evidence_notes": "Broad overview of sleep physiology, disorders and lifestyle factors.",
+      "limitations": [
+        "Use as background only until complete bibliographic details and full text are checked."
+      ],
+      "volume": "77",
+      "pages": "59-69"
+    },
+    {
+      "source_id": "SRC-015",
+      "title": "Measuring Sleep Efficiency: What Should the Denominator Be?",
+      "authors": [
+        "David L. Reed",
+        "William P. Sacco"
+      ],
+      "organization": "American Academy of Sleep Medicine",
+      "year": 2016,
+      "publication_type": "methodological_paper",
+      "journal": "Journal of Clinical Sleep Medicine",
+      "volume": "12",
+      "issue": "2",
+      "pages": "263-266",
+      "doi": "10.5664/jcsm.5498",
+      "pmid": "26194727",
+      "pmcid": "PMC4751425",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26194727/",
+      "access_status": "PubMed record and free PMC full text",
+      "verification_status": "bibliographic_metadata_and_full_text_verified",
+      "evidence_notes": "Explains limitations of using time in bed as the denominator for sleep efficiency and proposes duration of the sleep episode as an alternative denominator.",
+      "limitations": [
+        "This is a methodological proposal, not a universal replacement standard; the project must define and consistently apply its operational formula."
+      ]
+    },
+    {
+      "source_id": "SRC-016",
+      "title": "(Not so) Smart sleep tracking through the phone: Findings from a polysomnography study testing the reliability of four sleep applications",
+      "authors": [
+        "Edita Fino",
+        "Giuseppe Plazzi",
+        "Marco Filardi",
+        "Michele Marzocchi",
+        "Fabio Pizza",
+        "Stefano Vandi",
+        "Michela Mazzetti"
+      ],
+      "organization": "Peer-reviewed smartphone sleep-app validation study",
+      "year": 2020,
+      "publication_type": "validation_study",
+      "journal": "Journal of Sleep Research",
+      "pmid": "31674096",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31674096/",
+      "access_status": "PubMed record",
+      "verification_status": "full_bibliographic_metadata_and_abstract_verified",
+      "evidence_notes": "Four smartphone applications using sound and/or movement sensors were compared with polysomnography in 21 healthy participants over two nights. Accuracy differed by app and metric; screen inactivity alone was not evaluated.",
+      "limitations": [
+        "Small sample (21 healthy participants) and two-night observation period.",
+        "The evaluated apps used sound and/or movement sensors; the study does not validate screen-off or phone-inactivity windows as sleep detection."
+      ],
+      "volume": "29",
+      "issue": "1",
+      "pages": "e12935",
+      "doi": "10.1111/jsr.12935"
+    },
+    {
+      "source_id": "SRC-017",
+      "title": "Sleep and affect: A conceptual review",
+      "authors": [
+        "Maia ten Brink",
+        "Jessica R. Dietch",
+        "Joshua Tutek",
+        "Sooyeon A. Suh",
+        "James J. Gross",
+        "Rachel Manber"
+      ],
+      "organization": "Sleep Medicine Reviews",
+      "year": 2022,
+      "publication_type": "conceptual_review_with_systematic_review_of_empirical_studies",
+      "journal": "Sleep Medicine Reviews",
+      "volume": "65",
+      "pages": "101670",
+      "doi": "10.1016/j.smrv.2022.101670",
+      "pmid": "36088755",
+      "pmcid": "PMC10228665",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36088755/",
+      "access_status": "PubMed record and free PMC full text",
+      "verification_status": "bibliographic_metadata_and_full_text_verified",
+      "evidence_notes": "Conceptual review incorporating a systematic review of 80 empirical articles on sleep and affect. It found robust associations for some sleep-disturbance and sleep-duration domains, but mixed, inconclusive or sparse evidence in many other domains; it did not support granular bidirectionality.",
+      "limitations": [
+        "The review concerns affect and mood, not stress as a standalone construct.",
+        "Findings vary by sleep domain, affect domain, measurement method and timescale.",
+        "Temporal ordering in reviewed studies should not automatically be interpreted as causation."
+      ]
+    }
+  ],
+  "knowledge_chunks": [
+    {
+      "chunk_id": "SLEEP-001",
+      "category": "sleep_fundamentals",
+      "topic": "Dimensions of healthy sleep",
+      "content": "Healthy sleep is multidimensional. Commonly described dimensions include adequate duration, continuity or quality, appropriate timing, regularity, and the presence or absence of sleep disorders. Sleep duration alone does not fully describe sleep health: a person may spend enough time asleep but still experience fragmented, poorly timed or unsatisfactory sleep.",
+      "related_features": [
+        "sleep_duration",
+        "sleep_efficiency",
+        "sleep_timing",
+        "sleep_regularity"
+      ],
+      "evidence_type": "professional_society_position_statement",
+      "evidence_strength": "professional_consensus_framework",
+      "population_context": "General adult population; pediatric recommendations differ.",
+      "practical_implication": "Explain duration, continuity, timing and regularity as distinct dimensions. Do not treat one predicted sleep-efficiency value as a complete measure of sleep health.",
+      "limitations": [
+        "This is a broad professional-society framework, not a diagnostic instrument or individualized clinical assessment."
+      ],
+      "source_ids": [
+        "SRC-001",
+        "SRC-004"
+      ]
+    },
+    {
+      "chunk_id": "SLEEP-002",
+      "category": "sleep_fundamentals",
+      "topic": "Adult sleep duration recommendation",
+      "content": "A joint American Academy of Sleep Medicine and Sleep Research Society consensus statement recommends that adults regularly obtain at least seven hours of sleep per night to promote optimal health. This is a population-level recommendation for adults, not a precise sleep requirement for every person. Age, health, individual variation and the distinction between time asleep and time in bed matter.",
+      "related_features": [
+        "sleep_duration",
+        "previous_sleep_history"
+      ],
+      "evidence_type": "expert_consensus_statement",
+      "evidence_strength": "expert_consensus_recommendation",
+      "population_context": "Adults; do not apply this threshold to children or adolescents.",
+      "practical_implication": "When an adult reports regularly sleeping less than seven hours, explain that this is below the cited adult consensus recommendation while avoiding a personalized diagnosis or claim that exactly seven hours is sufficient for everyone.",
+      "limitations": [
+        "This recommendation is for adults and should not be applied to children or adolescents.",
+        "It does not determine an individual's exact sleep need or diagnose sleep deficiency."
+      ],
+      "source_ids": [
+        "SRC-004",
+        "SRC-001"
+      ]
+    },
+    {
+      "chunk_id": "SLEEP-003",
+      "category": "sleep_efficiency",
+      "topic": "Operational definition of sleep efficiency",
+      "content": "A commonly used operational measure of sleep efficiency is total sleep time (TST) divided by time in bed (TIB), multiplied by 100: SE = (TST / TIB) × 100. The denominator is not universally operationalized. Reed and Sacco discuss how literal time in bed can include awake activities before attempting sleep or after the final awakening, and propose duration of the sleep episode as an alternative denominator. A project must state which definition it uses and apply it consistently. A high percentage does not by itself establish adequate sleep duration.",
+      "related_features": [
+        "sleep_efficiency",
+        "total_sleep_time",
+        "time_in_bed"
+      ],
+      "evidence_type": "measurement_definition_and_methodological_paper",
+      "evidence_strength": "commonly_used_operational_definition_with_documented_measurement_debate",
+      "population_context": "Sleep research and sleep assessment; measurement protocol and denominator must be stated.",
+      "practical_implication": "Document the exact target formula and how TST and the denominator are obtained in the dataset, model labels, evaluation and user-facing explanations. Do not silently mix TIB-based and sleep-episode-based definitions.",
+      "limitations": [
+        "TST/TIB is common but has conceptual limitations when time in bed includes non-sleep activity.",
+        "The duration-of-sleep-episode denominator is a methodological proposal, not a universal replacement standard.",
+        "A high ratio can occur despite a short sleep opportunity."
+      ],
+      "source_ids": [
+        "SRC-015"
+      ]
+    },
+    {
+      "chunk_id": "CAFF-001",
+      "category": "caffeine",
+      "topic": "Caffeine and sleep continuity",
+      "content": "A systematic review and meta-analysis of 24 studies found that caffeine consumption can reduce subsequent total sleep time and sleep efficiency and increase sleep-onset latency and wake after sleep onset. The size of the effect varies with dose, timing, habitual consumption, study protocol and individual sensitivity. Pooled group-level findings should not be treated as a prediction of one person's response.",
+      "related_features": [
+        "caffeine_consumption",
+        "caffeine_timing",
+        "sleep_efficiency",
+        "sleep_latency",
+        "wake_after_sleep_onset"
+      ],
+      "evidence_type": "systematic_review_and_meta_analysis",
+      "evidence_strength": "moderate_support_with_heterogeneity",
+      "population_context": "Studies of caffeine exposure and subsequent sleep; study populations and protocols vary.",
+      "practical_implication": "Collect both approximate caffeine amount and timing. If discussing a model prediction, describe caffeine as one possible contributing feature only when supported by the user's data and model output; do not claim it caused the result.",
+      "limitations": [
+        "The included studies used heterogeneous doses, timing and designs.",
+        "Pooled estimates do not predict an individual's response.",
+        "General public-health advice is not a personalized medical threshold."
+      ],
+      "source_ids": [
+        "SRC-005",
+        "SRC-003"
+      ]
+    },
+    {
+      "chunk_id": "ALC-001",
+      "category": "alcohol",
+      "topic": "Alcohol and perceived sleepiness versus sleep quality",
+      "content": "Alcohol can cause subjective sleepiness, but feeling sedated is not equivalent to restorative or uninterrupted sleep. Public-health sleep guidance cautions that alcohol near bedtime can contribute to lighter or disrupted sleep. The effect may vary with amount, timing, individual characteristics and other substances or conditions.",
+      "related_features": [
+        "alcohol_consumption",
+        "sleep_latency",
+        "sleep_fragmentation",
+        "sleep_efficiency"
+      ],
+      "evidence_type": "government_health_guidance",
+      "evidence_strength": "established_general_guidance",
+      "population_context": "General adult health education.",
+      "practical_implication": "If alcohol use is reported, distinguish feeling sleepy or falling asleep quickly from sleep continuity and overall sleep health. Avoid claiming that a particular amount caused an individual's predicted sleep outcome.",
+      "limitations": [
+        "The cited guidance is educational and does not quantify an individual dose-response relationship.",
+        "Effects vary across people and drinking patterns."
+      ],
+      "source_ids": [
+        "SRC-002",
+        "SRC-003"
+      ]
+    },
+    {
+      "chunk_id": "MEAL-001",
+      "category": "nutrition_meal_timing",
+      "topic": "Large meals close to bedtime",
+      "content": "Public-health sleep guidance commonly advises avoiding heavy or large meals close to bedtime because discomfort or indigestion may interfere with sleep. An observational study of Brazilian adults also reported associations between meal patterns and sleep indicators. These findings do not establish that every late meal reduces sleep efficiency; meal size, composition, timing, reflux symptoms and individual tolerance may matter.",
+      "related_features": [
+        "dinner_timing",
+        "meal_size",
+        "sleep_quality"
+      ],
+      "evidence_type": "government_health_guidance",
+      "evidence_strength": "general_guidance",
+      "population_context": "General population; individual gastrointestinal conditions may change relevance.",
+      "practical_implication": "Where feasible, record dinner timing and meal size separately. Offer conditional suggestions based on the person's reported discomfort and pattern rather than imposing a universal meal-to-bed interval.",
+      "limitations": [
+        "The guidance does not establish one universally appropriate meal-to-bed interval.",
+        "The Brazilian study is observational and cannot establish causation.",
+        "The study population may not represent all regions, ages or dietary patterns."
+      ],
+      "source_ids": [
+        "SRC-003",
+        "SRC-010"
+      ]
+    },
+    {
+      "chunk_id": "ACT-001",
+      "category": "physical_activity",
+      "topic": "Physical activity and sleep habits",
+      "content": "Regular physical activity is included in public-health guidance on healthy sleep habits. In an observational study of Brazilian adults, morning exercise was associated with more favorable sleep-quality indicators. Exercise effects may depend on activity type, intensity, timing, health status and individual response; the evidence does not support a universal claim that all evening exercise is harmful.",
+      "related_features": [
+        "physical_activity",
+        "exercise_intensity",
+        "exercise_timing"
+      ],
+      "evidence_type": "government_health_guidance",
+      "evidence_strength": "general_guidance",
+      "population_context": "General population.",
+      "practical_implication": "Represent activity with more detail than a single yes/no field where possible, such as frequency, intensity and approximate timing. Describe associations cautiously and avoid prescribing a universal exercise time.",
+      "limitations": [
+        "The cited public-health guidance is general.",
+        "The Brazilian study is observational and cannot establish causation.",
+        "The study does not prove that morning exercise will improve sleep for every individual."
+      ],
+      "source_ids": [
+        "SRC-002",
+        "SRC-003"
+      ]
+    },
+    {
+      "chunk_id": "STRESS-001",
+      "category": "stress_mood",
+      "topic": "Stress, mood and sleep are interrelated",
+      "content": "Sleep and affective experience, including mood, are related, but the evidence is not uniformly bidirectional across all sleep and affect measures. A review of 80 empirical articles found stronger or more consistent associations for some domains, while many other associations were inconclusive or sparse. A self-reported stress or mood score should therefore be treated as contextual information, not proof of the cause of a sleep outcome. The cited affect review does not establish a specific causal effect of stress.",
+      "related_features": [
+        "stress_level",
+        "mood",
+        "sleep_quality",
+        "sleep_latency"
+      ],
+      "evidence_type": "conceptual_review_with_systematic_review_of_empirical_studies",
+      "evidence_strength": "mixed_domain_specific_association_evidence",
+      "population_context": "Primarily non-clinical adult samples in the reviewed literature.",
+      "practical_implication": "Use stress and mood inputs as contextual features. The assistant may say that mood and sleep can be associated, but must not diagnose a mental-health condition or claim that stress caused a low prediction or SHAP attribution.",
+      "limitations": [
+        "The review examines affect and mood; it does not establish stress-specific effects.",
+        "Evidence varies by sleep domain, affect domain, measurement method and timescale.",
+        "Associations and temporal ordering do not establish causation."
+      ],
+      "source_ids": [
+        "SRC-017"
+      ]
+    },
+    {
+      "chunk_id": "SCREEN-001",
+      "category": "screen_exposure",
+      "topic": "Evening screen exposure and sleep",
+      "content": "An observational study of Brazilian adults reported associations between screen use before bed and sleep duration, sleep latency and nocturnal awakenings. Screen behavior is not a single exposure: device type, brightness, content, duration, timing and whether use delays bedtime may all matter. A bibliographic review also found that light was a commonly studied sleep-hygiene component but that definitions and intervention details varied. These findings do not prove that screen exposure caused an individual's sleep difficulty.",
+      "related_features": [
+        "screen_time",
+        "screen_exposure_before_bed",
+        "sleep_latency",
+        "sleep_duration"
+      ],
+      "evidence_type": "observational_study",
+      "evidence_strength": "association_evidence",
+      "population_context": "Adult population study; findings may not generalize to all age groups or settings.",
+      "practical_implication": "If screen exposure is included as a feature, distinguish active screen use before intended sleep from passive phone inactivity. Capture timing and duration where possible and avoid attributing an individual prediction to screen exposure without supporting evidence.",
+      "limitations": [
+        "The Brazilian study is observational and cannot establish causality.",
+        "The sleep-hygiene review documents heterogeneity and does not rank screen-related practices by treatment effect.",
+        "Findings may not generalize to every device, age group or use pattern."
+      ],
+      "source_ids": [
+        "SRC-010",
+        "SRC-006"
+      ]
+    },
+    {
+      "chunk_id": "SCREEN-002",
+      "category": "screen_inactivity_measurement",
+      "topic": "Phone inactivity is not proof of sleep",
+      "content": "A period when a smartphone screen is off or the phone is inactive can be used only as a behavioral proxy for estimating a possible sleep interval. It is not a direct measurement of sleep: a person may be awake without using the phone, use another device, or leave the phone unused while away from bed; brief phone use can also occur during an awakening. AASM guidance on consumer sleep technology emphasizes validation limitations, and a small polysomnography study of four smartphone sleep applications found app-dependent accuracy; those apps used sound and/or movement sensors, not screen inactivity alone. Neither source validates this project's screen-inactivity method.",
+      "related_features": [
+        "screen_inactivity",
+        "estimated_sleep_onset",
+        "estimated_wake_time"
+      ],
+      "evidence_type": "methodological_caution_and_indirect_validation_evidence",
+      "evidence_strength": "direct_project_method_not_validated",
+      "population_context": "Project-specific passive smartphone sensing; external validity must be established empirically.",
+      "practical_implication": "Label the output as an estimated sleep window, not confirmed sleep onset or wake time. Validate the project's algorithm against sleep diaries and, where feasible, actigraphy or polysomnography before making accuracy claims.",
+      "limitations": [
+        "No cited source directly validates screen-off or phone-inactivity windows as a sleep detector.",
+        "The smartphone-app validation study included only 21 healthy participants over two nights and did not test inactivity-only inference.",
+        "Phone inactivity is a project-specific proxy and may be affected by device habits, charging, shared devices and time away from the phone."
+      ],
+      "source_ids": [
+        "SRC-013",
+        "SRC-016"
+      ]
+    },
+    {
+      "chunk_id": "NAP-001",
+      "category": "napping",
+      "topic": "Napping and nighttime sleep",
+      "content": "The relationship between daytime naps and nighttime sleep depends on timing, duration, sleep pressure and individual differences. Public-health guidance suggests that people who have difficulty sleeping at night may benefit from limiting naps or taking them earlier. In a 14-day study of 384 college students using self-reported nap duration and actigraphy, longer naps were associated with greater wake after sleep onset, lower sleep efficiency and longer sleep-onset latency, but associations varied between individuals and do not establish causation.",
+      "related_features": [
+        "nap_occurrence",
+        "nap_duration",
+        "nap_timing",
+        "night_sleep"
+      ],
+      "evidence_type": "government_health_guidance",
+      "evidence_strength": "general_guidance",
+      "population_context": "General adult guidance, particularly for people experiencing difficulty sleeping at night.",
+      "practical_implication": "Collect nap timing and duration separately. Discuss naps in the context of nighttime sleep and the person's schedule rather than applying a single universal nap rule.",
+      "limitations": [
+        "The actigraphy study involved college students and may not generalize to all adults.",
+        "The study was observational; associations do not prove that naps caused poorer nighttime sleep.",
+        "Nap needs may differ for shift workers and people recovering from sleep restriction."
+      ],
+      "source_ids": [
+        "SRC-003",
+        "SRC-011"
+      ]
+    },
+    {
+      "chunk_id": "REG-001",
+      "category": "sleep_regularity",
+      "topic": "Consistency of sleep and wake timing",
+      "content": "A systematic review of adult studies found that later sleep timing and greater variability in sleep timing were generally associated with some adverse health outcomes, but evidence quality ranged from very low to moderate. A National Sleep Foundation consensus statement also supports the importance of sleep regularity. The available sources do not establish one optimal bedtime or a universal cutoff for irregularity.",
+      "related_features": [
+        "bedtime_variability",
+        "wake_time_variability",
+        "sleep_regularity",
+        "previous_sleep_history"
+      ],
+      "evidence_type": "systematic_review_and_consensus",
+      "evidence_strength": "association_evidence_with_consensus_support",
+      "population_context": "Adults.",
+      "practical_implication": "Assess bedtime and wake-time patterns across multiple days. Explain consistency as a potentially useful sleep-health behavior without prescribing the same clock schedule to everyone.",
+      "limitations": [
+        "Much of the evidence is observational.",
+        "No universal threshold for late timing or irregularity is established.",
+        "Associations do not prove that irregular timing caused an individual's sleep outcome."
+      ],
+      "source_ids": [
+        "SRC-007",
+        "SRC-008"
+      ]
+    },
+    {
+      "chunk_id": "HISTORY-001",
+      "category": "sleep_history",
+      "topic": "Previous sleep and accumulated sleep restriction",
+      "content": "A single night's sleep estimate does not describe a person's longer-term sleep pattern. Repeated observations can show whether sleep duration and timing are consistent or variable across days. Sleep history should therefore be considered alongside the current night when interpreting lifestyle-based predictions. The sources in this record do not support calculating an individual's sleep debt or assuming that weekend catch-up sleep fully reverses prior restriction.",
+      "related_features": [
+        "previous_sleep_history",
+        "sleep_duration_history",
+        "sleep_debt"
+      ],
+      "evidence_type": "consensus_and_systematic_review_context",
+      "evidence_strength": "contextual_support_for_multi_night_assessment",
+      "population_context": "Adult sleep-history interpretation; individual schedules and clinical circumstances vary.",
+      "practical_implication": "Use a multi-night history where available and distinguish a one-night prediction from a longer-term pattern. Do not generate a numerical sleep-debt estimate unless a separately validated method is implemented.",
+      "limitations": [
+        "The cited timing and regularity sources do not provide an individual sleep-debt calculator or recovery formula.",
+        "A short history may not represent a stable pattern."
+      ],
+      "source_ids": [
+        "SRC-004",
+        "SRC-007",
+        "SRC-008"
+      ]
+    },
+    {
+      "chunk_id": "ENV-001",
+      "category": "sleep_environment",
+      "topic": "Bedroom environment",
+      "content": "Public-health sleep guidance commonly recommends a sleep environment that is quiet, cool and dark. Noise, bright light and uncomfortable thermal conditions can make the environment less conducive to sleep. These are general recommendations rather than a universal numeric temperature or noise threshold.",
+      "related_features": [
+        "bedroom_temperature",
+        "noise",
+        "light_exposure",
+        "sleep_environment"
+      ],
+      "evidence_type": "government_health_guidance",
+      "evidence_strength": "general_guidance",
+      "population_context": "General population.",
+      "practical_implication": "Ask about perceived noise, light and thermal comfort. Avoid claiming that one room temperature or decibel level is optimal for every person.",
+      "limitations": [
+        "The cited guidance does not establish a universal numeric temperature target.",
+        "Individual preferences, climate, housing and health conditions can affect comfort."
+      ],
+      "source_ids": [
+        "SRC-002",
+        "SRC-003"
+      ]
+    },
+    {
+      "chunk_id": "DIS-001",
+      "category": "sleep_disorders",
+      "topic": "Symptoms that may warrant assessment for sleep apnea",
+      "content": "Loud snoring, witnessed pauses in breathing, gasping during sleep and excessive daytime sleepiness can be reasons to discuss possible sleep apnea with a healthcare professional. These symptoms do not establish a diagnosis. Clinical assessment and appropriate testing may be needed.",
+      "related_features": [
+        "snoring",
+        "breathing_pauses",
+        "daytime_sleepiness"
+      ],
+      "evidence_type": "government_health_guidance",
+      "evidence_strength": "clinical_awareness_guidance",
+      "population_context": "People with possible sleep apnea symptoms.",
+      "practical_implication": "When a user reports breathing pauses, gasping or significant daytime sleepiness, recommend professional evaluation. Do not diagnose sleep apnea or attempt to rule it out using lifestyle data or a sleep-efficiency prediction.",
+      "limitations": [
+        "This is clinical-awareness guidance, not a diagnostic rule.",
+        "The knowledge base cannot determine whether an individual has sleep apnea."
+      ],
+      "source_ids": [
+        "SRC-012"
+      ]
+    },
+    {
+      "chunk_id": "TECH-001",
+      "category": "measurement_limitations",
+      "topic": "Consumer sleep technology limitations",
+      "content": "Consumer sleep technologies use different sensors and algorithms, and their accuracy and validation vary by device and metric. An American Academy of Sleep Medicine position statement cautions that consumer sleep technologies should not be treated as substitutes for clinical assessment or diagnostic testing. Device-derived sleep and sleep-stage values should be interpreted as estimates unless appropriately validated for the intended use.",
+      "related_features": [
+        "sleep_measurement",
+        "wearable_data",
+        "sleep_stage_estimates"
+      ],
+      "evidence_type": "professional_society_position_statement",
+      "evidence_strength": "professional_guidance",
+      "population_context": "Consumer sleep technology users.",
+      "practical_implication": "Clearly label consumer-device values as estimates and record the device, metric and validation method. This project does not require wearables, so this chunk is background on measurement limitations rather than a required input.",
+      "limitations": [
+        "The position statement is about consumer sleep technology broadly; it does not validate any particular device or the project's phone-inactivity method.",
+        "Performance can vary by device, algorithm, population and metric."
+      ],
+      "source_ids": [
+        "SRC-013"
+      ]
+    },
+    {
+      "chunk_id": "HYGIENE-001",
+      "category": "sleep_hygiene",
+      "topic": "Sleep hygiene is not a single standardized intervention",
+      "content": "A 2024 bibliographic review identified 548 adult studies and found substantial inconsistency in how sleep hygiene and its components were defined and reported. Commonly studied components included caffeine, alcohol, exercise, sleep timing, light, napping, noise, temperature and stress. The review describes the literature and its heterogeneity; it does not establish that every commonly listed sleep-hygiene practice is equally effective or that sleep hygiene alone treats chronic insomnia.",
+      "related_features": [
+        "caffeine_consumption",
+        "alcohol_consumption",
+        "physical_activity",
+        "sleep_timing",
+        "screen_time",
+        "nap_duration",
+        "stress_level",
+        "sleep_environment"
+      ],
+      "evidence_type": "bibliographic_review",
+      "evidence_strength": "review_evidence_high_heterogeneity",
+      "population_context": "Adult sleep-hygiene literature.",
+      "practical_implication": "Offer targeted, evidence-qualified suggestions linked to the person's reported behavior. Do not present a generic checklist as a proven treatment or imply that all components have equal evidence.",
+      "limitations": [
+        "Definitions and intervention details varied substantially across studies.",
+        "The review does not rank all sleep-hygiene components by causal effect.",
+        "Chronic insomnia may require evidence-based clinical treatment beyond general sleep-hygiene advice."
+      ],
+      "source_ids": [
+        "SRC-006"
+      ]
+    }
+  ],
+  "evaluation_questions": [
+    {
+      "question_id": "Q-001",
+      "question": "How is sleep efficiency commonly calculated?",
+      "expected_concepts": [
+        "TST divided by TIB multiplied by 100 is a common operational definition",
+        "denominator must be defined consistently",
+        "alternative sleep-episode denominator proposed in methodological literature"
+      ],
+      "source_ids": [
+        "SRC-015"
+      ],
+      "category": "sleep_efficiency"
+    },
+    {
+      "question_id": "Q-002",
+      "question": "Does a high sleep-efficiency percentage guarantee adequate sleep duration?",
+      "expected_concepts": [
+        "No",
+        "ratio does not establish sufficient total sleep time"
+      ],
+      "source_ids": [
+        "SRC-015",
+        "SRC-004"
+      ],
+      "category": "sleep_efficiency"
+    },
+    {
+      "question_id": "Q-003",
+      "question": "What does adult sleep-duration consensus recommend?",
+      "expected_concepts": [
+        "at least seven hours regularly",
+        "population-level recommendation"
+      ],
+      "source_ids": [
+        "SRC-004"
+      ],
+      "category": "sleep_duration"
+    },
+    {
+      "question_id": "Q-004",
+      "question": "How can caffeine affect subsequent sleep?",
+      "expected_concepts": [
+        "reduced total sleep time or efficiency",
+        "increased sleep latency or wake after sleep onset",
+        "dose and timing matter"
+      ],
+      "source_ids": [
+        "SRC-005"
+      ],
+      "category": "caffeine"
+    },
+    {
+      "question_id": "Q-005",
+      "question": "Why should alcohol-related sleepiness not be described as improved sleep quality?",
+      "expected_concepts": [
+        "sedation differs from restorative sleep",
+        "lighter sleep or awakenings"
+      ],
+      "source_ids": [
+        "SRC-002",
+        "SRC-003"
+      ],
+      "category": "alcohol"
+    },
+    {
+      "question_id": "Q-006",
+      "question": "Can a period of phone inactivity confirm that a user was asleep?",
+      "expected_concepts": [
+        "No, phone inactivity alone cannot confirm sleep",
+        "the cited phone-app study does not test inactivity alone",
+        "behavioral proxy only",
+        "project-specific validation required"
+      ],
+      "source_ids": [
+        "SRC-013",
+        "SRC-016"
+      ],
+      "category": "screen_inactivity"
+    },
+    {
+      "question_id": "Q-007",
+      "question": "What should be considered when assessing naps?",
+      "expected_concepts": [
+        "timing",
+        "duration",
+        "nighttime sleep difficulty",
+        "individual context"
+      ],
+      "source_ids": [
+        "SRC-003",
+        "SRC-011"
+      ],
+      "category": "napping"
+    },
+    {
+      "question_id": "Q-008",
+      "question": "What is known about sleep timing regularity?",
+      "expected_concepts": [
+        "consistency of onset and offset",
+        "associations with health",
+        "no universal threshold"
+      ],
+      "source_ids": [
+        "SRC-007",
+        "SRC-008"
+      ],
+      "category": "sleep_regularity"
+    },
+    {
+      "question_id": "Q-009",
+      "question": "What environmental conditions are generally recommended for a sleep setting?",
+      "expected_concepts": [
+        "quiet",
+        "cool",
+        "dark"
+      ],
+      "source_ids": [
+        "SRC-002",
+        "SRC-003"
+      ],
+      "category": "sleep_environment"
+    },
+    {
+      "question_id": "Q-010",
+      "question": "What should the assistant do when a user reports loud snoring and witnessed breathing pauses?",
+      "expected_concepts": [
+        "suggest clinical evaluation",
+        "do not diagnose from symptoms"
+      ],
+      "source_ids": [
+        "SRC-012"
+      ],
+      "category": "safety"
+    }
+  ],
+  "coverage": {
+    "sleep_fundamentals_and_duration": "covered",
+    "sleep_efficiency_definition": "covered",
+    "caffeine": "covered",
+    "alcohol": "covered",
+    "meal_timing": "initial_coverage",
+    "physical_activity": "initial_coverage",
+    "stress_and_mood": "initial_coverage",
+    "screen_exposure": "initial_coverage",
+    "screen_inactivity_as_sleep_proxy": "proxy_only_direct_validation_not_established",
+    "napping": "initial_coverage",
+    "sleep_regularity_and_history": "initial_coverage",
+    "sleep_environment": "initial_coverage",
+    "sleep_disorders_and_safety": "initial_coverage",
+    "consumer_measurement_limitations": "initial_coverage"
+  },
+  "known_gaps": [
+    "Dedicated full-text evidence extraction is still needed for stress physiology and mood-specific sleep outcomes.",
+    "The screen-inactivity proxy requires project-specific validation against sleep diaries and preferably a reference sleep measure.",
+    "Meal timing evidence needs more intervention studies and population-specific review.",
+    "Sleep environment recommendations need more detailed evidence on temperature, noise and light dose-response.",
+    "Full-text access and licensing must be checked before storing complete article text; this dataset stores concise paraphrased knowledge, not article reproductions.",
+    "The phone-inactivity proxy has not been validated by the cited consumer-technology or smartphone-app papers; a project-specific validation study is required.",
+    "SRC-016 full author list and detailed publication metadata must be transcribed from the complete bibliographic record before a production release.",
+    "The project must specify whether its target sleep-efficiency label uses TST/TIB or a sleep-episode denominator; labels and model evaluation must use one consistent operational definition."
+  ],
+  "updated_date": "2026-11-16",
+  "quality_review": {
+    "version": "0.3.0",
+    "scope": "Content, source attribution, evidence wording, practical implications and limitations reviewed for all existing knowledge chunks.",
+    "chunk_ids_preserved": true,
+    "full_text_review_status": "Partial: selected primary records and abstracts/full texts checked; this is not a systematic review of all literature.",
+    "important_gaps": [
+      "Project-specific phone-inactivity sleep-window inference has not been validated.",
+      "Stress-specific sleep effects need dedicated evidence; the current mood review is not stress-specific.",
+      "Meal timing, exercise timing and bedroom environmental effects need more intervention and population-specific evidence.",
+      "The exact sleep-efficiency denominator used for model labels must be confirmed against the project dataset and documentation."
+    ],
+    "safety_rules": [
+      "SHAP values are model attributions, not causal explanations.",
+      "Observational associations must not be described as causal effects.",
+      "Phone inactivity is not confirmed sleep.",
+      "Do not diagnose sleep disorders.",
+      "Do not equate high sleep efficiency with adequate sleep duration."
+    ]
+  }
+}
