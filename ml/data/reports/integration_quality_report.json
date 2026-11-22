@@ -31,10 +31,10 @@
   },
   "complete_rows_for_existing_20_feature_model": 0,
   "model_readiness": "not_retrainable_without_fabrication: external cohorts do not provide all 20 project inputs and cannot be cross-joined safely",
-  "raw_data_reference": "~/Documents/New project/ml/data/external_raw/final_project_dataset",
+  "raw_data_reference": "ml/data/external_raw/final_project_dataset",
   "outputs": {
-    "integrated_sleep_records": "~/Documents/New project/ml/data/processed/integrated_sleep_records.csv",
-    "model_contract_compatibility": "~/Documents/New project/ml/data/processed/model_contract_compatibility.csv",
-    "inventory": "~/Documents/New project/ml/data/interim/inventory/dataset_inventory.json"
+    "integrated_sleep_records": "ml/data/processed/integrated_sleep_records.csv",
+    "model_contract_compatibility": "ml/data/processed/model_contract_compatibility.csv",
+    "inventory": "ml/data/interim/inventory/dataset_inventory.json"
   }
 }

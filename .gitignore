@@ -3,6 +3,7 @@ __pycache__/
 
 .venv/
 .env
+*.env*.local
 .DS_Store
 
 node_modules/
@@ -42,3 +43,26 @@ assistant/.venv/
 
 # Downloaded model archives
 biomistral-v3-adapter.zip
+
+# Local BioMistral model assets
+assistant/models/
+# --- Repository hygiene (2026-11-22) ---
+# Archived duplicate of ml/ (moved outside the repo); protects the path if recreated
+/backend/app/services/ml/
+# Participant-level derived forecasting tables (reports and JSON results stay trackable)
+/ml/experiments/forecasting_v*/**/*.csv
+# Participant-derived standardized tables (StudentLife, single-person Fitbit); kept locally only
+/ml/data/interim/standardized/student_*.csv
+/ml/data/interim/standardized/fitbit_sleep_score.csv
+# Generated participant-level audit output (regenerate locally with integrate_external_datasets.py)
+/ml/data/reports/unmatched_keys.csv
+# Generated out-of-fold predictions from the hybrid ablation runs (large; regenerate with ml/scripts/run_hybrid_ablation_experiment_v*.py)
+/ml/experiments/hybrid_ablation_v1/oof_predictions.csv
+/ml/experiments/hybrid_ablation_v2/oof_predictions.csv
+# Participant-level MMASH outputs (aggregate metrics and the summary stay tracked)
+/ml/reports/mmash_wearable_oof_predictions.csv
+/ml/reports/mmash_hrv_excluded_records.csv
+# Machine-specific link to the local research datasets (configure via SLEEP_DATASET_DIR)
+/ml/data/external_raw/final_project_dataset
+# Third-party article kept locally only
+/docs/paper/futureinternet-16-00046.pdf

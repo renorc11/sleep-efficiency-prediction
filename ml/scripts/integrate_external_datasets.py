@@ -7,6 +7,7 @@ otherwise violate both provenance and the deployed application's data contract.
 from __future__ import annotations
 
 import argparse
+import os
 import csv
 import hashlib
 import json
@@ -211,13 +212,65 @@ def profile_file(path: Path, root: Path, missing_values: set[str]) -> dict[str, 
     return record
 
 
+DATASET_PLACEHOLDER = "${SLEEP_DATASET_DIR}"
+
+
+def report_path(path: Path | str, source_root: Path | None = None) -> str:
+    """Portable form of a path for written reports (no machine-specific prefixes).
+
+    * Inside the repository: project-relative POSIX path (checked before
+      resolving symlinks, so the local dataset link stays a repository path).
+    * Inside the configured dataset root: ``${SLEEP_DATASET_DIR}[/relative]``.
+    * Under the home directory otherwise: ``~/relative``.
+    * Anything else is returned unchanged.
+    """
+    candidate = Path(path)
+    try:
+        return candidate.relative_to(ROOT).as_posix()
+    except ValueError:
+        pass
+    resolved = candidate.resolve()
+    if source_root is not None:
+        try:
+            relative = resolved.relative_to(Path(source_root).resolve()).as_posix()
+            return DATASET_PLACEHOLDER if relative == "." else f"{DATASET_PLACEHOLDER}/{relative}"
+        except ValueError:
+            pass
+    try:
+        return resolved.relative_to(ROOT.resolve()).as_posix()
+    except ValueError:
+        pass
+    try:
+        return "~/" + resolved.relative_to(Path.home().resolve()).as_posix()
+    except ValueError:
+        return candidate.as_posix()
+
+
+def checkpoint_matches(previous: dict[str, Any], source_root: Path, files: list[Path]) -> bool:
+    """Whether a saved inventory belongs to this dataset folder and file set.
+
+    The saved root may be the portable placeholder or a legacy absolute path.
+    A matching root alone is not enough: the saved relative paths must equal
+    the current files (complete inventory) or be the leading part of the
+    current profiling order (partial inventory being resumed).
+    """
+    saved_root = previous.get("source_root")
+    if saved_root not in {DATASET_PLACEHOLDER, str(source_root), str(Path(source_root).resolve())}:
+        return False
+    current = [str(path.relative_to(source_root)) for path in sorted(files)]
+    saved = [entry.get("relative_path") for entry in previous.get("files", [])]
+    if previous.get("inventory_complete", False):
+        return previous.get("file_count") == len(current) and sorted(saved) == sorted(current)
+    return saved == current[: len(saved)]
+
+
 def inventory_source(source_root: Path, output_path: Path, missing_values: set[str]) -> dict[str, Any]:
     files = [path for path in source_root.rglob("*") if path.is_file() and path.name != ".DS_Store"]
     entries: list[dict[str, Any]] = []
     if output_path.exists():
         try:
             previous = json.loads(output_path.read_text(encoding="utf-8"))
-            if previous.get("source_root") == str(source_root):
+            if checkpoint_matches(previous, source_root, files):
                 if previous.get("inventory_complete", False):
                     print(f"[Inventory] using completed inventory for {len(previous.get('files', []))}/{len(files)} files", flush=True)
                     return previous
@@ -229,7 +282,7 @@ def inventory_source(source_root: Path, output_path: Path, missing_values: set[s
     def checkpoint(complete: bool) -> dict[str, Any]:
         report = {
             "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-            "source_root": str(source_root),
+            "source_root": report_path(source_root, source_root),
             "file_count": len(files),
             "profiled_file_count": len(entries),
             "inventory_complete": complete,
@@ -469,9 +522,30 @@ def markdown_inventory(report: dict[str, Any], path: Path) -> None:
     path.write_text("\n".join(rows) + "\n", encoding="utf-8")
 
 
+DATASET_ENV_VAR = "SLEEP_DATASET_DIR"
+
+
+def resolve_source_root(config: dict[str, Any], override: Path | None = None) -> Path:
+    """Locate the external datasets without a machine-specific path in Git.
+
+    Order: --source-root, then $SLEEP_DATASET_DIR, then a "source_root" set in the
+    config, then the existing local (untracked) link under ml/data/external_raw.
+    """
+    for candidate in (override, os.environ.get(DATASET_ENV_VAR, "").strip() or None, config.get("source_root")):
+        if candidate:
+            return Path(candidate).expanduser()
+    link = DATA_DIR / "external_raw" / config["raw_link_name"]
+    if link.is_symlink() and link.exists():
+        return link.resolve()
+    raise FileNotFoundError(
+        "External dataset folder is not configured. Pass --source-root, set "
+        f"{DATASET_ENV_VAR}, or see docs/dataset_integration.md."
+    )
+
+
 def run(config_path: Path, source_root_override: Path | None = None) -> dict[str, Any]:
     config = load_config(config_path)
-    source_root = (source_root_override or Path(config["source_root"])).expanduser()
+    source_root = resolve_source_root(config, source_root_override)
     if not source_root.is_dir():
         raise FileNotFoundError(f"External dataset folder does not exist: {source_root}")
 
@@ -522,11 +596,11 @@ def run(config_path: Path, source_root_override: Path | None = None) -> dict[str
     dataframe_to_csv(sleep_records.loc[sleep_records["quality_flags"].fillna("") != ""], reports / "invalid_records.csv")
 
     quality = quality_report(sleep_records, screen_features, model_contract, config)
-    quality["raw_data_reference"] = str(raw_reference)
+    quality["raw_data_reference"] = report_path(raw_reference, source_root)
     quality["outputs"] = {
-        "integrated_sleep_records": str(processed / "integrated_sleep_records.csv"),
-        "model_contract_compatibility": str(processed / "model_contract_compatibility.csv"),
-        "inventory": str(inventory_dir / "dataset_inventory.json"),
+        "integrated_sleep_records": report_path(processed / "integrated_sleep_records.csv", source_root),
+        "model_contract_compatibility": report_path(processed / "model_contract_compatibility.csv", source_root),
+        "inventory": report_path(inventory_dir / "dataset_inventory.json", source_root),
     }
     (reports / "integration_quality_report.json").write_text(json.dumps(quality, indent=2), encoding="utf-8")
     return quality

@@ -15,6 +15,17 @@ source .venv/bin/activate
 python3 ml/scripts/integrate_external_datasets.py
 ```
 
+## Research dataset location
+
+The datasets are never copied into Git, and no machine-specific path is stored in the repository. Configure the location on each machine in one of these ways (first match wins):
+
+1. `--source-root "/path/to/dataset_folder"` (integration script only).
+2. The environment variable `SLEEP_DATASET_DIR`, for example `export SLEEP_DATASET_DIR="/path/to/dataset_folder"`.
+3. `"source_root"` in `ml/config/dataset_integration.json` (default `null`; keep local edits out of commits).
+4. The local link `ml/data/external_raw/final_project_dataset`, which the integration script creates and which is ignored by Git.
+
+The forecasting code (`ml/forecasting/`) uses `SLEEP_DATASET_DIR`, then the local link. If no location is configured, the scripts stop with an error that names these options; the forecasting dataset tests are skipped.
+
 Use another source folder without modifying code:
 
 ```bash

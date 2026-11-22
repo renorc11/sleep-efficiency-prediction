@@ -1,5 +1,6 @@
 {
-  "source_root": "~/Desktop/Final_Project_Dataset",
+  "source_root": null,
+  "source_root_note": "Machine-specific; not stored in Git. Set SLEEP_DATASET_DIR or pass --source-root (see docs/dataset_integration.md).",
   "raw_link_name": "final_project_dataset",
   "timezone_policy": "Source time zones are not supplied. Unix timestamps are interpreted as UTC for date grouping; all other timestamps retain their source-local value.",
   "missing_values": ["", "na", "n/a", "nan", "none", "null", "not available", "unknown"],
