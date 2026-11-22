@@ -1,3 +1,18 @@
+######################################################################
+WITHDRAWN (2026-11-22): THIS COMPARISON IS NOT SUPPORTED
+######################################################################
+This report compares the project's "ROC-AUC" with AUROC values from a clinical
+sleep-disorder risk paper (JMIR 2023, e46520). The comparison is withdrawn:
+- The project's ROC-AUC was computed from a linear rescaling of a regression
+  output, (prediction - 50) / 50, not from a classifier probability. It is no
+  longer reported by the API or the clients.
+- The tasks, targets, populations and data differ (constructed sleep-efficiency
+  index on Kaggle data vs. clinically diagnosed OSA/COMISA/insomnia risk).
+- No replacement numerical comparison is provided.
+The text below is kept unchanged for the record only. Do not cite it.
+See WITHDRAWN.md in this folder.
+######################################################################
+
 Explainable Machine Learning for Lifestyle-Based Sleep Efficiency Prediction Using Behavioral and Screen Inactivity Signals
 Comparison Report: Base Paper vs Your Project
 Date: 2026-02-17

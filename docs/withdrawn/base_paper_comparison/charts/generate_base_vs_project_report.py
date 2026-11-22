@@ -1,5 +1,11 @@
 from __future__ import annotations
 
+# WITHDRAWN (2026-11-22). This script compared the project's ROC-AUC, computed from a
+# rescaled regression output, with AUROC from a clinical sleep-disorder classification
+# paper. Those numbers are not comparable. See ../WITHDRAWN.md. Its output paths also
+# no longer resolve after the move, so it refuses to run.
+raise SystemExit("Withdrawn: unsupported base-paper comparison. See docs/withdrawn/base_paper_comparison/WITHDRAWN.md")
+
 import json
 from pathlib import Path
 import textwrap
